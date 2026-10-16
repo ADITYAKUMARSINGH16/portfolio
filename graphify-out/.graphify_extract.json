@@ -1,0 +1,1514 @@
+{
+  "nodes": [
+    {
+      "id": "ai_assistant",
+      "label": "ai-assistant.js",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "ai_assistant_portfolioaiassistant",
+      "label": "PortfolioAIAssistant",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L10",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "ai_assistant_portfolioaiassistant_constructor",
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "ai_assistant_portfolioaiassistant_initspeech",
+      "label": ".initSpeech()",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L24",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "ai_assistant_portfolioaiassistant_togglespeech",
+      "label": ".toggleSpeech()",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L36",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "ai_assistant_portfolioaiassistant_speak",
+      "label": ".speak()",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L44",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "ai_assistant_portfolioaiassistant_ask",
+      "label": ".ask()",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L67",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "ai_assistant_portfolioaiassistant_resolveportfolioknowledge",
+      "label": ".resolvePortfolioKnowledge()",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L92",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "ai_assistant_portfolioaiassistant_suggestnextactions",
+      "label": ".suggestNextActions()",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L237",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "ai_assistant_portfolioaiassistant_queryexternalllm",
+      "label": ".queryExternalLLM()",
+      "file_type": "code",
+      "source_file": "ai-assistant.js",
+      "source_location": "L247",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app",
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_copilot",
+      "label": "coPilot",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initthemetoggle",
+      "label": "initThemeToggle()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L36",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_updatethemeicon",
+      "label": "updateThemeIcon()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L57",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initliveclock",
+      "label": "initLiveClock()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L69",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initliveclock_updatetime",
+      "label": "updateTime()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L73",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initparticlecanvas",
+      "label": "initParticleCanvas()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L94",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initparticlecanvas_animate",
+      "label": "animate()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L161",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_inittypingeffect",
+      "label": "initTypingEffect()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L195",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_inittypingeffect_type",
+      "label": "type()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L210",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_rendersystempillars",
+      "label": "renderSystemPillars()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L241",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_renderarchitectureprojects",
+      "label": "renderArchitectureProjects()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L259",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initprojectfilters",
+      "label": "initProjectFilters()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L327",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_handledirectprojectquery",
+      "label": "handleDirectProjectQuery()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L339",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_renderarsenalmatrix",
+      "label": "renderArsenalMatrix()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L356",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initaicopilotchat",
+      "label": "initAICoPilotChat()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L439",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_executecopilotquery",
+      "label": "executeCoPilotQuery()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L498",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_appendcopilotmessage",
+      "label": "appendCoPilotMessage()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L524",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_appendtypingindicator",
+      "label": "appendTypingIndicator()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L541",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_appendassistantresponse",
+      "label": "appendAssistantResponse()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L559",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_parsemarkdowntohtml",
+      "label": "parseMarkdownToHtml()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L591",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_escapehtml",
+      "label": "escapeHtml()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L604",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initfloatingcopilot",
+      "label": "initFloatingCoPilot()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L617",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initfloatingcopilot_opendrawer",
+      "label": "openDrawer()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L627",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initfloatingcopilot_closedrawer",
+      "label": "closeDrawer()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L637",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initcyberterminal",
+      "label": "initCyberTerminal()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L697",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initcyberterminal_runcommand",
+      "label": "runCommand()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L704",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initcontacthub",
+      "label": "initContactHub()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L790",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initsettingsmodal",
+      "label": "initSettingsModal()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L817",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initmobilemenu",
+      "label": "initMobileMenu()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L861",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initmobilemenu_closemenu",
+      "label": "closeMenu()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L868",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initmobilemenu_togglemenu",
+      "label": "toggleMenu()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L875",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "app_initscrollspy",
+      "label": "initScrollSpy()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L905",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "observe",
+            "receiver_type": "IntersectionObserver",
+            "lang": "typescript",
+            "line": "L929"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "app_showtoast",
+      "label": "showToast()",
+      "file_type": "code",
+      "source_file": "app.js",
+      "source_location": "L935",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "knowledge_base",
+      "label": "knowledge-base.js",
+      "file_type": "code",
+      "source_file": "knowledge-base.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "knowledge_base_aditya_profile",
+      "label": "ADITYA_PROFILE",
+      "file_type": "code",
+      "source_file": "knowledge-base.js",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "knowledge_base_aditya_projects",
+      "label": "ADITYA_PROJECTS",
+      "file_type": "code",
+      "source_file": "knowledge-base.js",
+      "source_location": "L59",
+      "_origin": "ast"
+    },
+    {
+      "id": "knowledge_base_aditya_skills",
+      "label": "ADITYA_SKILLS",
+      "file_type": "code",
+      "source_file": "knowledge-base.js",
+      "source_location": "L204",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "ai_assistant",
+      "target": "knowledge_base",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant",
+      "target": "knowledge_base_aditya_profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant",
+      "target": "knowledge_base_aditya_skills",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant",
+      "target": "knowledge_base_aditya_projects",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant",
+      "target": "ai_assistant_portfolioaiassistant",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant",
+      "target": "ai_assistant_portfolioaiassistant_constructor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant",
+      "target": "ai_assistant_portfolioaiassistant_initspeech",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant",
+      "target": "ai_assistant_portfolioaiassistant_togglespeech",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant",
+      "target": "ai_assistant_portfolioaiassistant_speak",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant",
+      "target": "ai_assistant_portfolioaiassistant_ask",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant",
+      "target": "ai_assistant_portfolioaiassistant_resolveportfolioknowledge",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant",
+      "target": "ai_assistant_portfolioaiassistant_suggestnextactions",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L237",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant",
+      "target": "ai_assistant_portfolioaiassistant_queryexternalllm",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L247",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant_constructor",
+      "target": "ai_assistant_portfolioaiassistant_initspeech",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant_ask",
+      "target": "ai_assistant_portfolioaiassistant_queryexternalllm",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant_ask",
+      "target": "ai_assistant_portfolioaiassistant_suggestnextactions",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "ai_assistant_portfolioaiassistant_ask",
+      "target": "ai_assistant_portfolioaiassistant_resolveportfolioknowledge",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ai-assistant.js",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "knowledge_base",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "knowledge_base_aditya_profile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "knowledge_base_aditya_skills",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "knowledge_base_aditya_projects",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "ai_assistant",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "ai_assistant_portfolioaiassistant",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_copilot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initthemetoggle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_updatethemeicon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initliveclock",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initliveclock",
+      "target": "app_initliveclock_updatetime",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initparticlecanvas",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initparticlecanvas",
+      "target": "app_initparticlecanvas_animate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L161",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_inittypingeffect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L195",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_inittypingeffect",
+      "target": "app_inittypingeffect_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L210",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_rendersystempillars",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L241",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_renderarchitectureprojects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L259",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initprojectfilters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L327",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_handledirectprojectquery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L339",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_renderarsenalmatrix",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L356",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initaicopilotchat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L439",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_executecopilotquery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L498",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_appendcopilotmessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L524",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_appendtypingindicator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L541",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_appendassistantresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L559",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_parsemarkdowntohtml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L591",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_escapehtml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L604",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initfloatingcopilot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L617",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initfloatingcopilot",
+      "target": "app_initfloatingcopilot_opendrawer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L627",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initfloatingcopilot",
+      "target": "app_initfloatingcopilot_closedrawer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L637",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initcyberterminal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L697",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initcyberterminal",
+      "target": "app_initcyberterminal_runcommand",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L704",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initcontacthub",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L790",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initsettingsmodal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L817",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initmobilemenu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L861",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initmobilemenu",
+      "target": "app_initmobilemenu_closemenu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L868",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initmobilemenu",
+      "target": "app_initmobilemenu_togglemenu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L875",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initscrollspy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L905",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_showtoast",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L935",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initthemetoggle",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initliveclock",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initparticlecanvas",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_inittypingeffect",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_rendersystempillars",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_renderarchitectureprojects",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_renderarsenalmatrix",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initprojectfilters",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initaicopilotchat",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initfloatingcopilot",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initcyberterminal",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initcontacthub",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initsettingsmodal",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initmobilemenu",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app",
+      "target": "app_initscrollspy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initthemetoggle",
+      "target": "app_updatethemeicon",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initthemetoggle",
+      "target": "app_showtoast",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initliveclock",
+      "target": "app_initliveclock_updatetime",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initparticlecanvas",
+      "target": "app_initparticlecanvas_animate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L189",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_renderarchitectureprojects",
+      "target": "app_handledirectprojectquery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L322",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initprojectfilters",
+      "target": "app_renderarchitectureprojects",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L334",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initaicopilotchat",
+      "target": "app_showtoast",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L456",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initaicopilotchat",
+      "target": "app_executecopilotquery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L472",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_executecopilotquery",
+      "target": "app_appendcopilotmessage",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L500",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_executecopilotquery",
+      "target": "app_appendtypingindicator",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L503",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_executecopilotquery",
+      "target": "app_appendassistantresponse",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L511",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_appendcopilotmessage",
+      "target": "app_escapehtml",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L532",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_appendassistantresponse",
+      "target": "app_parsemarkdowntohtml",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L563",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_appendassistantresponse",
+      "target": "app_escapehtml",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L571",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_appendassistantresponse",
+      "target": "app_executecopilotquery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L585",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initfloatingcopilot",
+      "target": "app_initfloatingcopilot_opendrawer",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L646",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initfloatingcopilot",
+      "target": "app_initfloatingcopilot_closedrawer",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L648",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initfloatingcopilot",
+      "target": "app_executecopilotquery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L679",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initcyberterminal",
+      "target": "app_initcyberterminal_runcommand",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L776",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initcyberterminal_runcommand",
+      "target": "app_escapehtml",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L711",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initcontacthub",
+      "target": "app_showtoast",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L796",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initsettingsmodal",
+      "target": "app_showtoast",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L854",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initmobilemenu",
+      "target": "app_initmobilemenu_togglemenu",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L884",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initmobilemenu",
+      "target": "app_initmobilemenu_closemenu",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.js",
+      "source_location": "L889",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "knowledge_base",
+      "target": "knowledge_base_aditya_profile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "knowledge-base.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "knowledge_base",
+      "target": "knowledge_base_aditya_projects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "knowledge-base.js",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "knowledge_base",
+      "target": "knowledge_base_aditya_skills",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "knowledge-base.js",
+      "source_location": "L204",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_initaicopilotchat",
+      "target": "ai_assistant_portfolioaiassistant_togglespeech",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "app.js",
+      "source_location": "L451",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_executecopilotquery",
+      "target": "ai_assistant_portfolioaiassistant_ask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "app.js",
+      "source_location": "L507",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_executecopilotquery",
+      "target": "ai_assistant_portfolioaiassistant_speak",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "app.js",
+      "source_location": "L512",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

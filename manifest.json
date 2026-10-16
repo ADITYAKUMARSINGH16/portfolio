@@ -1,0 +1,56 @@
+{
+  "name": "Aditya Kumar Singh | Autonomous Systems & AI Architecture",
+  "short_name": "Aditya // SYS",
+  "description": "High-Performance Autonomous Systems, Local RAG, and Air-Gapped AI Engineering Portfolio.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#030712",
+  "theme_color": "#030712",
+  "categories": ["portfolio", "engineering", "technology", "developer"],
+  "icons": [
+    {
+      "src": "assets/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Download Official Resume",
+      "short_name": "Resume",
+      "description": "Official 1-page engineering resume PDF",
+      "url": "./#resume-download",
+      "icons": [{ "src": "assets/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ask AI Co-Pilot",
+      "short_name": "Co-Pilot",
+      "description": "Chat with offline intelligence co-pilot",
+      "url": "./#ai-copilot-section",
+      "icons": [{ "src": "assets/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Interactive Simulation Lab",
+      "short_name": "Sim Lab",
+      "description": "WiZ UDP and AURA Tactical simulation environments",
+      "url": "./#systems",
+      "icons": [{ "src": "assets/icon-192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Telemetry CLI Terminal",
+      "short_name": "Terminal",
+      "description": "Interactive developer command line console",
+      "url": "./#terminal-section",
+      "icons": [{ "src": "assets/icon-192.svg", "sizes": "192x192" }]
+    }
+  ]
+}

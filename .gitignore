@@ -1,0 +1,14 @@
+# IDE & Environment
+.gemini/
+.playwright-mcp/
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencies & Python Cache
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+.venv/
+env/

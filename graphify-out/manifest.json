@@ -1,0 +1,92 @@
+{
+  ".gemini/settings.json": {
+    "mtime": 1792141807.6782258,
+    "seen": 1792143812.9129715,
+    "ast_hash": "20b56c0e00e63cefbcf1f89219e50c6d",
+    "semantic_hash": ""
+  },
+  "ai-assistant.js": {
+    "mtime": 1792146739.3368945,
+    "seen": 1792146779.7038596,
+    "ast_hash": "c5abc8f59a7ddb5e92d62a42cb48a66f",
+    "semantic_hash": ""
+  },
+  "app.js": {
+    "mtime": 1792148807.3787727,
+    "seen": 1792148817.0562127,
+    "ast_hash": "f35ef06f4b02dc1166771dfe3d6acfa0",
+    "semantic_hash": ""
+  },
+  "knowledge-base.js": {
+    "mtime": 1792146937.7539248,
+    "seen": 1792147756.9782193,
+    "ast_hash": "cc63402ffd2eea85ffb28fe64885f086",
+    "semantic_hash": ""
+  },
+  "GEMINI.md": {
+    "mtime": 1792141807.6588614,
+    "seen": 1792143812.9129715,
+    "ast_hash": "67d88e9d0760c3ba54c75dfd9551c1c5",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1792146023.0212069,
+    "seen": 1792146055.139324,
+    "ast_hash": "92987e7721d12c9abed0c4e52c761eca",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1792148699.4555082,
+    "seen": 1792148817.0562127,
+    "ast_hash": "f7a88d52186e6a16583008bf4fddda65",
+    "semantic_hash": ""
+  },
+  "assets/Aditya_Kumar_Singh_Resume.pdf": {
+    "mtime": 1787323792.272012,
+    "seen": 1792146586.452849,
+    "ast_hash": "8e372e5a7c6934eccd68379d1c0e28ef",
+    "semantic_hash": ""
+  },
+  "assets/test.pdf": {
+    "mtime": 1792143426.4714587,
+    "seen": 1792143812.9129715,
+    "ast_hash": "3c02dfc3274b710561bacd19aa40853b",
+    "semantic_hash": ""
+  },
+  "assets/Aditya_Resume.pdf": {
+    "mtime": 1787323792.272012,
+    "seen": 1792146586.452849,
+    "ast_hash": "8e372e5a7c6934eccd68379d1c0e28ef",
+    "semantic_hash": ""
+  },
+  "cyber-audio.js": {
+    "mtime": 1792147959.911425,
+    "seen": 1792148457.4113984,
+    "ast_hash": "071ea079377483f5d7371d626a62490a",
+    "semantic_hash": ""
+  },
+  "manifest.json": {
+    "mtime": 1792148622.4039197,
+    "seen": 1792148817.0562127,
+    "ast_hash": "2adcdc1933aa6060a64e7632e987c9e6",
+    "semantic_hash": ""
+  },
+  "sw.js": {
+    "mtime": 1792148659.9347775,
+    "seen": 1792148817.0562127,
+    "ast_hash": "d229f517ee842073cf847eadeb4a456c",
+    "semantic_hash": ""
+  },
+  "assets/icon-192.svg": {
+    "mtime": 1792148633.7095842,
+    "seen": 1792148817.0562127,
+    "ast_hash": "71f5c06b91960609090eba714864000e",
+    "semantic_hash": ""
+  },
+  "assets/icon-512.svg": {
+    "mtime": 1792148646.0883408,
+    "seen": 1792148817.0562127,
+    "ast_hash": "23c2e48719994967e67c809e35d76c92",
+    "semantic_hash": ""
+  }
+}

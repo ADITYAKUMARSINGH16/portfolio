@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="cyanViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="192" height="192" rx="36" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="2" />
+
+  <!-- Hexagon Outline -->
+  <polygon points="96,24 156,58 156,134 96,168 36,134 36,58" fill="none" stroke="url(#cyanViolet)" stroke-width="3" filter="url(#neonGlow)" />
+
+  <!-- Inner Nodes & Circuit Details -->
+  <circle cx="96" cy="24" r="4" fill="#38bdf8" />
+  <circle cx="156" cy="58" r="4" fill="#818cf8" />
+  <circle cx="156" cy="134" r="4" fill="#c084fc" />
+  <circle cx="96" cy="168" r="4" fill="#38bdf8" />
+  <circle cx="36" cy="134" r="4" fill="#818cf8" />
+  <circle cx="36" cy="58" r="4" fill="#c084fc" />
+
+  <!-- Center Monogram -->
+  <path d="M72 128 L96 64 L120 128 M80 110 L112 110" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)" />
+  <circle cx="96" cy="96" r="3" fill="#38bdf8" />
+
+  <!-- Tech Status Tag -->
+  <text x="96" y="152" font-family="monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="2">SYS</text>
+</svg>

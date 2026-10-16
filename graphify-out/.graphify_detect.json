@@ -1,0 +1,33 @@
+{
+  "files": {
+    "code": [
+      "G:\\Side Projects\\portfolio\\.gemini\\settings.json",
+      "G:\\Side Projects\\portfolio\\ai-assistant.js",
+      "G:\\Side Projects\\portfolio\\app.js",
+      "G:\\Side Projects\\portfolio\\knowledge-base.js"
+    ],
+    "document": [
+      "G:\\Side Projects\\portfolio\\GEMINI.md",
+      "G:\\Side Projects\\portfolio\\README.md",
+      "G:\\Side Projects\\portfolio\\index.html"
+    ],
+    "paper": [],
+    "image": [],
+    "video": []
+  },
+  "total_files": 7,
+  "total_words": 8780,
+  "needs_graph": false,
+  "warning": "Corpus is ~8,780 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [],
+  "unclassified": [
+    "G:\\Side Projects\\portfolio\\style.css"
+  ],
+  "walk_errors": [],
+  "ignored": [],
+  "pruned_noise_dirs": [
+    "G:\\Side Projects\\portfolio\\graphify-out\\"
+  ],
+  "graphifyignore_patterns": 0,
+  "scan_root": "G:\\Side Projects\\portfolio"
+}

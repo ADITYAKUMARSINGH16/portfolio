@@ -1,10 +1,4 @@
 {
-  ".gemini/settings.json": {
-    "mtime": 1792141807.6782258,
-    "seen": 1792143812.9129715,
-    "ast_hash": "20b56c0e00e63cefbcf1f89219e50c6d",
-    "semantic_hash": ""
-  },
   "ai-assistant.js": {
     "mtime": 1792146739.3368945,
     "seen": 1792146779.7038596,
@@ -12,9 +6,9 @@
     "semantic_hash": ""
   },
   "app.js": {
-    "mtime": 1792148807.3787727,
-    "seen": 1792148817.0562127,
-    "ast_hash": "f35ef06f4b02dc1166771dfe3d6acfa0",
+    "mtime": 1792148864.1304367,
+    "seen": 1792149484.137247,
+    "ast_hash": "dd738d284ac75c056732f87185e5a4bd",
     "semantic_hash": ""
   },
   "knowledge-base.js": {
@@ -36,21 +30,15 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1792148699.4555082,
-    "seen": 1792148817.0562127,
-    "ast_hash": "f7a88d52186e6a16583008bf4fddda65",
+    "mtime": 1792148900.4549162,
+    "seen": 1792149484.137247,
+    "ast_hash": "01260a90d020b792e5fc395bfe8c633b",
     "semantic_hash": ""
   },
   "assets/Aditya_Kumar_Singh_Resume.pdf": {
     "mtime": 1787323792.272012,
     "seen": 1792146586.452849,
     "ast_hash": "8e372e5a7c6934eccd68379d1c0e28ef",
-    "semantic_hash": ""
-  },
-  "assets/test.pdf": {
-    "mtime": 1792143426.4714587,
-    "seen": 1792143812.9129715,
-    "ast_hash": "3c02dfc3274b710561bacd19aa40853b",
     "semantic_hash": ""
   },
   "assets/Aditya_Resume.pdf": {
@@ -72,9 +60,9 @@
     "semantic_hash": ""
   },
   "sw.js": {
-    "mtime": 1792148659.9347775,
-    "seen": 1792148817.0562127,
-    "ast_hash": "d229f517ee842073cf847eadeb4a456c",
+    "mtime": 1792148914.748343,
+    "seen": 1792149484.137247,
+    "ast_hash": "d9043e69e6593c6ebd03500545250913",
     "semantic_hash": ""
   },
   "assets/icon-192.svg": {

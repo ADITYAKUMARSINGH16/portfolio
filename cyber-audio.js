@@ -165,6 +165,24 @@ class CyberAudioSynthesizer {
           break;
         }
 
+        case 'tick': {
+          // Micro-tick for text scramble and hover effects
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(2400, now);
+          osc.frequency.exponentialRampToValueAtTime(800, now + 0.012);
+
+          gain.gain.setValueAtTime(0.018, now);
+          gain.gain.exponentialRampToValueAtTime(0.0005, now + 0.012);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.015);
+          break;
+        }
+
         default:
           break;
       }
@@ -172,6 +190,14 @@ class CyberAudioSynthesizer {
       // Graceful fallback if audio graph throws
     }
   }
+
+  playClick() { this.play('keyClick'); }
+  playTick() { this.play('tick'); }
+  playChime() { this.play('chime'); }
+  playWhoosh() { this.play('whoosh'); }
+  playPing() { this.play('ping'); }
+  playSuccess() { this.play('success'); }
 }
 
 export const cyberAudio = new CyberAudioSynthesizer();
+

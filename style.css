@@ -3338,4 +3338,197 @@ section {
   gap: 4px;
 }
 
+/* ==========================================================================
+   LENIS SMOOTH SCROLL INTEGRATION & KINETIC TRANSITIONS
+   ========================================================================== */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Kinetic Scroll Reveals with 3D Perspective and Blur Clearance */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(36px) scale(0.975);
+  filter: blur(5px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Staggered entrance for cards */
+.system-pillars-grid .pillar-card:nth-child(1) { transition-delay: 0.04s; }
+.system-pillars-grid .pillar-card:nth-child(2) { transition-delay: 0.12s; }
+.system-pillars-grid .pillar-card:nth-child(3) { transition-delay: 0.20s; }
+.system-pillars-grid .pillar-card:nth-child(4) { transition-delay: 0.28s; }
+
+.arch-grid .arch-card:nth-child(1) { transition-delay: 0.05s; }
+.arch-grid .arch-card:nth-child(2) { transition-delay: 0.12s; }
+.arch-grid .arch-card:nth-child(3) { transition-delay: 0.19s; }
+.arch-grid .arch-card:nth-child(4) { transition-delay: 0.26s; }
+
+.arsenal-grid .arsenal-card:nth-child(1) { transition-delay: 0.04s; }
+.arsenal-grid .arsenal-card:nth-child(2) { transition-delay: 0.09s; }
+.arsenal-grid .arsenal-card:nth-child(3) { transition-delay: 0.14s; }
+.arsenal-grid .arsenal-card:nth-child(4) { transition-delay: 0.19s; }
+
+/* Parallax Depth Support */
+[data-parallax] {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* Velocity Skew Effect */
+.velocity-skew {
+  will-change: transform;
+  transition: transform 0.18s ease-out;
+}
+
+/* Enhanced Scroll Progress Bar Glow */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-indigo), var(--accent-violet));
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 0 20px rgba(99, 102, 241, 0.45);
+  z-index: 10001;
+  transition: width 0.05s ease-out;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   TACTICAL HUD CORNER RETICLES & TARGET ACQUISITION
+   ========================================================================== */
+.arch-card, .pillar-card, .arsenal-card, .metric-card-link, .system-pillar-item {
+  position: relative;
+}
+
+.hud-corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  pointer-events: none;
+  opacity: 0.35;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.hud-corner.top-left {
+  top: 7px;
+  left: 7px;
+  border-top: 2px solid var(--accent-cyan);
+  border-left: 2px solid var(--accent-cyan);
+}
+
+.hud-corner.top-right {
+  top: 7px;
+  right: 7px;
+  border-top: 2px solid var(--accent-cyan);
+  border-right: 2px solid var(--accent-cyan);
+}
+
+.hud-corner.bottom-left {
+  bottom: 7px;
+  left: 7px;
+  border-bottom: 2px solid var(--accent-cyan);
+  border-left: 2px solid var(--accent-cyan);
+}
+
+.hud-corner.bottom-right {
+  bottom: 7px;
+  right: 7px;
+  border-bottom: 2px solid var(--accent-cyan);
+  border-right: 2px solid var(--accent-cyan);
+}
+
+/* Hover: Snaps outward with electric HUD laser glow */
+.arch-card:hover .hud-corner,
+.pillar-card:hover .hud-corner,
+.arsenal-card:hover .hud-corner,
+.metric-card-link:hover .hud-corner {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.9));
+}
+
+.arch-card:hover .hud-corner.top-left,
+.pillar-card:hover .hud-corner.top-left,
+.arsenal-card:hover .hud-corner.top-left,
+.metric-card-link:hover .hud-corner.top-left {
+  transform: translate(-3px, -3px);
+}
+
+.arch-card:hover .hud-corner.top-right,
+.pillar-card:hover .hud-corner.top-right,
+.arsenal-card:hover .hud-corner.top-right,
+.metric-card-link:hover .hud-corner.top-right {
+  transform: translate(3px, -3px);
+}
+
+.arch-card:hover .hud-corner.bottom-left,
+.pillar-card:hover .hud-corner.bottom-left,
+.arsenal-card:hover .hud-corner.bottom-left,
+.metric-card-link:hover .hud-corner.bottom-left {
+  transform: translate(-3px, 3px);
+}
+
+.arch-card:hover .hud-corner.bottom-right,
+.pillar-card:hover .hud-corner.bottom-right,
+.arsenal-card:hover .hud-corner.bottom-right,
+.metric-card-link:hover .hud-corner.bottom-right {
+  transform: translate(3px, 3px);
+}
+
+/* ==========================================================================
+   CRYPTOGRAPHIC TEXT SCRAMBLER & CIRCUIT STYLES
+   ========================================================================== */
+.scramble-active {
+  font-family: var(--font-mono) !important;
+  color: var(--accent-cyan) !important;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+  letter-spacing: 0.04em;
+  will-change: contents;
+}
+
+/* Skill to Project Circuit Pulse Highlight */
+.circuit-pulse-highlight {
+  border-color: var(--accent-cyan) !important;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.45), 0 0 50px rgba(99, 102, 241, 0.25) !important;
+  transform: translateY(-4px) scale(1.015) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Skill Chip Active Connection Pulse */
+.arsenal-tag.circuit-source {
+  border-color: var(--accent-cyan) !important;
+  background: rgba(56, 189, 248, 0.22) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5) !important;
+}
+
+
+
 

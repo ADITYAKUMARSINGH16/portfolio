@@ -7,9 +7,11 @@ import { ADITYA_PROFILE, ADITYA_SKILLS, ADITYA_PROJECTS } from './knowledge-base
 import { PortfolioAIAssistant } from './ai-assistant.js';
 import { cyberAudio } from './cyber-audio.js';
 
+let lenisInstance = null;
 const coPilot = new PortfolioAIAssistant();
 
 document.addEventListener('DOMContentLoaded', () => {
+  initLenisSmoothScroll();
   initCyberAudio();
   initThemeToggle();
   initMetricsCards();
@@ -20,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSystemPillars();
   renderArchitectureProjects('all');
   renderArsenalMatrix();
+  initTextScramble();
+  initSkillCircuitSync();
   initProjectFilters();
   initAICoPilotChat();
   initFloatingCoPilot();
@@ -942,6 +946,10 @@ function renderSystemPillars() {
 
   container.innerHTML = ADITYA_PROFILE.pillars.map(pillar => `
     <div class="pillar-card">
+      <span class="hud-corner top-left"></span>
+      <span class="hud-corner top-right"></span>
+      <span class="hud-corner bottom-left"></span>
+      <span class="hud-corner bottom-right"></span>
       <div class="pillar-header">
         <span class="pillar-icon">${pillar.icon}</span>
         <h3 class="pillar-title">${pillar.title}</h3>
@@ -964,6 +972,10 @@ function renderArchitectureProjects(filter = 'all') {
 
   container.innerHTML = filtered.map(proj => `
     <article class="arch-card" data-category="${proj.category}">
+      <span class="hud-corner top-left"></span>
+      <span class="hud-corner top-right"></span>
+      <span class="hud-corner bottom-left"></span>
+      <span class="hud-corner bottom-right"></span>
       <div class="arch-card-top">
         <span class="arch-card-icon">${proj.icon}</span>
         <span class="arch-status-pill ${proj.statusColor || 'cyan'}">
@@ -1057,6 +1069,9 @@ function renderArchitectureProjects(filter = 'all') {
       handleDirectProjectQuery(projTitle);
     });
   });
+
+  initTextScramble();
+  initSkillCircuitSync();
 }
 
 function initProjectFilters() {
@@ -1095,6 +1110,10 @@ function renderArsenalMatrix() {
   container.innerHTML = `
     <!-- Languages -->
     <div class="arsenal-card">
+      <span class="hud-corner top-left"></span>
+      <span class="hud-corner top-right"></span>
+      <span class="hud-corner bottom-left"></span>
+      <span class="hud-corner bottom-right"></span>
       <div class="arsenal-card-header">
         <span class="arsenal-card-icon">💻</span>
         <h3 class="arsenal-card-title">Core Languages</h3>
@@ -1114,6 +1133,10 @@ function renderArsenalMatrix() {
 
     <!-- AI & Offline RAG -->
     <div class="arsenal-card">
+      <span class="hud-corner top-left"></span>
+      <span class="hud-corner top-right"></span>
+      <span class="hud-corner bottom-left"></span>
+      <span class="hud-corner bottom-right"></span>
       <div class="arsenal-card-header">
         <span class="arsenal-card-icon">🧠</span>
         <h3 class="arsenal-card-title">AI &amp; Offline RAG</h3>
@@ -1132,6 +1155,10 @@ function renderArsenalMatrix() {
 
     <!-- Systems & IoT Protocols -->
     <div class="arsenal-card">
+      <span class="hud-corner top-left"></span>
+      <span class="hud-corner top-right"></span>
+      <span class="hud-corner bottom-left"></span>
+      <span class="hud-corner bottom-right"></span>
       <div class="arsenal-card-header">
         <span class="arsenal-card-icon">⚡</span>
         <h3 class="arsenal-card-title">Systems &amp; IoT Protocols</h3>
@@ -1150,6 +1177,10 @@ function renderArsenalMatrix() {
 
     <!-- Web & Tooling -->
     <div class="arsenal-card">
+      <span class="hud-corner top-left"></span>
+      <span class="hud-corner top-right"></span>
+      <span class="hud-corner bottom-left"></span>
+      <span class="hud-corner bottom-right"></span>
       <div class="arsenal-card-header">
         <span class="arsenal-card-icon">🛠️</span>
         <h3 class="arsenal-card-title">Web &amp; Tooling</h3>
@@ -1166,6 +1197,9 @@ function renderArsenalMatrix() {
       </div>
     </div>
   `;
+
+  initTextScramble();
+  initSkillCircuitSync();
 }
 
 /* ==========================================================================
@@ -1749,7 +1783,13 @@ function initCommandPalette() {
   function scrollToSection(id) {
     closePalette();
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      if (lenisInstance) {
+        lenisInstance.scrollTo(el, { offset: -72, duration: 1.2 });
+      } else {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }
 
   function downloadResume() {
@@ -2039,11 +2079,21 @@ function initMobileMenu() {
 }
 
 /* ==========================================================================
-   14. SCROLL SPY (ACTIVE NAVIGATION INDICATOR)
+   14. SCROLL SPY & DYNAMIC TELEMETRY BREADCRUMB
    ========================================================================== */
+const SECTION_TELEMETRY_MAP = {
+  'hero': 'SYS // OPERATIONAL',
+  'systems': 'ARCH // SYSTEMS',
+  'arsenal': 'TECH // ARSENAL',
+  'metrics': 'CODE // TELEMETRY',
+  'terminal-section': 'CLI // TERMINAL',
+  'contact': 'UPLINK // CONTACT'
+};
+
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id], header[id]');
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const brandTag = document.getElementById('brand-status-tag');
 
   if (!sections.length || !navLinks.length) return;
 
@@ -2058,6 +2108,11 @@ function initScrollSpy() {
             link.classList.remove('active');
           }
         });
+
+        // Dynamic status tag update in Navbar
+        if (brandTag && SECTION_TELEMETRY_MAP[id]) {
+          brandTag.innerHTML = `<span class="pulse-dot-sm"></span> ${SECTION_TELEMETRY_MAP[id]}`;
+        }
       }
     });
   }, {
@@ -2082,14 +2137,111 @@ function showToast(message) {
 }
 
 /* ==========================================================================
-   15. SCROLL ENGINE: PROGRESS BAR, HERO MOUSE INDICATOR & REVEALS
+   15. LENIS SMOOTH SCROLL ENGINE, PARALLAX & KINETIC REVEALS
    ========================================================================== */
+function initLenisSmoothScroll() {
+  const bar = document.getElementById('scroll-progress-bar');
+  const indicator = document.getElementById('hero-scroll-trigger');
+
+  if (typeof window.Lenis !== 'undefined') {
+    lenisInstance = new window.Lenis({
+      duration: 1.25,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential ease-out
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 0.95,
+      smoothTouch: false,
+      touchMultiplier: 1.8,
+    });
+
+    function raf(time) {
+      lenisInstance.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Scroll hook for progress, hero indicator, and parallax layers
+    lenisInstance.on('scroll', ({ scroll, limit, velocity }) => {
+      // Top scroll progress bar
+      if (bar && limit > 0) {
+        const progress = Math.min(100, Math.max(0, (scroll / limit) * 100));
+        bar.style.width = `${progress}%`;
+        bar.setAttribute('aria-valuenow', Math.round(progress));
+      }
+
+      // Hero indicator fade
+      if (indicator) {
+        if (scroll > 85) {
+          indicator.classList.add('scrolled-hidden');
+        } else {
+          indicator.classList.remove('scrolled-hidden');
+        }
+      }
+
+      // Velocity skewing on cards (subtle kinetic response)
+      updateVelocitySkew(velocity);
+    });
+
+    // Intercept internal anchor link clicks for smooth Lenis glide
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const href = anchor.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          cyberAudio.playClick();
+          lenisInstance.scrollTo(target, {
+            offset: -72,
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+          });
+
+          // Close mobile menu if open
+          const navMenu = document.getElementById('nav-menu');
+          const mobileToggle = document.getElementById('mobile-menu-toggle');
+          if (navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+  } else {
+    // Native fallback when Lenis is not available
+    initScrollProgressBarFallback();
+    initHeroScrollIndicatorFallback();
+  }
+}
+
+let skewTimeout = null;
+function updateVelocitySkew(velocity) {
+  if (Math.abs(velocity) < 1.5) return;
+  const cards = document.querySelectorAll('.arch-card, .pillar-card');
+  const clampedSkew = Math.max(-2.5, Math.min(2.5, velocity * 0.12));
+
+  cards.forEach(card => {
+    card.style.transform = `skewY(${clampedSkew.toFixed(2)}deg)`;
+  });
+
+  clearTimeout(skewTimeout);
+  skewTimeout = setTimeout(() => {
+    cards.forEach(card => {
+      card.style.transform = '';
+    });
+  }, 140);
+}
+
 function initScrollProgressBar() {
+  // Handled inside initLenisSmoothScroll when Lenis is loaded
+}
+
+function initScrollProgressBarFallback() {
   const bar = document.getElementById('scroll-progress-bar');
   if (!bar) return;
 
   let ticking = false;
-
   function updateProgress() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -2110,11 +2262,14 @@ function initScrollProgressBar() {
 }
 
 function initHeroScrollIndicator() {
+  // Handled inside initLenisSmoothScroll when Lenis is loaded
+}
+
+function initHeroScrollIndicatorFallback() {
   const indicator = document.getElementById('hero-scroll-trigger');
   if (!indicator) return;
 
   let ticking = false;
-
   function handleScroll() {
     if (window.scrollY > 85) {
       indicator.classList.add('scrolled-hidden');
@@ -2135,7 +2290,7 @@ function initHeroScrollIndicator() {
 }
 
 function initScrollObserver() {
-  const elements = document.querySelectorAll('.reveal-on-scroll, .arch-card, .pillar-card, .arsenal-card, .metric-card-link');
+  const elements = document.querySelectorAll('.reveal-on-scroll, .arch-card, .pillar-card, .arsenal-card, .metric-card-link, .system-pillar-item, .contact-card, .telemetry-card');
   if (!elements.length) return;
 
   elements.forEach(el => el.classList.add('scroll-reveal'));
@@ -2160,3 +2315,94 @@ function initScrollObserver() {
 
   elements.forEach(el => observer.observe(el));
 }
+
+/* ==========================================================================
+   16. CRYPTOGRAPHIC TEXT SCRAMBLER ("DATA DECODING")
+   ========================================================================== */
+const SCRAMBLE_GLYPHS = '01!@#$%^&*<>[]{}~=+ABCDEF';
+
+function scrambleElement(el) {
+  if (el.dataset.scrambling === 'true') return;
+  const original = el.getAttribute('data-original-text') || el.textContent.trim();
+  el.setAttribute('data-original-text', original);
+  el.dataset.scrambling = 'true';
+  el.classList.add('scramble-active');
+
+  let frame = 0;
+  const totalFrames = Math.max(14, Math.floor(original.length * 1.8));
+
+  cyberAudio.playTick?.();
+
+  const interval = setInterval(() => {
+    frame++;
+    const progress = frame / totalFrames;
+    const revealedCount = Math.floor(progress * original.length);
+
+    el.textContent = original
+      .split('')
+      .map((char, idx) => {
+        if (char === ' ' || char === '\n' || char === '\t') return char;
+        if (idx < revealedCount) return original[idx];
+        return SCRAMBLE_GLYPHS[Math.floor(Math.random() * SCRAMBLE_GLYPHS.length)];
+      })
+      .join('');
+
+    if (frame >= totalFrames) {
+      clearInterval(interval);
+      el.textContent = original;
+      el.dataset.scrambling = 'false';
+      el.classList.remove('scramble-active');
+    }
+  }, 28);
+}
+
+function initTextScramble() {
+  const targets = document.querySelectorAll('.arch-title, .pillar-title, .arsenal-card-title, .section-title, #brand-badge-code, .dock-pill-btn span');
+  targets.forEach(el => {
+    if (el.children.length === 0) {
+      el.setAttribute('data-original-text', el.textContent.trim());
+      el.removeEventListener('mouseenter', el._scrambleHandler);
+      el._scrambleHandler = () => scrambleElement(el);
+      el.addEventListener('mouseenter', el._scrambleHandler);
+    }
+  });
+}
+
+/* ==========================================================================
+   17. NEURAL CIRCUIT: SKILL TO PROJECT HIGHLIGHT
+   ========================================================================== */
+function initSkillCircuitSync() {
+  const skillItems = document.querySelectorAll('.arsenal-item, .arch-tag');
+  const projectCards = document.querySelectorAll('.arch-card');
+
+  skillItems.forEach(item => {
+    item.removeEventListener('mouseenter', item._circuitEnter);
+    item.removeEventListener('mouseleave', item._circuitLeave);
+
+    item._circuitEnter = () => {
+      const skillName = (item.querySelector('.arsenal-name')?.textContent || item.textContent).trim().toLowerCase();
+      if (!skillName || skillName.length < 2) return;
+
+      item.classList.add('circuit-source');
+
+      projectCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(skillName)) {
+          card.classList.add('circuit-pulse-highlight');
+        }
+      });
+      cyberAudio.playTick?.();
+    };
+
+    item._circuitLeave = () => {
+      item.classList.remove('circuit-source');
+      projectCards.forEach(card => {
+        card.classList.remove('circuit-pulse-highlight');
+      });
+    };
+
+    item.addEventListener('mouseenter', item._circuitEnter);
+    item.addEventListener('mouseleave', item._circuitLeave);
+  });
+}
+

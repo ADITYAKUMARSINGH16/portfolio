@@ -44,6 +44,7 @@
   --bg-glass: rgba(8, 11, 17, 0.85);
 
   --text-main: #f8fafc;
+  --text-primary: #f8fafc;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
 
@@ -72,6 +73,7 @@
   --bg-glass: rgba(255, 255, 255, 0.85);
 
   --text-main: #0f172a;
+  --text-primary: #0f172a;
   --text-muted: #334155;
   --text-dim: #64748b;
 
@@ -146,6 +148,88 @@ button {
   transition: var(--transition);
 }
 
+/* --------------------------------------------------------------------------
+   FOCUS STATES & KEYBOARD NAVIGATION
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--accent-cyan);
+  outline-offset: 4px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--accent-cyan);
+  outline-offset: 4px;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-cyan);
+  color: var(--bg-canvas);
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border-radius: var(--radius-md);
+  z-index: 9999;
+  transition: top 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-glow);
+  text-decoration: none;
+  border: 1px solid var(--border-active);
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   THEME CROSS-FADE (smooth dark↔light transition)
+   -------------------------------------------------------------------------- */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-crossfade {
+  opacity: 0.45 !important;
+  transition: opacity 0.16s ease !important;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   BUTTON PRESS STATES (tactile feedback across all interactive buttons)
+   -------------------------------------------------------------------------- */
+button:active,
+a.btn-theme-toggle:active,
+a.btn-nav-ai:active,
+a.btn-nav-resume:active,
+.dock-pill-btn:active,
+.filter-btn:active,
+.preset-chip:active,
+.copilot-chip:active,
+.mobile-menu-btn:active {
+  transform: scale(0.95);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   UTILITY: BODY SCROLL-LOCK (for mobile drawers/modals)
+   -------------------------------------------------------------------------- */
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  touch-action: none;
+}
+
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -216,9 +300,10 @@ button {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1400px;
-  padding: 0 1.75rem;
-  gap: 1.5rem;
+  max-width: 1440px;
+  padding: 0 1.25rem;
+  gap: 0.75rem;
+  box-sizing: border-box;
 }
 
 .nav-brand-engineering {
@@ -273,10 +358,10 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.35rem;
+  gap: 1.15rem;
   list-style: none;
   margin-left: auto;
-  margin-right: 1.5rem;
+  margin-right: 1.25rem;
 }
 
 .nav-links a {
@@ -316,7 +401,7 @@ button {
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.5rem;
   flex-shrink: 0;
 }
 
@@ -778,7 +863,8 @@ section {
 
 .architecture-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  /* min() prevents the 360px track minimum from overflowing narrow viewports. */
+  grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -933,6 +1019,7 @@ section {
 .arch-footer {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
   border-top: 1px solid var(--border-subtle);
   padding-top: 1.25rem;
@@ -987,6 +1074,13 @@ section {
   display: grid;
   grid-template-columns: 320px 1fr;
   min-height: 600px;
+  min-width: 0;
+}
+
+/* Grid/flex children default to min-width:auto, which lets long content
+   push the track wider than the viewport. Opt them back into shrinking. */
+.copilot-container > * {
+  min-width: 0;
 }
 
 .copilot-sidebar {
@@ -996,6 +1090,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  min-width: 0;
 }
 
 .copilot-profile {
@@ -1085,6 +1180,16 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.6rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.copilot-topic-btn span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .copilot-topic-btn:hover {
@@ -1416,7 +1521,9 @@ section {
    -------------------------------------------------------------------------- */
 .metrics-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* min() keeps the track from exceeding the viewport on very narrow devices,
+     where a fixed 320px minimum would force horizontal overflow. */
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 1.75rem;
   margin-bottom: 2.5rem;
 }
@@ -1427,6 +1534,7 @@ section {
   border-radius: var(--radius-md);
   padding: 1.75rem;
   backdrop-filter: blur(16px);
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -1484,6 +1592,21 @@ section {
   transition: var(--transition);
 }
 
+.platform-img-wrap.is-loading::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.08), transparent);
+  background-size: 200% 100%;
+  animation: cyber-metric-shimmer 1.8s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes cyber-metric-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 [data-theme="dark"] .platform-img-wrap {
   background: #0d1117;
 }
@@ -1496,13 +1619,14 @@ section {
 .platform-img-wrap img {
   max-width: 100%;
   height: auto;
+  display: block;
   transition: opacity 0.2s ease;
 }
 
 .platform-fallback-card {
   width: 100%;
   padding: 1.25rem;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 0.75rem;
   background: var(--bg-elevated);
@@ -1547,9 +1671,10 @@ section {
   color: #080b11;
 }
 
-/* --------------------------------------------------------------------------
-   CYBER TELEMETRY CONSOLE
-   -------------------------------------------------------------------------- */
+#terminal-section {
+  scroll-margin-top: 5rem;
+}
+
 .terminal-window {
   max-width: 860px;
   margin: 0 auto;
@@ -1559,20 +1684,33 @@ section {
   box-shadow: var(--shadow-card);
   overflow: hidden;
   font-family: var(--font-mono);
+  box-sizing: border-box;
 }
 
 .terminal-header {
   background: var(--bg-elevated);
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
   border-bottom: 1px solid var(--border-subtle);
+  min-height: 42px;
+  box-sizing: border-box;
+}
+
+.terminal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  flex: 1;
 }
 
 .terminal-dots {
   display: flex;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .tdot { width: 11px; height: 11px; border-radius: 50%; }
@@ -1583,56 +1721,245 @@ section {
 .terminal-title {
   font-size: 0.78rem;
   color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.term-title-host {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.term-title-sub {
+  color: var(--text-muted);
+}
+
+.terminal-header-right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.terminal-status-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-full);
+  padding: 0.2rem 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+/* Quick Commands Toolbar */
+.terminal-quickbar {
+  background: rgba(10, 15, 26, 0.85);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-sizing: border-box;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.terminal-quickbar::-webkit-scrollbar {
+  display: none;
+}
+
+.quickbar-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .terminal-presets {
   display: flex;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  min-width: 0;
+  flex: 1;
+  padding: 2px 0;
+}
+
+.terminal-presets::-webkit-scrollbar {
+  display: none;
 }
 
 .preset-chip {
-  font-size: 0.72rem;
-  padding: 2px 7px;
+  font-size: 0.74rem;
+  padding: 0.3rem 0.65rem;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   color: var(--accent-cyan);
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  user-select: none;
+  flex-shrink: 0;
 }
 
 .preset-chip:hover {
   background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+}
+
+.preset-chip:active {
+  transform: translateY(0);
 }
 
 .terminal-body {
-  padding: 1.5rem;
-  min-height: 250px;
+  padding: 1.25rem;
+  min-height: 240px;
   max-height: 380px;
   overflow-y: auto;
   font-size: 0.85rem;
   line-height: 1.6;
+  box-sizing: border-box;
 }
 
-.terminal-line { margin-bottom: 0.4rem; }
+.terminal-line {
+  margin-bottom: 0.4rem;
+  word-break: break-word;
+}
 .term-cyan { color: var(--accent-cyan); }
 .term-green { color: var(--accent-emerald); }
 .term-yellow { color: var(--accent-amber); }
 .term-violet { color: var(--accent-indigo); }
+.term-dim { color: var(--text-muted); }
 
 .terminal-input-row {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0 1.5rem 1rem 1.5rem;
+  padding: 0 1.25rem 1rem 1.25rem;
+  box-sizing: border-box;
+}
+
+.terminal-prompt {
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .terminal-cli-input {
   flex: 1;
+  min-width: 0;
   background: none;
   border: none;
   outline: none;
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+}
+
+@media (max-width: 768px) {
+  .terminal-window {
+    border-radius: var(--radius-sm);
+  }
+
+  .terminal-header {
+    padding: 0.55rem 0.85rem;
+  }
+
+  .terminal-quickbar {
+    padding: 0.45rem 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .preset-chip {
+    font-size: 0.72rem;
+    padding: 0.28rem 0.6rem;
+  }
+
+  .terminal-body {
+    padding: 1rem 0.85rem;
+    font-size: 0.82rem;
+    min-height: 220px;
+  }
+
+  .terminal-input-row {
+    padding: 0 0.85rem 0.85rem 0.85rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .term-title-sub {
+    display: none;
+  }
+
+  .terminal-status-badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.45rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-header {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .terminal-status-badge {
+    display: none;
+  }
+
+  .quickbar-label span {
+    display: none;
+  }
+
+  .terminal-quickbar {
+    padding: 0.4rem 0.65rem;
+    gap: 0.4rem;
+  }
+
+  .terminal-body {
+    padding: 0.75rem 0.65rem;
+    font-size: 0.78rem;
+    min-height: 200px;
+  }
+
+  .terminal-input-row {
+    padding: 0 0.65rem 0.75rem 0.65rem;
+    gap: 0.35rem;
+  }
+
+  .terminal-prompt {
+    font-size: 0.74rem;
+  }
+
+  .terminal-cli-input {
+    font-size: 0.74rem;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1651,6 +1978,7 @@ section {
   border-radius: var(--radius-md);
   padding: 2.25rem;
   backdrop-filter: blur(16px);
+  min-width: 0;
 }
 
 .contact-methods {
@@ -1669,6 +1997,20 @@ section {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   transition: var(--transition);
+  min-width: 0;
+}
+
+/* Long values (emails, handles) must be allowed to wrap instead of
+   forcing the flex row past the viewport width. */
+.contact-item-meta {
+  min-width: 0;
+  flex: 1;
+}
+
+.contact-item-meta a,
+.contact-item-meta span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .contact-item:hover {
@@ -2052,17 +2394,26 @@ section {
   animation: fadeIn 0.25s ease;
 }
 
-/* Responsive & Mobile Navigation */
-@media (max-width: 1150px) {
+/* Responsive & Adaptive Navigation */
+@media (max-width: 1360px) {
+  .brand-status-meta {
+    display: none;
+  }
+  .cmd-pill-text {
+    display: none;
+  }
+  .btn-cmd-palette {
+    padding: 0.38rem 0.65rem;
+    min-width: 38px;
+    height: 38px;
+    justify-content: center;
+  }
   .nav-links {
-    gap: 0.95rem;
+    gap: 0.85rem;
     margin-right: 0.85rem;
   }
   .nav-links a {
-    font-size: 0.83rem;
-  }
-  .brand-status-meta {
-    display: none;
+    font-size: 0.82rem;
   }
 }
 
@@ -2073,7 +2424,7 @@ section {
   .contact-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .nav-links {
     display: none;
     position: fixed;
@@ -2109,14 +2460,68 @@ section {
   .hero-main-title { font-size: 2.1rem; }
   .system-pillars-grid { grid-template-columns: 1fr; }
   .architecture-grid { grid-template-columns: 1fr; }
-  
+
+  /* ---- Touch targets: ensure ≥44px on mobile ---- */
+  .mobile-menu-btn,
+  .btn-theme-toggle,
+  .btn-cmd-palette,
+  .btn-nav-ai,
+  .btn-nav-resume,
+  .preset-chip,
+  .copilot-chip,
+  .filter-btn,
+  .dock-pill-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .preset-chip {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.78rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .copilot-chip {
+    padding: 0.45rem 0.85rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  /* ---- Terminal CLI styling is handled cleanly in dedicated terminal section ---- */
+
+  /* ---- Co-pilot drawer: true bottom-sheet on mobile ---- */
   .floating-copilot-drawer {
-    right: 1rem;
-    left: 1rem;
-    bottom: 5.5rem;
-    width: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
     max-width: none;
-    height: 480px;
+    height: 85vh;
+    max-height: 85vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border: none;
+    border-top: 1px solid var(--border-active);
+    transform-origin: bottom;
+  }
+
+  .floating-copilot-drawer.hidden {
+    transform: translateY(100%) scale(0.98);
+  }
+
+  .floating-copilot-launcher {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .btn-copilot-circle {
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
   }
 
   .floating-copilot-launcher {
@@ -2132,6 +2537,114 @@ section {
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  #btn-shortcuts-hud {
+    display: none;
+  }
+
+  .btn-nav-ai span,
+  .btn-nav-resume span {
+    display: none;
+  }
+
+  .btn-nav-ai,
+  .btn-nav-resume {
+    padding: 0.45rem 0.65rem;
+    gap: 0;
+    justify-content: center;
+  }
+
+  .nav-controls {
+    gap: 0.35rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SMALL-SCREEN NAV: prevent horizontal overflow of the control cluster
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .navbar .container {
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+
+  .btn-nav-ai {
+    display: none;
+  }
+
+  /* Collapse the text CTAs to icon-only pills so the control row fits one line. */
+  .btn-nav-resume {
+    padding: 0.45rem 0.55rem;
+    gap: 0;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .btn-nav-resume span {
+    display: none;
+  }
+
+  /* Drop the "Ctrl K" hint text; the magnifier icon is the affordance. */
+  .cmd-pill-text {
+    display: none;
+  }
+
+  .btn-cmd-palette {
+    padding: 0.38rem 0.55rem;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .nav-controls {
+    gap: 0.3rem;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  /* Brand badge shrinks and is allowed to truncate rather than push the row wide. */
+  .nav-brand-engineering {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .brand-badge-code {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 430px) {
+  /* Very narrow devices: drop the sound toggle to keep the row on one line. */
+  #btn-sound-toggle {
+    display: none;
+  }
+
+  .navbar .container {
+    padding: 0 0.75rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Below this the brand text cannot coexist with the control row. */
+  .brand-badge-code {
+    display: none;
+  }
+
+  .navbar .container {
+    padding: 0 0.5rem;
+    gap: 0.4rem;
+  }
+
+  .nav-controls {
+    gap: 0.25rem;
   }
 }
 
@@ -2156,6 +2669,10 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal-on-scroll {
     opacity: 1 !important;
     transform: none !important;
@@ -2164,6 +2681,18 @@ section {
   .mouse-wheel-dot,
   .scroll-chevrons {
     animation: none !important;
+  }
+
+  #particle-canvas {
+    opacity: 0 !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -2224,10 +2753,13 @@ section {
   position: relative;
 }
 
-.flow-step-item.interactive-step:hover {
+.flow-step-item.interactive-step:hover,
+.flow-step-item.interactive-step:focus-visible {
   background: rgba(56, 189, 248, 0.1);
   color: var(--text-main);
   transform: translateX(4px);
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
 }
 
 .flow-step-item.interactive-step .step-arrow-icon {
@@ -2238,7 +2770,8 @@ section {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.flow-step-item.interactive-step:hover .step-arrow-icon {
+.flow-step-item.interactive-step:hover .step-arrow-icon,
+.flow-step-item.interactive-step:focus-visible .step-arrow-icon {
   opacity: 1;
   transform: translateX(2px);
 }
@@ -3394,6 +3927,15 @@ html.lenis, html.lenis body {
 .arsenal-grid .arsenal-card:nth-child(3) { transition-delay: 0.14s; }
 .arsenal-grid .arsenal-card:nth-child(4) { transition-delay: 0.19s; }
 
+/* Extended staggered delays for metrics, contact & telemetry cards */
+.platform-metric-card:nth-child(1) { transition-delay: 0.04s; }
+.platform-metric-card:nth-child(2) { transition-delay: 0.11s; }
+.platform-metric-card:nth-child(3) { transition-delay: 0.18s; }
+.platform-metric-card:nth-child(4) { transition-delay: 0.25s; }
+
+.contact-card { transition-delay: 0.05s; }
+.telemetry-card { transition-delay: 0.05s; }
+
 /* Parallax Depth Support */
 [data-parallax] {
   will-change: transform;
@@ -3502,6 +4044,36 @@ html.lenis, html.lenis body {
   transform: translate(3px, 3px);
 }
 
+/* --------------------------------------------------------------------------
+   CARD HOVER GLOW (subtle electric lift on all surface cards)
+   -------------------------------------------------------------------------- */
+.arch-card:hover,
+.pillar-card:hover,
+.arsenal-card:hover,
+.platform-metric-card:hover,
+.contact-card:hover,
+.telemetry-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-highlight);
+}
+
+/* --------------------------------------------------------------------------
+   FILTER BUTTON ACTIVE GLOW
+   -------------------------------------------------------------------------- */
+.filter-btn.active {
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION DIVIDER (consistent visual rhythm between sections)
+   -------------------------------------------------------------------------- */
+.section-divider {
+  height: 1px;
+  margin: 3rem 0;
+  background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+  border: none;
+}
+
 /* ==========================================================================
    CRYPTOGRAPHIC TEXT SCRAMBLER & CIRCUIT STYLES
    ========================================================================== */
@@ -3529,6 +4101,361 @@ html.lenis, html.lenis body {
   box-shadow: 0 0 12px rgba(56, 189, 248, 0.5) !important;
 }
 
+/* PWA Shortcut Target Glow Animation */
+@keyframes resumeTargetPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px 6px rgba(56, 189, 248, 0.5), 0 0 45px 12px rgba(99, 102, 241, 0.3);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+    transform: scale(1);
+  }
+}
 
+.pulse-highlight {
+  animation: resumeTargetPulse 1.2s ease-in-out infinite;
+  border-color: var(--accent-cyan) !important;
+  outline: 2px solid rgba(56, 189, 248, 0.5);
+  outline-offset: 4px;
+}
 
+/* Phase 4: Status box pulsing glow for contact feedback */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+  }
+}
+
+/* ==========================================================================
+   FEATURE EXPANSION v6.0
+   1. Web Speech Mic & Waveform
+   2. Keyboard Navigation HUD
+   3. Recruiter Fast-Track Dossier
+   4. Architecture Pipeline Visualizer Beam
+   ========================================================================== */
+
+/* 1. Web Speech Mic Button */
+.btn-copilot-mic {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.btn-copilot-mic:hover {
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.btn-copilot-mic.listening {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+  animation: micPulse 1.2s infinite;
+}
+
+@keyframes micPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 14px 4px rgba(239, 68, 68, 0.4);
+    transform: scale(1.08);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    transform: scale(1);
+  }
+}
+
+.btn-drawer-voice {
+  background: none;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.btn-drawer-voice:hover,
+.btn-drawer-voice.active {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+/* 2. Architecture Pipeline Stream & Track */
+.pipeline-track-container {
+  position: relative;
+  margin: 0.85rem 0 1.25rem 0;
+  padding: 0.65rem 0.5rem;
+  background: rgba(6, 11, 25, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.pipeline-node-chips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pipeline-node-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.pipeline-chip {
+  flex: 1;
+  min-width: 110px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 0.4rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.pipeline-chip:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);
+}
+
+.pipeline-chip .chip-step {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent-cyan);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.pipeline-chip .chip-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pipeline-pulse-beam {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-indigo), transparent);
+  transform: translateY(-50%);
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+  background-size: 200% 100%;
+  animation: beamFlow 3s linear infinite;
+}
+
+@keyframes beamFlow {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* 3. Keyboard HUD Modal */
+.keyboard-hud-card {
+  max-width: 580px;
+}
+
+.hud-shortcuts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+}
+
+.hud-shortcut-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.85rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  transition: border-color 0.2s ease;
+}
+
+.hud-shortcut-row:hover {
+  border-color: var(--accent-cyan);
+}
+
+.hud-key-combo {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  color: var(--text-main);
+  font-size: 0.85rem;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--accent-cyan);
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-subtle);
+  border-bottom: 2px solid var(--border-subtle);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hud-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* 4. Recruiter Fast-Track Dossier Modal */
+.recruiter-modal-card {
+  max-width: 680px;
+}
+
+.recruiter-dossier-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.recruiter-meta-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.recruiter-badge-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.recruiter-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+
+.recruiter-val {
+  font-size: 0.92rem;
+  color: var(--text-main);
+}
+
+.recruiter-highlights-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+}
+
+.recruiter-highlights-box h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+}
+
+.recruiter-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.recruiter-bullet-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.recruiter-bullet-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+  font-weight: bold;
+}
+
+.recruiter-cert-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.recruiter-cert-pill {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-subtle);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-main);
+}
+
+.recruiter-actions-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .recruiter-actions-panel {
+    flex-direction: column;
+  }
+  .recruiter-actions-panel .dock-pill-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
 

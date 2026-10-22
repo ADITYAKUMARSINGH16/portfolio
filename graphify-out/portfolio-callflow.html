@@ -60,22 +60,25 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 <div class="container">
 
 <h1>portfolio — Complete Call Flow &amp; Architecture Documentation</h1>
-<p class="subtitle">Generated from graphify knowledge graph: 128 nodes, 199 edges, 13 communities. Commit: f328d67</p>
+<p class="subtitle">Generated from graphify knowledge graph: 160 nodes, 245 edges, 21 communities. Commit: e183c28</p>
 
 <div class="nav">
     <a href="#overview">Architecture Overview</a>
+    <a href="#build-graph">Graph Build</a>
     <a href="#ingest-cache-update">Ingestion &amp; Updates</a>
-    <a href="#appjs-handledirectprojectquery-initarchinspector">Appjs Handledirectprojectquery Initarchinspectormodal</a>
-    <a href="#assistantjs-appjs-portfolioaiassistant">Assistantjs Appjs Portfolioaiassistant</a>
-    <a href="#appjs-initcyberaudio-initmetricscards">Appjs Initcyberaudio Initmetricscards</a>
-    <a href="#appjs-appendassistantresponse-appendcopilotmessa">Appjs Appendassistantresponse Appendcopilotmessage</a>
+    <a href="#appjs-copytoclipboard-initcontacthub">Appjs Copytoclipboard Initcontacthub</a>
+    <a href="#appjs-ref-initheroscrollindicator">Appjs Ref Initheroscrollindicator</a>
     <a href="#appjs-initcommandpalette-closepalette">Appjs Initcommandpalette Closepalette</a>
+    <a href="#assistantjs-portfolioaiassistant-ask">Assistantjs Portfolioaiassistant Ask</a>
     <a href="#readmemd-option-aditya">Readmemd Option Aditya</a>
+    <a href="#appjs-appendassistantresponse-appendcopilotmessa">Appjs Appendassistantresponse Appendcopilotmessage</a>
     <a href="#appjs-initheroscrollindicatorfallback-handlescro">Appjs Initheroscrollindicatorfallback Handlescroll</a>
+    <a href="#appjs-initprojectfilters-initskillcircuitsync">Appjs Initprojectfilters Initskillcircuitsync</a>
+    <a href="#appjs-initprojectsandboxmodal-closesandbox">Appjs Initprojectsandboxmodal Closesandbox</a>
     <a href="#knowledge-basejs-aditya">Knowledge Basejs Aditya</a>
-    <a href="#appjs-initmobilemenu-closemenu">Appjs Initmobilemenu Closemenu</a>
-    <a href="#geminimd-graphify">Geminimd Graphify</a>
-    <a href="#swjs-precache-assets">Swjs Precache Assets</a>
+    <a href="#appjs-handledirectprojectquery-initarchinspector">Appjs Handledirectprojectquery Initarchinspectormodal</a>
+    <a href="#swjs-assets-external">Swjs Assets External</a>
+    <a href="#other">Other</a>
 </div>
 
 <!-- ====== Architecture Overview ====== -->
@@ -85,42 +88,48 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
+    BUILD_GRAPH_321CBB04("Graph Build<br/><small>10 nodes</small>")
+    class BUILD_GRAPH_321CBB04 module;
     INGEST_CACHE_UPDATE_FF457338("Ingestion &amp; Updates<br/><small>26 nodes</small>")
     class INGEST_CACHE_UPDATE_FF457338 module;
-    APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE("Appjs Handledirectprojectquery Initarchinspectormodal<br/><small>29 nodes</small>")
-    class APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE module;
-    ASSISTANTJS_APPJS_PORTFOLIOAIASSISTANT_803B5D52("Assistantjs Appjs Portfolioaiassistant<br/><small>15 nodes</small>")
-    class ASSISTANTJS_APPJS_PORTFOLIOAIASSISTANT_803B5D52 module;
-    APPJS_INITCYBERAUDIO_INITMETRICSCARDS_85D91ACD("Appjs Initcyberaudio Initmetricscards<br/><small>13 nodes</small>")
-    class APPJS_INITCYBERAUDIO_INITMETRICSCARDS_85D91ACD module;
-    APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B("Appjs Appendassistantresponse Appendcopilotmessage<br/><small>10 nodes</small>")
-    class APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B module;
-    APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E("Appjs Initcommandpalette Closepalette<br/><small>8 nodes</small>")
+    APPJS_COPYTOCLIPBOARD_INITCONTACTHUB_B4DB8383("Appjs Copytoclipboard Initcontacthub<br/><small>20 nodes</small>")
+    class APPJS_COPYTOCLIPBOARD_INITCONTACTHUB_B4DB8383 module;
+    APPJS_REF_INITHEROSCROLLINDICATOR_97A98006("Appjs Ref Initheroscrollindicator<br/><small>18 nodes</small>")
+    class APPJS_REF_INITHEROSCROLLINDICATOR_97A98006 module;
+    APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E("Appjs Initcommandpalette Closepalette<br/><small>17 nodes</small>")
     class APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E module;
+    ASSISTANTJS_PORTFOLIOAIASSISTANT_ASK_24EEE8E4("Assistantjs Portfolioaiassistant Ask<br/><small>12 nodes</small>")
+    class ASSISTANTJS_PORTFOLIOAIASSISTANT_ASK_24EEE8E4 module;
     READMEMD_OPTION_ADITYA_73D12869("Readmemd Option Aditya<br/><small>8 nodes</small>")
     class READMEMD_OPTION_ADITYA_73D12869 module;
+    APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B("Appjs Appendassistantresponse Appendcopilotmessage<br/><small>7 nodes</small>")
+    class APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B module;
     APPJS_INITHEROSCROLLINDICATORFALLBACK_HANDLESCRO_A4D27B03("Appjs Initheroscrollindicatorfallback Handlescroll<br/><small>7 nodes</small>")
     class APPJS_INITHEROSCROLLINDICATORFALLBACK_HANDLESCRO_A4D27B03 module;
-    KNOWLEDGE_BASEJS_ADITYA_E5BA835B("Knowledge Basejs Aditya<br/><small>5 nodes</small>")
+    APPJS_INITPROJECTFILTERS_INITSKILLCIRCUITSYNC_E48C7895("Appjs Initprojectfilters Initskillcircuitsync<br/><small>6 nodes</small>")
+    class APPJS_INITPROJECTFILTERS_INITSKILLCIRCUITSYNC_E48C7895 module;
+    APPJS_INITPROJECTSANDBOXMODAL_CLOSESANDBOX_98F248B5("Appjs Initprojectsandboxmodal Closesandbox<br/><small>5 nodes</small>")
+    class APPJS_INITPROJECTSANDBOXMODAL_CLOSESANDBOX_98F248B5 module;
+    KNOWLEDGE_BASEJS_ADITYA_E5BA835B("Knowledge Basejs Aditya<br/><small>4 nodes</small>")
     class KNOWLEDGE_BASEJS_ADITYA_E5BA835B module;
-    APPJS_INITMOBILEMENU_CLOSEMENU_5141B6E6("Appjs Initmobilemenu Closemenu<br/><small>3 nodes</small>")
-    class APPJS_INITMOBILEMENU_CLOSEMENU_5141B6E6 module;
-    GEMINIMD_GRAPHIFY_82654AD0("Geminimd Graphify<br/><small>2 nodes</small>")
-    class GEMINIMD_GRAPHIFY_82654AD0 module;
-    SWJS_PRECACHE_ASSETS_7CA8642E("Swjs Precache Assets<br/><small>2 nodes</small>")
-    class SWJS_PRECACHE_ASSETS_7CA8642E module;
-    APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE -->|contains x10| APPJS_INITCYBERAUDIO_INITMETRICSCARDS_85D91ACD
-    APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE -->|contains x7| APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B
-    APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE -->|contains x5| ASSISTANTJS_APPJS_PORTFOLIOAIASSISTANT_803B5D52
-    APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE -->|imports x5| KNOWLEDGE_BASEJS_ADITYA_E5BA835B
-    APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE -->|contains x4| APPJS_INITHEROSCROLLINDICATORFALLBACK_HANDLESCRO_A4D27B03
-    APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B -->|calls x2| APPJS_INITCYBERAUDIO_INITMETRICSCARDS_85D91ACD
-    APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E -->|calls x2| APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE
-    APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE -->|imports x2| INGEST_CACHE_UPDATE_FF457338
-    APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B -->|calls| ASSISTANTJS_APPJS_PORTFOLIOAIASSISTANT_803B5D52
-    ASSISTANTJS_APPJS_PORTFOLIOAIASSISTANT_803B5D52 -->|calls| APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B
-    ASSISTANTJS_APPJS_PORTFOLIOAIASSISTANT_803B5D52 -->|calls| APPJS_INITCYBERAUDIO_INITMETRICSCARDS_85D91ACD
-    APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E -->|calls| APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B
+    APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE("Appjs Handledirectprojectquery Initarchinspectormodal<br/><small>3 nodes</small>")
+    class APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE module;
+    SWJS_ASSETS_EXTERNAL_B16C7F2C("Swjs Assets External<br/><small>3 nodes</small>")
+    class SWJS_ASSETS_EXTERNAL_B16C7F2C module;
+    OTHER_D0941E68("Other<br/><small>14 nodes</small>")
+    class OTHER_D0941E68 module;
+    APPJS_REF_INITHEROSCROLLINDICATOR_97A98006 -->|contains x11| APPJS_COPYTOCLIPBOARD_INITCONTACTHUB_B4DB8383
+    APPJS_REF_INITHEROSCROLLINDICATOR_97A98006 -->|contains x8| APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E
+    APPJS_REF_INITHEROSCROLLINDICATOR_97A98006 -->|contains x7| APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B
+    APPJS_REF_INITHEROSCROLLINDICATOR_97A98006 -->|contains x6| APPJS_INITPROJECTFILTERS_INITSKILLCIRCUITSYNC_E48C7895
+    APPJS_REF_INITHEROSCROLLINDICATOR_97A98006 -->|contains x5| OTHER_D0941E68
+    APPJS_REF_INITHEROSCROLLINDICATOR_97A98006 -->|contains x4| APPJS_INITHEROSCROLLINDICATORFALLBACK_HANDLESCRO_A4D27B03
+    APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E -->|calls x3| APPJS_COPYTOCLIPBOARD_INITCONTACTHUB_B4DB8383
+    APPJS_COPYTOCLIPBOARD_INITCONTACTHUB_B4DB8383 -->|calls x3| APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E
+    APPJS_INITPROJECTSANDBOXMODAL_CLOSESANDBOX_98F248B5 -->|calls x2| APPJS_COPYTOCLIPBOARD_INITCONTACTHUB_B4DB8383
+    APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E -->|calls x2| APPJS_APPENDASSISTANTRESPONSE_APPENDCOPILOTMESSA_B0DD414B
+    APPJS_INITPROJECTFILTERS_INITSKILLCIRCUITSYNC_E48C7895 -->|calls x2| APPJS_INITCOMMANDPALETTE_CLOSEPALETTE_1B637E5E
+    APPJS_REF_INITHEROSCROLLINDICATOR_97A98006 -->|contains x2| APPJS_HANDLEDIRECTPROJECTQUERY_INITARCHINSPECTOR_E2156EEE
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -137,30 +146,188 @@ flowchart LR
     <h4>Architecture Layers</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>Layer</th><th>Nodes</th><th>Communities</th></tr>
-      <tr><td>Ingestion &amp; Updates</td><td>26</td><td><code>15, 16</code></td></tr><tr><td>Appjs Handledirectprojectquery Initarchinspectormodal</td><td>29</td><td><code>4</code></td></tr><tr><td>Assistantjs Appjs Portfolioaiassistant</td><td>15</td><td><code>1</code></td></tr><tr><td>Appjs Initcyberaudio Initmetricscards</td><td>13</td><td><code>2</code></td></tr><tr><td>Appjs Appendassistantresponse Appendcopilotmessage</td><td>10</td><td><code>0</code></td></tr><tr><td>Appjs Initcommandpalette Closepalette</td><td>8</td><td><code>11</code></td></tr><tr><td>Readmemd Option Aditya</td><td>8</td><td><code>5</code></td></tr><tr><td>Appjs Initheroscrollindicatorfallback Handlescroll</td><td>7</td><td><code>6</code></td></tr><tr><td>Knowledge Basejs Aditya</td><td>5</td><td><code>3</code></td></tr><tr><td>Appjs Initmobilemenu Closemenu</td><td>3</td><td><code>7</code></td></tr><tr><td>Geminimd Graphify</td><td>2</td><td><code>12</code></td></tr><tr><td>Swjs Precache Assets</td><td>2</td><td><code>18</code></td></tr>
+      <tr><td>Graph Build</td><td>10</td><td><code>8</code></td></tr><tr><td>Ingestion &amp; Updates</td><td>26</td><td><code>15, 16</code></td></tr><tr><td>Appjs Copytoclipboard Initcontacthub</td><td>20</td><td><code>2</code></td></tr><tr><td>Appjs Ref Initheroscrollindicator</td><td>18</td><td><code>4</code></td></tr><tr><td>Appjs Initcommandpalette Closepalette</td><td>17</td><td><code>11</code></td></tr><tr><td>Assistantjs Portfolioaiassistant Ask</td><td>12</td><td><code>1</code></td></tr><tr><td>Readmemd Option Aditya</td><td>8</td><td><code>5</code></td></tr><tr><td>Appjs Appendassistantresponse Appendcopilotmessage</td><td>7</td><td><code>0</code></td></tr><tr><td>Appjs Initheroscrollindicatorfallback Handlescroll</td><td>7</td><td><code>6</code></td></tr><tr><td>Appjs Initprojectfilters Initskillcircuitsync</td><td>6</td><td><code>3</code></td></tr><tr><td>Appjs Initprojectsandboxmodal Closesandbox</td><td>5</td><td><code>10</code></td></tr><tr><td>Knowledge Basejs Aditya</td><td>4</td><td><code>9</code></td></tr><tr><td>Appjs Handledirectprojectquery Initarchinspectormodal</td><td>3</td><td><code>13</code></td></tr><tr><td>Swjs Assets External</td><td>3</td><td><code>18</code></td></tr><tr><td>Other</td><td>14</td><td><code>20, 7, 12, 14, 17, 19</code></td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Core Flow</h4>
-    <div class="arrow-chain">Readmemd Option Aditya -&gt; Ingestion &amp; Updates -&gt; Appjs Handledirectprojectquery Initarchinspectormodal -&gt; Appjs Initcyberaudio Initmetricscards -&gt; Assistantjs Appjs Portfolioaiassistant -&gt; Appjs Appendassistantresponse Appendcopilotmessage -&gt; Appjs Initcommandpalette Closepalette</div>
+    <div class="arrow-chain">Graph Build -&gt; Ingestion &amp; Updates -&gt; Appjs Copytoclipboard Initcontacthub -&gt; Appjs Initcommandpalette Closepalette -&gt; Appjs Appendassistantresponse Appendcopilotmessage -&gt; Appjs Ref Initheroscrollindicator -&gt; Appjs Initprojectfilters Initskillcircuitsync</div>
   </div>
 </div>
 <div class="grid">
   <div class="card">
     <h4>Graph Report Highlights</h4>
     <ul>
-      <li>128 nodes · 199 edges · 13 communities (9 shown, 4 thin omitted)</li>
-      <li>Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.85)</li>
+      <li>160 nodes · 245 edges · 21 communities (11 shown, 10 thin omitted)</li>
+      <li>Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.85)</li>
       <li>Token cost: 0 input · 0 output</li>
-      <li>1. `showToast()` - 11 edges</li>
-      <li>2. `CyberAudioSynthesizer` - 11 edges</li>
-      <li>3. `PortfolioAIAssistant` - 10 edges</li>
+      <li>1. `showToast()` - 14 edges</li>
+      <li>2. `trapFocus()` - 13 edges</li>
+      <li>3. `initCommandPalette()` - 11 edges</li>
     </ul>
   </div>
 </div>
 <hr>
-<!-- ====== 2. Ingestion & Updates ====== -->
-<h2 id="ingest-cache-update">2. Ingestion &amp; Updates</h2>
+<!-- ====== 2. Graph Build ====== -->
+<h2 id="build-graph">2. Graph Build</h2>
+<p>Graph Build groups implementation around resume, build, pdfpy, reportlab, mostly in build_resume_pdf.py. This section covers 10 nodes and 11 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Graph Build (10 nodes, 11 edges)
+    subgraph build_graph_External_generated_653891f5["External / generated"]
+        os_999a3419("os")
+        shutil_74870859("shutil")
+        reportlab_lib_bf040a43("reportlab_lib")
+        reportlab_lib_styles_6b84249f("reportlab_lib_styles")
+        reportlab_platypus_aa3a661e("reportlab_platypus")
+        reportlab_lib_pagesizes_e01f9914("reportlab_lib_pagesizes")
+    end
+    subgraph build_graph_build_resume_pdf_py_9f945d89["build_resume_pdf.py"]
+        build_resume_pdf_501709bf("build_resume_pdf.py")
+        build_resume_pdf_generate_resume_468c3830("generate_resume()<br/><small>build_resume_pdf.py</small>")
+        build_resume_pdf_generate_resume_add_section_hea_b3a816c6("add_section_header()<br/><small>build_resume_pdf.py</small>")
+        build_resume_pdf_rationale_1_9936ca84("Aditya Kumar Singh - Official Engineeri...<br/><small>build_resume_pdf.py</small>")
+    end
+    build_resume_pdf_generate_resume_468c3830 -->|calls| os_999a3419
+    build_resume_pdf_generate_resume_468c3830 -->|calls| shutil_74870859
+    build_resume_pdf_501709bf -->|imports| os_999a3419
+    build_resume_pdf_501709bf -->|imports| shutil_74870859
+    build_resume_pdf_501709bf -->|imports| reportlab_lib_bf040a43
+    build_resume_pdf_501709bf -->|imports| reportlab_lib_styles_6b84249f
+    build_resume_pdf_501709bf -->|imports| reportlab_platypus_aa3a661e
+    build_resume_pdf_501709bf -->|imports| reportlab_lib_pagesizes_e01f9914
+    class os_999a3419 function;
+    class shutil_74870859 function;
+    class reportlab_lib_bf040a43 function;
+    class reportlab_lib_styles_6b84249f function;
+    class reportlab_platypus_aa3a661e function;
+    class reportlab_lib_pagesizes_e01f9914 function;
+    class build_resume_pdf_501709bf module;
+    class build_resume_pdf_generate_resume_468c3830 function;
+    class build_resume_pdf_generate_resume_add_section_hea_b3a816c6 function;
+    class build_resume_pdf_rationale_1_9936ca84 concept;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>generate_resume()</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>os</code><br><code>shutil</code></td>
+  <td>generate_resume() node in build_resume_pdf.py.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>add_section_header()</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>add_section_header() node in build_resume_pdf.py.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>build_resume_pdf.py</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td><span class="tag tag-class">Module</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>os</code><br><code>reportlab_lib</code><br><code>reportlab_lib_pagesizes</code><br>+3 more</td>
+  <td>Module file in build_resume_pdf.py.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>Aditya Kumar Singh - Official Engineering Resume PDF Generator Uses ReportLab…</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Design note for Aditya Kumar Singh - Official Engineering Resume PDF Generator Uses ReportLab….</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>os</code><br><small style="color:var(--muted)"></small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>build_resume_pdf.py</code><br><small style="color:var(--muted)">build_resume_pdf.py</small><br><code>generate_resume()</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td>No direct outbound edge</td>
+  <td>os node in project.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>reportlab_lib</code><br><small style="color:var(--muted)"></small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>build_resume_pdf.py</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td>No direct outbound edge</td>
+  <td>reportlab_lib node in project.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>reportlab_lib_pagesizes</code><br><small style="color:var(--muted)"></small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>build_resume_pdf.py</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td>No direct outbound edge</td>
+  <td>Organizes documentation pages, navigation, or content lookup.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>reportlab_lib_styles</code><br><small style="color:var(--muted)"></small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>build_resume_pdf.py</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td>No direct outbound edge</td>
+  <td>reportlab_lib_styles node in project.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>reportlab_platypus</code><br><small style="color:var(--muted)"></small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>build_resume_pdf.py</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td>No direct outbound edge</td>
+  <td>reportlab_platypus node in project.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>shutil</code><br><small style="color:var(--muted)"></small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>build_resume_pdf.py</code><br><small style="color:var(--muted)">build_resume_pdf.py</small><br><code>generate_resume()</code><br><small style="color:var(--muted)">build_resume_pdf.py</small></td>
+  <td>No direct outbound edge</td>
+  <td>shutil node in project.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>build_resume_pdf.py</code></td><td>4 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: imports x4, calls x2, contains x2, imports x2. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 3. Ingestion & Updates ====== -->
+<h2 id="ingest-cache-update">3. Ingestion &amp; Updates</h2>
 <p>Ingestion &amp; Updates groups implementation around cyber, audiojs, manifestjson, color, mostly in cyber-audio.js, manifest.json. This section covers 26 nodes and 33 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -340,7 +507,7 @@ flowchart LR
   <td>12</td>
   <td><code>cyber-audio.js</code><br><small style="color:var(--muted)">cyber-audio.js</small></td>
   <td><span class="tag tag-class">Module</span></td>
-  <td><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>cyber-audio.js node in cyber-audio.js.</td>
 </tr>
@@ -348,7 +515,7 @@ flowchart LR
   <td>13</td>
   <td><code>cyberAudio</code><br><small style="color:var(--muted)">cyber-audio.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
-  <td><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>cyberAudio node in cyber-audio.js.</td>
 </tr>
@@ -474,598 +641,67 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 3. Appjs Handledirectprojectquery Initarchinspectormodal ====== -->
-<h2 id="appjs-handledirectprojectquery-initarchinspector">3. Appjs Handledirectprojectquery Initarchinspectormodal</h2>
-<p>Appjs Handledirectprojectquery Initarchinspectormodal groups implementation around appjs, handledirectprojectquery, initarchinspectormodal, initcyberterminal, mostly in app.js. This section covers 29 nodes and 41 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 4. Appjs Copytoclipboard Initcontacthub ====== -->
+<h2 id="appjs-copytoclipboard-initcontacthub">4. Appjs Copytoclipboard Initcontacthub</h2>
+<p>Appjs Copytoclipboard Initcontacthub groups implementation around appjs, copytoclipboard, initcontacthub, gettransmissiondata, mostly in app.js. This section covers 20 nodes and 25 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Appjs Handledirectprojectquery Initarchinspectormodal (29 nodes, 41 edges)
-    app_renderarchitectureprojects_4b896ee2("renderArchitectureProjects()<br/><small>app.js</small>")
-    app_renderarsenalmatrix_5f6fafd8("renderArsenalMatrix()<br/><small>app.js</small>")
-    app_initarchinspectormodal_a413fcea("initArchInspectorModal()<br/><small>app.js</small>")
-    app_initcyberterminal_runcommand_eb2f071c("runCommand()<br/><small>app.js</small>")
-    app_initprojectfilters_663a06a2("initProjectFilters()<br/><small>app.js</small>")
-    app_openarchinspector_b6575d7a("openArchInspector()<br/><small>app.js</small>")
-    app_handledirectprojectquery_a33a632a("handleDirectProjectQuery()<br/><small>app.js</small>")
-    app_openprojectsandbox_5e6d070e("openProjectSandbox()<br/><small>app.js</small>")
-    app_inittextscramble_3a23a273("initTextScramble()<br/><small>app.js</small>")
-    app_scrambleelement_77755d12("scrambleElement()<br/><small>app.js</small>")
-    app_renderinspectorstep_7e6d2182("renderInspectorStep()<br/><small>app.js</small>")
-    app_initskillcircuitsync_87f20e15("initSkillCircuitSync()<br/><small>app.js</small>")
-    app_section_telemetry_map_f0f39a21("SECTION_TELEMETRY_MAP<br/><small>app.js</small>")
-    app_initparticlecanvas_animate_2d459359("animate()<br/><small>app.js</small>")
-    app_7d104347("app.js")
-    app_copilot_a8e7b027("coPilot<br/><small>app.js</small>")
-    app_initcyberterminal_fd40c1ba("initCyberTerminal()<br/><small>app.js</small>")
-    app_initheroscrollindicator_697c83bb("initHeroScrollIndicator()<br/><small>app.js</small>")
-    app_initarchinspectormodal_a413fcea -->|calls| app_handledirectprojectquery_a33a632a
-    app_initcyberterminal_runcommand_eb2f071c -->|calls| app_openprojectsandbox_5e6d070e
-    app_initprojectfilters_663a06a2 -->|calls| app_renderarchitectureprojects_4b896ee2
-    app_inittextscramble_3a23a273 -->|calls| app_scrambleelement_77755d12
-    app_openarchinspector_b6575d7a -->|calls| app_renderinspectorstep_7e6d2182
-    app_renderarchitectureprojects_4b896ee2 -->|calls| app_openarchinspector_b6575d7a
-    app_renderarchitectureprojects_4b896ee2 -->|calls| app_openprojectsandbox_5e6d070e
-    app_renderarchitectureprojects_4b896ee2 -->|calls| app_handledirectprojectquery_a33a632a
-    app_renderarchitectureprojects_4b896ee2 -->|calls| app_inittextscramble_3a23a273
-    app_renderarchitectureprojects_4b896ee2 -->|calls| app_initskillcircuitsync_87f20e15
-    app_renderarsenalmatrix_5f6fafd8 -->|calls| app_inittextscramble_3a23a273
-    app_renderarsenalmatrix_5f6fafd8 -->|calls| app_initskillcircuitsync_87f20e15
-    app_renderinspectorstep_7e6d2182 -->|calls| app_renderinspectorstep_7e6d2182
-    %% Omitted for readability: 11 nodes, 0 edges
-    class app_renderarchitectureprojects_4b896ee2 function;
-    class app_renderarsenalmatrix_5f6fafd8 function;
-    class app_initarchinspectormodal_a413fcea function;
-    class app_initcyberterminal_runcommand_eb2f071c entry;
-    class app_initprojectfilters_663a06a2 function;
-    class app_openarchinspector_b6575d7a function;
-    class app_handledirectprojectquery_a33a632a function;
-    class app_openprojectsandbox_5e6d070e function;
-    class app_inittextscramble_3a23a273 function;
-    class app_scrambleelement_77755d12 function;
-    class app_renderinspectorstep_7e6d2182 function;
-    class app_initskillcircuitsync_87f20e15 function;
-    class app_section_telemetry_map_f0f39a21 klass;
-    class app_initparticlecanvas_animate_2d459359 function;
-    class app_7d104347 module;
-    class app_copilot_a8e7b027 function;
-    class app_initcyberterminal_fd40c1ba function;
-    class app_initheroscrollindicator_697c83bb function;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>handleDirectProjectQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>initArchInspectorModal()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>handleDirectProjectQuery() node in app.js.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>initArchInspectorModal()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>handleDirectProjectQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initArchInspectorModal() node in app.js.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>initCyberTerminal()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>initCyberTerminal() node in app.js.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>runCommand()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-cmd">Entry</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small><br><code>openProjectSandbox()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>runCommand() node in app.js.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>initHeroScrollIndicator()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>initHeroScrollIndicator() node in app.js.</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>initLiveClock()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>initLiveClock() node in app.js.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>updateTime()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>updateTime() node in app.js.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>initParallaxTilt()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>initParallaxTilt() node in app.js.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>initParticleCanvas()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>initParticleCanvas() node in app.js.</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>animate()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>animate() node in app.js.</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td><code>initProjectFilters()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initProjectFilters() node in app.js.</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td><code>initScrollObserver()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>initScrollObserver() node in app.js.</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td><code>initScrollProgressBar()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>initScrollProgressBar() node in app.js.</td>
-</tr>
-<tr>
-  <td>14</td>
-  <td><code>initScrollSpy()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>initScrollSpy() node in app.js.</td>
-</tr>
-<tr>
-  <td>15</td>
-  <td><code>initSkillCircuitSync()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArsenalMatrix()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>initSkillCircuitSync() node in app.js.</td>
-</tr>
-<tr>
-  <td>16</td>
-  <td><code>initTextScramble()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArsenalMatrix()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><code>scrambleElement()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initTextScramble() node in app.js.</td>
-</tr>
-<tr>
-  <td>17</td>
-  <td><code>initTypingEffect()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>initTypingEffect() node in app.js.</td>
-</tr>
-<tr>
-  <td>18</td>
-  <td><code>type()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>type() node in app.js.</td>
-</tr>
-<tr>
-  <td>19</td>
-  <td><code>openArchInspector()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>initCommandPalette()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><code>renderInspectorStep()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>openArchInspector() node in app.js.</td>
-</tr>
-<tr>
-  <td>20</td>
-  <td><code>openProjectSandbox()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>initCommandPalette()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small><br><code>runCommand()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>openProjectSandbox() node in app.js.</td>
-</tr>
-<tr>
-  <td>21</td>
-  <td><code>registerServiceWorker()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>registerServiceWorker() node in app.js.</td>
-</tr>
-<tr>
-  <td>22</td>
-  <td><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>initProjectFilters()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><code>handleDirectProjectQuery()</code><br><small style="color:var(--muted)">app.js</small><br><code>initSkillCircuitSync()</code><br><small style="color:var(--muted)">app.js</small><br><code>initTextScramble()</code><br><small style="color:var(--muted)">app.js</small><br>+2 more</td>
-  <td>renderArchitectureProjects() node in app.js.</td>
-</tr>
-<tr>
-  <td>23</td>
-  <td><code>renderArsenalMatrix()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>initSkillCircuitSync()</code><br><small style="color:var(--muted)">app.js</small><br><code>initTextScramble()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>renderArsenalMatrix() node in app.js.</td>
-</tr>
-<tr>
-  <td>24</td>
-  <td><code>renderInspectorStep()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>openArchInspector()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderInspectorStep()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><code>renderInspectorStep()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>renderInspectorStep() node in app.js.</td>
-</tr>
-<tr>
-  <td>25</td>
-  <td><code>renderSystemPillars()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>renderSystemPillars() node in app.js.</td>
-</tr>
-<tr>
-  <td>26</td>
-  <td><code>scrambleElement()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>initTextScramble()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>scrambleElement() node in app.js.</td>
-</tr>
-<tr>
-  <td>27</td>
-  <td><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-class">Module</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>ADITYA_PROFILE</code><br><small style="color:var(--muted)">knowledge-base.js</small><br><code>ADITYA_PROJECTS</code><br><small style="color:var(--muted)">knowledge-base.js</small><br><code>ADITYA_SKILLS</code><br><small style="color:var(--muted)">knowledge-base.js</small><br>+5 more</td>
-  <td>app.js node in app.js.</td>
-</tr>
-<tr>
-  <td>28</td>
-  <td><code>coPilot</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>coPilot node in app.js.</td>
-</tr>
-<tr>
-  <td>29</td>
-  <td><code>SECTION_TELEMETRY_MAP</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>SECTION_TELEMETRY_MAP node in app.js.</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>app.js</code></td><td>29 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x28, calls x13. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 4. Assistantjs Appjs Portfolioaiassistant ====== -->
-<h2 id="assistantjs-appjs-portfolioaiassistant">4. Assistantjs Appjs Portfolioaiassistant</h2>
-<p>Assistantjs Appjs Portfolioaiassistant groups implementation around assistantjs, appjs, portfolioaiassistant, ask, mostly in ai-assistant.js, app.js. This section covers 15 nodes and 20 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Assistantjs Appjs Portfolioaiassistant (15 nodes, 20 edges)
-    subgraph assistantjs_appjs_portfolioaiassistant_ai_assist_11e15ab7["ai-assistant.js"]
-        ai_assistant_portfolioaiassistant_bf7eaa1d("PortfolioAIAssistant<br/><small>ai-assistant.js</small>")
-        ai_assistant_portfolioaiassistant_ask_57d985a5("ask()<br/><small>ai-assistant.js</small>")
-        ai_assistant_portfolioaiassistant_constructor_2ab5a1b0("constructor()<br/><small>ai-assistant.js</small>")
-        ai_assistant_portfolioaiassistant_initspeech_5259e617("initSpeech()<br/><small>ai-assistant.js</small>")
-        ai_assistant_portfolioaiassistant_suggestnextact_ccf76f23("suggestNextActions()<br/><small>ai-assistant.js</small>")
-        ai_assistant_portfolioaiassistant_queryexternall_17e2ea1b("queryExternalLLM()<br/><small>ai-assistant.js</small>")
-        ai_assistant_portfolioaiassistant_togglespeech_5089a0c3("toggleSpeech()<br/><small>ai-assistant.js</small>")
-        ai_assistant_portfolioaiassistant_speak_ba616a25("speak()<br/><small>ai-assistant.js</small>")
-        ai_assistant_portfolioaiassistant_resolveportfol_21623542("resolvePortfolioKnowledge()<br/><small>ai-assistant.js</small>")
-    end
-    subgraph assistantjs_appjs_portfolioaiassistant_app_js_11da492d["app.js"]
-        app_initaicopilotchat_014a09aa("initAICoPilotChat()<br/><small>app.js</small>")
-        app_executecopilotquery_a3383c75("executeCoPilotQuery()<br/><small>app.js</small>")
-        app_initfloatingcopilot_3971f2ea("initFloatingCoPilot()<br/><small>app.js</small>")
-        app_appendtypingindicator_19e35ccb("appendTypingIndicator()<br/><small>app.js</small>")
-        app_initfloatingcopilot_closedrawer_315c59b4("closeDrawer()<br/><small>app.js</small>")
-        app_initfloatingcopilot_opendrawer_3887f249("openDrawer()<br/><small>app.js</small>")
-    end
-    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_constructor_2ab5a1b0
-    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_initspeech_5259e617
-    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_suggestnextact_ccf76f23
-    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_queryexternall_17e2ea1b
-    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_togglespeech_5089a0c3
-    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_speak_ba616a25
-    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_ask_57d985a5
-    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_resolveportfol_21623542
-    ai_assistant_portfolioaiassistant_ask_57d985a5 -->|calls| ai_assistant_portfolioaiassistant_queryexternall_17e2ea1b
-    ai_assistant_portfolioaiassistant_ask_57d985a5 -->|calls| ai_assistant_portfolioaiassistant_suggestnextact_ccf76f23
-    ai_assistant_portfolioaiassistant_ask_57d985a5 -->|calls| ai_assistant_portfolioaiassistant_resolveportfol_21623542
-    ai_assistant_portfolioaiassistant_constructor_2ab5a1b0 -->|calls| ai_assistant_portfolioaiassistant_initspeech_5259e617
-    app_executecopilotquery_a3383c75 -->|calls| app_appendtypingindicator_19e35ccb
-    app_initaicopilotchat_014a09aa -->|calls| app_executecopilotquery_a3383c75
-    app_initfloatingcopilot_3971f2ea -->|calls| app_executecopilotquery_a3383c75
-    app_executecopilotquery_a3383c75 -->|calls| ai_assistant_portfolioaiassistant_ask_57d985a5
-    app_executecopilotquery_a3383c75 -->|calls| ai_assistant_portfolioaiassistant_speak_ba616a25
-    app_initaicopilotchat_014a09aa -->|calls| ai_assistant_portfolioaiassistant_togglespeech_5089a0c3
-    class ai_assistant_portfolioaiassistant_bf7eaa1d klass;
-    class ai_assistant_portfolioaiassistant_ask_57d985a5 function;
-    class ai_assistant_portfolioaiassistant_constructor_2ab5a1b0 function;
-    class ai_assistant_portfolioaiassistant_initspeech_5259e617 function;
-    class ai_assistant_portfolioaiassistant_suggestnextact_ccf76f23 function;
-    class ai_assistant_portfolioaiassistant_queryexternall_17e2ea1b function;
-    class ai_assistant_portfolioaiassistant_togglespeech_5089a0c3 function;
-    class ai_assistant_portfolioaiassistant_speak_ba616a25 function;
-    class ai_assistant_portfolioaiassistant_resolveportfol_21623542 function;
-    class app_initaicopilotchat_014a09aa function;
-    class app_executecopilotquery_a3383c75 function;
-    class app_initfloatingcopilot_3971f2ea function;
-    class app_appendtypingindicator_19e35ccb function;
-    class app_initfloatingcopilot_closedrawer_315c59b4 function;
-    class app_initfloatingcopilot_opendrawer_3887f249 function;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><code>ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>constructor()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>initSpeech()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br>+5 more</td>
-  <td>PortfolioAIAssistant node in ai-assistant.js.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>.ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><code>queryExternalLLM()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>resolvePortfolioKnowledge()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>suggestNextActions()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td>.ask() node in ai-assistant.js.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>.constructor()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><code>initSpeech()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td>.constructor() node in ai-assistant.js.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>.initSpeech()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>constructor()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>.initSpeech() node in ai-assistant.js.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>.queryExternalLLM()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>.queryExternalLLM() node in ai-assistant.js.</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>.resolvePortfolioKnowledge()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>.resolvePortfolioKnowledge() node in ai-assistant.js.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>.speak()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>.speak() node in ai-assistant.js.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>.suggestNextActions()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>.suggestNextActions() node in ai-assistant.js.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>.toggleSpeech()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>initAICoPilotChat()</code><br><small style="color:var(--muted)">app.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>.toggleSpeech() node in ai-assistant.js.</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>appendTypingIndicator()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>appendTypingIndicator() node in app.js.</td>
-</tr>
-<tr>
-  <td>11</td>
-  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>appendAssistantResponse()</code><br><small style="color:var(--muted)">app.js</small><br><code>initAICoPilotChat()</code><br><small style="color:var(--muted)">app.js</small><br><code>initFloatingCoPilot()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><code>appendCoPilotMessage()</code><br><small style="color:var(--muted)">app.js</small><br><code>appendTypingIndicator()</code><br><small style="color:var(--muted)">app.js</small><br><code>ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br>+1 more</td>
-  <td>executeCoPilotQuery() node in app.js.</td>
-</tr>
-<tr>
-  <td>12</td>
-  <td><code>initAICoPilotChat()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small><br><code>toggleSpeech()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td>Supports retrieval-augmented Q&amp;A or streaming chat.</td>
-</tr>
-<tr>
-  <td>13</td>
-  <td><code>initFloatingCoPilot()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initFloatingCoPilot() node in app.js.</td>
-</tr>
-<tr>
-  <td>14</td>
-  <td><code>closeDrawer()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>closeDrawer() node in app.js.</td>
-</tr>
-<tr>
-  <td>15</td>
-  <td><code>openDrawer()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>openDrawer() node in app.js.</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>ai-assistant.js</code></td><td>9 nodes</td></tr>
-<tr><td><code>app.js</code></td><td>6 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: calls x10, method x8, contains x2. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 5. Appjs Initcyberaudio Initmetricscards ====== -->
-<h2 id="appjs-initcyberaudio-initmetricscards">5. Appjs Initcyberaudio Initmetricscards</h2>
-<p>Appjs Initcyberaudio Initmetricscards groups implementation around appjs, initcyberaudio, initmetricscards, initnetworktelemetry, mostly in app.js. This section covers 13 nodes and 14 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Appjs Initcyberaudio Initmetricscards (13 nodes, 14 edges)
-    app_initthemetoggle_c6821701("initThemeToggle()<br/><small>app.js</small>")
-    app_initnetworktelemetry_ac8f721d("initNetworkTelemetry()<br/><small>app.js</small>")
+    %% Section: Appjs Copytoclipboard Initcontacthub (20 nodes, 25 edges)
+    app_initcontacthub_57e07bdf("initContactHub()<br/><small>app.js</small>")
     app_initcyberaudio_33b26b61("initCyberAudio()<br/><small>app.js</small>")
-    app_initmetricscards_349b17d1("initMetricsCards()<br/><small>app.js</small>")
+    app_initkeyboardhud_closehud_a4783594("closeHUD()<br/><small>app.js</small>")
+    app_initnetworktelemetry_ac8f721d("initNetworkTelemetry()<br/><small>app.js</small>")
     app_initnetworktelemetry_updatenetworkstatus_9221b803("updateNetworkStatus()<br/><small>app.js</small>")
     app_initpwainstall_fbaa08db("initPWAInstall()<br/><small>app.js</small>")
+    app_copytoclipboard_bd037ebe("copyToClipboard()<br/><small>app.js</small>")
     app_showtoast_632d55ef("showToast()<br/><small>app.js</small>")
-    app_updatemetricscardstheme_936d43fd("updateMetricsCardsTheme()<br/><small>app.js</small>")
+    app_returnfocus_4e0bc6e8("returnFocus()<br/><small>app.js</small>")
+    app_initrecruiterfasttrack_e602e2ad("initRecruiterFastTrack()<br/><small>app.js</small>")
+    app_initrecruiterfasttrack_checkrecruiterdeeplin_050287df("checkRecruiterDeepLink()<br/><small>app.js</small>")
+    app_initrecruiterfasttrack_openrecruitermodal_5c500a04("openRecruiterModal()<br/><small>app.js</small>")
+    app_initrecruiterfasttrack_closerecruitermodal_4b7ed66a("closeRecruiterModal()<br/><small>app.js</small>")
     app_initresumemodal_1d929526("initResumeModal()<br/><small>app.js</small>")
-    app_initsettingsmodal_017119ea("initSettingsModal()<br/><small>app.js</small>")
-    app_updatethemeicon_738f385f("updateThemeIcon()<br/><small>app.js</small>")
+    app_initresumemodal_checkresumedeeplink_2daa7929("checkResumeDeepLink()<br/><small>app.js</small>")
     app_initresumemodal_closeresume_de7d3ea7("closeResume()<br/><small>app.js</small>")
-    app_initresumemodal_openresume_da2d48a3("openResume()<br/><small>app.js</small>")
+    app_initsettingsmodal_017119ea("initSettingsModal()<br/><small>app.js</small>")
+    app_initsettingsmodal_closesettings_f5153888("closeSettings()<br/><small>app.js</small>")
+    app_copytoclipboard_bd037ebe -->|calls| app_showtoast_632d55ef
+    app_initcontacthub_57e07bdf -->|calls| app_copytoclipboard_bd037ebe
+    app_initcontacthub_57e07bdf -->|calls| app_showtoast_632d55ef
     app_initcyberaudio_33b26b61 -->|calls| app_showtoast_632d55ef
-    app_initmetricscards_349b17d1 -->|calls| app_updatemetricscardstheme_936d43fd
+    app_initkeyboardhud_closehud_a4783594 -->|calls| app_returnfocus_4e0bc6e8
     app_initnetworktelemetry_ac8f721d -->|calls| app_showtoast_632d55ef
-    app_initnetworktelemetry_ac8f721d -->|calls| app_updatemetricscardstheme_936d43fd
     app_initnetworktelemetry_updatenetworkstatus_9221b803 -->|calls| app_showtoast_632d55ef
     app_initpwainstall_fbaa08db -->|calls| app_showtoast_632d55ef
-    app_initresumemodal_1d929526 -->|calls| app_showtoast_632d55ef
+    app_initrecruiterfasttrack_e602e2ad -->|calls| app_copytoclipboard_bd037ebe
+    app_initrecruiterfasttrack_checkrecruiterdeeplin_050287df -->|calls| app_initrecruiterfasttrack_openrecruitermodal_5c500a04
+    app_initrecruiterfasttrack_closerecruitermodal_4b7ed66a -->|calls| app_returnfocus_4e0bc6e8
+    app_initresumemodal_1d929526 -->|calls| app_copytoclipboard_bd037ebe
+    app_initresumemodal_checkresumedeeplink_2daa7929 -->|calls| app_showtoast_632d55ef
+    app_initresumemodal_closeresume_de7d3ea7 -->|calls| app_returnfocus_4e0bc6e8
     app_initsettingsmodal_017119ea -->|calls| app_showtoast_632d55ef
-    app_initthemetoggle_c6821701 -->|calls| app_updatethemeicon_738f385f
-    app_initthemetoggle_c6821701 -->|calls| app_updatemetricscardstheme_936d43fd
-    app_initthemetoggle_c6821701 -->|calls| app_showtoast_632d55ef
-    class app_initthemetoggle_c6821701 function;
-    class app_initnetworktelemetry_ac8f721d function;
+    app_initsettingsmodal_closesettings_f5153888 -->|calls| app_returnfocus_4e0bc6e8
+    %% Omitted for readability: 2 nodes, 0 edges
+    class app_initcontacthub_57e07bdf function;
     class app_initcyberaudio_33b26b61 function;
-    class app_initmetricscards_349b17d1 function;
+    class app_initkeyboardhud_closehud_a4783594 function;
+    class app_initnetworktelemetry_ac8f721d function;
     class app_initnetworktelemetry_updatenetworkstatus_9221b803 function;
     class app_initpwainstall_fbaa08db function;
+    class app_copytoclipboard_bd037ebe entry;
     class app_showtoast_632d55ef function;
-    class app_updatemetricscardstheme_936d43fd function;
+    class app_returnfocus_4e0bc6e8 function;
+    class app_initrecruiterfasttrack_e602e2ad function;
+    class app_initrecruiterfasttrack_checkrecruiterdeeplin_050287df function;
+    class app_initrecruiterfasttrack_openrecruitermodal_5c500a04 function;
+    class app_initrecruiterfasttrack_closerecruitermodal_4b7ed66a function;
     class app_initresumemodal_1d929526 function;
-    class app_initsettingsmodal_017119ea function;
-    class app_updatethemeicon_738f385f function;
+    class app_initresumemodal_checkresumedeeplink_2daa7929 function;
     class app_initresumemodal_closeresume_de7d3ea7 function;
-    class app_initresumemodal_openresume_da2d48a3 function;
+    class app_initsettingsmodal_017119ea function;
+    class app_initsettingsmodal_closesettings_f5153888 function;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -1089,11 +725,262 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
+  <td><code>copyToClipboard()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-cmd">Entry</span></td>
+  <td><code>initContactHub()</code><br><small style="color:var(--muted)">app.js</small><br><code>initRecruiterFastTrack()</code><br><small style="color:var(--muted)">app.js</small><br><code>initResumeModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>copyToClipboard() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>initContactHub()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>copyToClipboard()</code><br><small style="color:var(--muted)">app.js</small><br><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initContactHub() node in app.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>getTransmissionData()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>getTransmissionData() node in app.js.</td>
+</tr>
+<tr>
+  <td>4</td>
   <td><code>initCyberAudio()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
   <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td>initCyberAudio() node in app.js.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>closeHUD()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initKeyboardHUD()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>returnFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>closeHUD() node in app.js.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>initNetworkTelemetry()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small><br><code>updateMetricsCardsTheme()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initNetworkTelemetry() node in app.js.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>updateNetworkStatus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>updateNetworkStatus() node in app.js.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>initPWAInstall()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initPWAInstall() node in app.js.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>initRecruiterFastTrack()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>closeRecruiterModal()</code><br><small style="color:var(--muted)">app.js</small><br><code>copyToClipboard()</code><br><small style="color:var(--muted)">app.js</small><br><code>openRecruiterModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initRecruiterFastTrack() node in app.js.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>checkRecruiterDeepLink()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>openRecruiterModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>checkRecruiterDeepLink() node in app.js.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>closeRecruiterModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initRecruiterFastTrack()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>returnFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>closeRecruiterModal() node in app.js.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>openRecruiterModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>checkRecruiterDeepLink()</code><br><small style="color:var(--muted)">app.js</small><br><code>initRecruiterFastTrack()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>openRecruiterModal() node in app.js.</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>initResumeModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>closeResume()</code><br><small style="color:var(--muted)">app.js</small><br><code>copyToClipboard()</code><br><small style="color:var(--muted)">app.js</small><br><code>openResume()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initResumeModal() node in app.js.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>checkResumeDeepLink()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>checkResumeDeepLink() node in app.js.</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>closeResume()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initResumeModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>returnFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>closeResume() node in app.js.</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>openResume()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initResumeModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>openResume() node in app.js.</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>initSettingsModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>closeSettings()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small><br><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initSettingsModal() node in app.js.</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>closeSettings()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initSettingsModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>returnFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>closeSettings() node in app.js.</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>returnFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>closeHUD()</code><br><small style="color:var(--muted)">app.js</small><br><code>closeInspector()</code><br><small style="color:var(--muted)">app.js</small><br><code>closePalette()</code><br><small style="color:var(--muted)">app.js</small><br>+4 more</td>
+  <td>No direct outbound edge</td>
+  <td>returnFocus() node in app.js.</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>checkResumeDeepLink()</code><br><small style="color:var(--muted)">app.js</small><br><code>copyToClipboard()</code><br><small style="color:var(--muted)">app.js</small><br><code>initAICoPilotChat()</code><br><small style="color:var(--muted)">app.js</small><br>+10 more</td>
+  <td>No direct outbound edge</td>
+  <td>showToast() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>20 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x16, indirect call x5, contains x4. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 5. Appjs Ref Initheroscrollindicator ====== -->
+<h2 id="appjs-ref-initheroscrollindicator">5. Appjs Ref Initheroscrollindicator</h2>
+<p>Appjs Ref Initheroscrollindicator groups implementation around appjs, ref, initheroscrollindicator, initmetricscards, mostly in app.js. This section covers 18 nodes and 20 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Appjs Ref Initheroscrollindicator (18 nodes, 20 edges)
+    subgraph appjs_ref_initheroscrollindicator_app_js_edf3bd4c["app.js"]
+        app_7d104347("app.js")
+        app_initthemetoggle_c6821701("initThemeToggle()<br/><small>app.js</small>")
+        app_initmetricscards_349b17d1("initMetricsCards()<br/><small>app.js</small>")
+        app_updatemetricscardstheme_936d43fd("updateMetricsCardsTheme()<br/><small>app.js</small>")
+        app_updatethemeicon_738f385f("updateThemeIcon()<br/><small>app.js</small>")
+        app_focusable_selectors_6c335bb4("FOCUSABLE_SELECTORS<br/><small>app.js</small>")
+        app_section_telemetry_map_f0f39a21("SECTION_TELEMETRY_MAP<br/><small>app.js</small>")
+        app_copilot_a8e7b027("coPilot<br/><small>app.js</small>")
+        app_initheroscrollindicator_697c83bb("initHeroScrollIndicator()<br/><small>app.js</small>")
+        app_initparallaxtilt_c6d545de("initParallaxTilt()<br/><small>app.js</small>")
+        app_initscrollobserver_5402dbcd("initScrollObserver()<br/><small>app.js</small>")
+        app_initscrollprogressbar_2ddf1c97("initScrollProgressBar()<br/><small>app.js</small>")
+        app_initscrollspy_2c457437("initScrollSpy()<br/><small>app.js</small>")
+        app_registerserviceworker_89fdaf46("registerServiceWorker()<br/><small>app.js</small>")
+        app_rendersystempillars_bdd2dcf3("renderSystemPillars()<br/><small>app.js</small>")
+        app_reordersections_6d10dced("reorderSections()<br/><small>app.js</small>")
+    end
+    subgraph appjs_ref_initheroscrollindicator_External_gener_ea8e7c85["External / generated"]
+        ref_ai_assistant_js_v_6_5_c7447ec1("ref_ai_assistant_js_v_6_5")
+        ref_cyber_audio_js_v_6_5_ffc4446f("ref_cyber_audio_js_v_6_5")
+    end
+    app_initmetricscards_349b17d1 -->|calls| app_updatemetricscardstheme_936d43fd
+    app_initthemetoggle_c6821701 -->|calls| app_updatethemeicon_738f385f
+    app_initthemetoggle_c6821701 -->|calls| app_updatemetricscardstheme_936d43fd
+    app_7d104347 -->|imports| ref_ai_assistant_js_v_6_5_c7447ec1
+    app_7d104347 -->|imports| ref_cyber_audio_js_v_6_5_ffc4446f
+    class app_7d104347 module;
+    class app_initthemetoggle_c6821701 function;
+    class app_initmetricscards_349b17d1 function;
+    class app_updatemetricscardstheme_936d43fd function;
+    class app_updatethemeicon_738f385f function;
+    class app_focusable_selectors_6c335bb4 klass;
+    class app_section_telemetry_map_f0f39a21 klass;
+    class app_copilot_a8e7b027 function;
+    class app_initheroscrollindicator_697c83bb function;
+    class app_initparallaxtilt_c6d545de function;
+    class app_initscrollobserver_5402dbcd function;
+    class app_initscrollprogressbar_2ddf1c97 function;
+    class app_initscrollspy_2c457437 function;
+    class app_registerserviceworker_89fdaf46 function;
+    class app_rendersystempillars_bdd2dcf3 function;
+    class app_reordersections_6d10dced function;
+    class ref_ai_assistant_js_v_6_5_c7447ec1 function;
+    class ref_cyber_audio_js_v_6_5_ffc4446f function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>initHeroScrollIndicator()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>initHeroScrollIndicator() node in app.js.</td>
 </tr>
 <tr>
   <td>2</td>
@@ -1105,62 +992,38 @@ flowchart LR
 </tr>
 <tr>
   <td>3</td>
-  <td><code>initNetworkTelemetry()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>initParallaxTilt()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small><br><code>updateMetricsCardsTheme()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initNetworkTelemetry() node in app.js.</td>
+  <td>No direct outbound edge</td>
+  <td>initParallaxTilt() node in app.js.</td>
 </tr>
 <tr>
   <td>4</td>
-  <td><code>updateNetworkStatus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>initScrollObserver()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>updateNetworkStatus() node in app.js.</td>
+  <td>No direct outbound edge</td>
+  <td>initScrollObserver() node in app.js.</td>
 </tr>
 <tr>
   <td>5</td>
-  <td><code>initPWAInstall()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>initScrollProgressBar()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initPWAInstall() node in app.js.</td>
+  <td>No direct outbound edge</td>
+  <td>initScrollProgressBar() node in app.js.</td>
 </tr>
 <tr>
   <td>6</td>
-  <td><code>initResumeModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>initScrollSpy()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>closeResume()</code><br><small style="color:var(--muted)">app.js</small><br><code>openResume()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initResumeModal() node in app.js.</td>
+  <td>No direct outbound edge</td>
+  <td>initScrollSpy() node in app.js.</td>
 </tr>
 <tr>
   <td>7</td>
-  <td><code>closeResume()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>initResumeModal()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>closeResume() node in app.js.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>openResume()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>initResumeModal()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>openResume() node in app.js.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>initSettingsModal()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initSettingsModal() node in app.js.</td>
-</tr>
-<tr>
-  <td>10</td>
   <td><code>initThemeToggle()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -1168,15 +1031,31 @@ flowchart LR
   <td>initThemeToggle() node in app.js.</td>
 </tr>
 <tr>
-  <td>11</td>
-  <td><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>8</td>
+  <td><code>registerServiceWorker()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
-  <td><code>initAICoPilotChat()</code><br><small style="color:var(--muted)">app.js</small><br><code>initContactHub()</code><br><small style="color:var(--muted)">app.js</small><br><code>initCyberAudio()</code><br><small style="color:var(--muted)">app.js</small><br>+7 more</td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>showToast() node in app.js.</td>
+  <td>registerServiceWorker() node in app.js.</td>
 </tr>
 <tr>
-  <td>12</td>
+  <td>9</td>
+  <td><code>renderSystemPillars()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>renderSystemPillars() node in app.js.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>reorderSections()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>reorderSections() node in app.js.</td>
+</tr>
+<tr>
+  <td>11</td>
   <td><code>updateMetricsCardsTheme()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>initMetricsCards()</code><br><small style="color:var(--muted)">app.js</small><br><code>initNetworkTelemetry()</code><br><small style="color:var(--muted)">app.js</small><br><code>initThemeToggle()</code><br><small style="color:var(--muted)">app.js</small></td>
@@ -1184,164 +1063,60 @@ flowchart LR
   <td>updateMetricsCardsTheme() node in app.js.</td>
 </tr>
 <tr>
-  <td>13</td>
+  <td>12</td>
   <td><code>updateThemeIcon()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>initThemeToggle()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td>No direct outbound edge</td>
   <td>updateThemeIcon() node in app.js.</td>
 </tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>app.js</code></td><td>13 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: calls x11, indirect call x2, contains x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 6. Appjs Appendassistantresponse Appendcopilotmessage ====== -->
-<h2 id="appjs-appendassistantresponse-appendcopilotmessa">6. Appjs Appendassistantresponse Appendcopilotmessage</h2>
-<p>Appjs Appendassistantresponse Appendcopilotmessage groups implementation around appjs, appendassistantresponse, appendcopilotmessage, escapehtml, mostly in app.js. This section covers 10 nodes and 10 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Appjs Appendassistantresponse Appendcopilotmessage (10 nodes, 10 edges)
-    app_appendassistantresponse_f04cefbd("appendAssistantResponse()<br/><small>app.js</small>")
-    app_appendcopilotmessage_4dea3db6("appendCoPilotMessage()<br/><small>app.js</small>")
-    app_initcontacthub_57e07bdf("initContactHub()<br/><small>app.js</small>")
-    app_initprojectsandboxmodal_e9b48eea("initProjectSandboxModal()<br/><small>app.js</small>")
-    app_initprojectsandboxmodal_updatebulbvisuals_5b72b985("updateBulbVisuals()<br/><small>app.js</small>")
-    app_parsemarkdowntohtml_c88bc9d5("parseMarkdownToHtml()<br/><small>app.js</small>")
-    app_escapehtml_7f79eca0("escapeHtml()<br/><small>app.js</small>")
-    app_initprojectsandboxmodal_hextorgb_2d706998("hexToRgb()<br/><small>app.js</small>")
-    app_initcontacthub_gettransmissiondata_20716b91("getTransmissionData()<br/><small>app.js</small>")
-    app_initprojectsandboxmodal_rendernyayacase_7b875754("renderNyayaCase()<br/><small>app.js</small>")
-    app_appendassistantresponse_f04cefbd -->|calls| app_parsemarkdowntohtml_c88bc9d5
-    app_appendassistantresponse_f04cefbd -->|calls| app_escapehtml_7f79eca0
-    app_appendcopilotmessage_4dea3db6 -->|calls| app_escapehtml_7f79eca0
-    app_initcontacthub_57e07bdf -->|calls| app_escapehtml_7f79eca0
-    app_initprojectsandboxmodal_e9b48eea -->|calls| app_escapehtml_7f79eca0
-    app_initprojectsandboxmodal_updatebulbvisuals_5b72b985 -->|calls| app_initprojectsandboxmodal_hextorgb_2d706998
-    class app_appendassistantresponse_f04cefbd function;
-    class app_appendcopilotmessage_4dea3db6 function;
-    class app_initcontacthub_57e07bdf function;
-    class app_initprojectsandboxmodal_e9b48eea function;
-    class app_initprojectsandboxmodal_updatebulbvisuals_5b72b985 function;
-    class app_parsemarkdowntohtml_c88bc9d5 function;
-    class app_escapehtml_7f79eca0 function;
-    class app_initprojectsandboxmodal_hextorgb_2d706998 function;
-    class app_initcontacthub_gettransmissiondata_20716b91 function;
-    class app_initprojectsandboxmodal_rendernyayacase_7b875754 function;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
 <tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>appendAssistantResponse()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td>13</td>
+  <td><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-class">Module</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small><br><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small><br><code>parseMarkdownToHtml()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>appendAssistantResponse() node in app.js.</td>
+  <td><code>ref_ai_assistant_js_v_6_5</code><br><code>ref_cyber_audio_js_v_6_5</code><br><code>ref_knowledge_base_js_v_6_5</code></td>
+  <td>app.js node in app.js.</td>
 </tr>
 <tr>
-  <td>2</td>
-  <td><code>appendCoPilotMessage()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>appendCoPilotMessage() node in app.js.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>appendAssistantResponse()</code><br><small style="color:var(--muted)">app.js</small><br><code>appendCoPilotMessage()</code><br><small style="color:var(--muted)">app.js</small><br><code>initContactHub()</code><br><small style="color:var(--muted)">app.js</small><br>+3 more</td>
-  <td>No direct outbound edge</td>
-  <td>Exports documentation data to a target format.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>initContactHub()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initContactHub() node in app.js.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>getTransmissionData()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>14</td>
+  <td><code>coPilot</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>getTransmissionData() node in app.js.</td>
+  <td>coPilot node in app.js.</td>
 </tr>
 <tr>
-  <td>6</td>
-  <td><code>initProjectSandboxModal()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>initProjectSandboxModal() node in app.js.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>hexToRgb()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>updateBulbVisuals()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>No direct outbound edge</td>
-  <td>hexToRgb() node in app.js.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>renderNyayaCase()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td>15</td>
+  <td><code>FOCUSABLE_SELECTORS</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-class">Class</span></td>
   <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
-  <td>renderNyayaCase() node in app.js.</td>
+  <td>FOCUSABLE_SELECTORS node in app.js.</td>
 </tr>
 <tr>
-  <td>9</td>
-  <td><code>updateBulbVisuals()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><span class="tag tag-func">Function</span></td>
+  <td>16</td>
+  <td><code>SECTION_TELEMETRY_MAP</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-class">Class</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>hexToRgb()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td>updateBulbVisuals() node in app.js.</td>
+  <td>No direct outbound edge</td>
+  <td>SECTION_TELEMETRY_MAP node in app.js.</td>
 </tr>
 <tr>
-  <td>10</td>
-  <td><code>parseMarkdownToHtml()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>17</td>
+  <td><code>ref_ai_assistant_js_v_6_5</code><br><small style="color:var(--muted)"></small></td>
   <td><span class="tag tag-func">Function</span></td>
-  <td><code>appendAssistantResponse()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
   <td>No direct outbound edge</td>
-  <td>Exports documentation data to a target format.</td>
+  <td>ref_ai_assistant_js_v_6_5 node in project.</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>ref_cyber_audio_js_v_6_5</code><br><small style="color:var(--muted)"></small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>ref_cyber_audio_js_v_6_5 node in project.</td>
 </tr>
 </table>
 
@@ -1350,44 +1125,75 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>app.js</code></td><td>10 nodes</td></tr>
+      <tr><td><code>app.js</code></td><td>16 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: calls x6, contains x4. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x15, calls x3, imports x2. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 7. Appjs Initcommandpalette Closepalette ====== -->
-<h2 id="appjs-initcommandpalette-closepalette">7. Appjs Initcommandpalette Closepalette</h2>
-<p>Appjs Initcommandpalette Closepalette groups implementation around appjs, initcommandpalette, closepalette, downloadresume, mostly in app.js. This section covers 8 nodes and 12 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 6. Appjs Initcommandpalette Closepalette ====== -->
+<h2 id="appjs-initcommandpalette-closepalette">6. Appjs Initcommandpalette Closepalette</h2>
+<p>Appjs Initcommandpalette Closepalette groups implementation around appjs, initcommandpalette, closepalette, downloadresume, mostly in app.js. This section covers 17 nodes and 28 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Appjs Initcommandpalette Closepalette (8 nodes, 12 edges)
-    app_initcommandpalette_downloadresume_640aa6ec("downloadResume()<br/><small>app.js</small>")
+    %% Section: Appjs Initcommandpalette Closepalette (17 nodes, 28 edges)
+    app_initcommandpalette_e4c0b24d("initCommandPalette()<br/><small>app.js</small>")
     app_initcommandpalette_openpalette_7233f37b("openPalette()<br/><small>app.js</small>")
     app_initcommandpalette_openresumemodal_c0aa57da("openResumeModal()<br/><small>app.js</small>")
-    app_initcommandpalette_scrolltosection_bbc77b0a("scrollToSection()<br/><small>app.js</small>")
-    app_initcommandpalette_renderresults_f48e2c92("renderResults()<br/><small>app.js</small>")
+    app_initcyberterminal_runcommand_eb2f071c("runCommand()<br/><small>app.js</small>")
+    app_openarchinspector_b6575d7a("openArchInspector()<br/><small>app.js</small>")
+    app_initcommandpalette_downloadresume_640aa6ec("downloadResume()<br/><small>app.js</small>")
+    app_openprojectsandbox_5e6d070e("openProjectSandbox()<br/><small>app.js</small>")
+    app_trapfocus_85a1fd74("trapFocus()<br/><small>app.js</small>")
     app_initcommandpalette_closepalette_e0181562("closePalette()<br/><small>app.js</small>")
-    app_initcommandpalette_e4c0b24d("initCommandPalette()<br/><small>app.js</small>")
+    app_initcommandpalette_renderresults_f48e2c92("renderResults()<br/><small>app.js</small>")
+    app_initcommandpalette_scrolltosection_bbc77b0a("scrollToSection()<br/><small>app.js</small>")
+    app_initkeyboardhud_9f6e0931("initKeyboardHUD()<br/><small>app.js</small>")
+    app_initkeyboardhud_openhud_f7ee3bfc("openHUD()<br/><small>app.js</small>")
+    app_renderinspectorstep_7e6d2182("renderInspectorStep()<br/><small>app.js</small>")
+    app_initcyberterminal_fd40c1ba("initCyberTerminal()<br/><small>app.js</small>")
+    app_isfocusablevisible_a6ec1ebf("isFocusableVisible()<br/><small>app.js</small>")
     app_initcommandpalette_scrollselectedintoview_bf88151c("scrollSelectedIntoView()<br/><small>app.js</small>")
+    app_initcommandpalette_e4c0b24d -->|calls| app_openprojectsandbox_5e6d070e
+    app_initcommandpalette_e4c0b24d -->|calls| app_openarchinspector_b6575d7a
+    app_initcommandpalette_e4c0b24d -->|calls| app_trapfocus_85a1fd74
     app_initcommandpalette_downloadresume_640aa6ec -->|calls| app_initcommandpalette_closepalette_e0181562
+    app_initcommandpalette_openpalette_7233f37b -->|calls| app_trapfocus_85a1fd74
     app_initcommandpalette_openpalette_7233f37b -->|calls| app_initcommandpalette_renderresults_f48e2c92
     app_initcommandpalette_openresumemodal_c0aa57da -->|calls| app_initcommandpalette_closepalette_e0181562
+    app_initcommandpalette_openresumemodal_c0aa57da -->|calls| app_trapfocus_85a1fd74
     app_initcommandpalette_renderresults_f48e2c92 -->|calls| app_initcommandpalette_closepalette_e0181562
     app_initcommandpalette_scrolltosection_bbc77b0a -->|calls| app_initcommandpalette_closepalette_e0181562
-    class app_initcommandpalette_downloadresume_640aa6ec function;
+    app_initcyberterminal_runcommand_eb2f071c -->|calls| app_openprojectsandbox_5e6d070e
+    app_initcyberterminal_runcommand_eb2f071c -->|calls| app_trapfocus_85a1fd74
+    app_initkeyboardhud_9f6e0931 -->|calls| app_trapfocus_85a1fd74
+    app_initkeyboardhud_openhud_f7ee3bfc -->|calls| app_trapfocus_85a1fd74
+    app_openarchinspector_b6575d7a -->|calls| app_renderinspectorstep_7e6d2182
+    app_openarchinspector_b6575d7a -->|calls| app_trapfocus_85a1fd74
+    app_openprojectsandbox_5e6d070e -->|calls| app_trapfocus_85a1fd74
+    app_renderinspectorstep_7e6d2182 -->|calls| app_renderinspectorstep_7e6d2182
+    class app_initcommandpalette_e4c0b24d entry;
     class app_initcommandpalette_openpalette_7233f37b function;
     class app_initcommandpalette_openresumemodal_c0aa57da function;
-    class app_initcommandpalette_scrolltosection_bbc77b0a function;
-    class app_initcommandpalette_renderresults_f48e2c92 function;
+    class app_initcyberterminal_runcommand_eb2f071c entry;
+    class app_openarchinspector_b6575d7a function;
+    class app_initcommandpalette_downloadresume_640aa6ec function;
+    class app_openprojectsandbox_5e6d070e function;
+    class app_trapfocus_85a1fd74 function;
     class app_initcommandpalette_closepalette_e0181562 function;
-    class app_initcommandpalette_e4c0b24d entry;
+    class app_initcommandpalette_renderresults_f48e2c92 function;
+    class app_initcommandpalette_scrolltosection_bbc77b0a function;
+    class app_initkeyboardhud_9f6e0931 function;
+    class app_initkeyboardhud_openhud_f7ee3bfc function;
+    class app_renderinspectorstep_7e6d2182 function;
+    class app_initcyberterminal_fd40c1ba function;
+    class app_isfocusablevisible_a6ec1ebf function;
     class app_initcommandpalette_scrollselectedintoview_bf88151c function;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
@@ -1415,7 +1221,7 @@ flowchart LR
   <td><code>initCommandPalette()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-cmd">Entry</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>openArchInspector()</code><br><small style="color:var(--muted)">app.js</small><br><code>openPalette()</code><br><small style="color:var(--muted)">app.js</small><br><code>openProjectSandbox()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>openArchInspector()</code><br><small style="color:var(--muted)">app.js</small><br><code>openPalette()</code><br><small style="color:var(--muted)">app.js</small><br><code>openProjectSandbox()</code><br><small style="color:var(--muted)">app.js</small><br>+1 more</td>
   <td>initCommandPalette() node in app.js.</td>
 </tr>
 <tr>
@@ -1423,7 +1229,7 @@ flowchart LR
   <td><code>closePalette()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>downloadResume()</code><br><small style="color:var(--muted)">app.js</small><br><code>openResumeModal()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderResults()</code><br><small style="color:var(--muted)">app.js</small><br>+1 more</td>
-  <td>No direct outbound edge</td>
+  <td><code>returnFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td>closePalette() node in app.js.</td>
 </tr>
 <tr>
@@ -1439,7 +1245,7 @@ flowchart LR
   <td><code>openPalette()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>initCommandPalette()</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><code>renderResults()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>renderResults()</code><br><small style="color:var(--muted)">app.js</small><br><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td>openPalette() node in app.js.</td>
 </tr>
 <tr>
@@ -1447,7 +1253,7 @@ flowchart LR
   <td><code>openResumeModal()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>closePalette()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>closePalette()</code><br><small style="color:var(--muted)">app.js</small><br><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td>openResumeModal() node in app.js.</td>
 </tr>
 <tr>
@@ -1474,6 +1280,78 @@ flowchart LR
   <td><code>closePalette()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td>scrollToSection() node in app.js.</td>
 </tr>
+<tr>
+  <td>9</td>
+  <td><code>initCyberTerminal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>initCyberTerminal() node in app.js.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>runCommand()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-cmd">Entry</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small><br><code>openProjectSandbox()</code><br><small style="color:var(--muted)">app.js</small><br><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>runCommand() node in app.js.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>initKeyboardHUD()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>closeHUD()</code><br><small style="color:var(--muted)">app.js</small><br><code>openHUD()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small><br>+1 more</td>
+  <td>initKeyboardHUD() node in app.js.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>openHUD()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initKeyboardHUD()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>openHUD() node in app.js.</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>isFocusableVisible()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>isFocusableVisible() node in app.js.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>openArchInspector()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initCommandPalette()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>renderInspectorStep()</code><br><small style="color:var(--muted)">app.js</small><br><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>openArchInspector() node in app.js.</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>openProjectSandbox()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initCommandPalette()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small><br><code>runCommand()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>openProjectSandbox() node in app.js.</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>renderInspectorStep()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>openArchInspector()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderInspectorStep()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>renderInspectorStep()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>renderInspectorStep() node in app.js.</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>trapFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initCommandPalette()</code><br><small style="color:var(--muted)">app.js</small><br><code>initKeyboardHUD()</code><br><small style="color:var(--muted)">app.js</small><br><code>initSettingsModal()</code><br><small style="color:var(--muted)">app.js</small><br>+8 more</td>
+  <td><code>isFocusableVisible()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>trapFocus() node in app.js.</td>
+</tr>
 </table>
 
 <div class="grid">
@@ -1481,12 +1359,194 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>app.js</code></td><td>8 nodes</td></tr>
+      <tr><td><code>app.js</code></td><td>17 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x6, calls x5, indirect call x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x18, contains x7, indirect call x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 7. Assistantjs Portfolioaiassistant Ask ====== -->
+<h2 id="assistantjs-portfolioaiassistant-ask">7. Assistantjs Portfolioaiassistant Ask</h2>
+<p>Assistantjs Portfolioaiassistant Ask groups implementation around assistantjs, portfolioaiassistant, ask, constructor, mostly in ai-assistant.js. This section covers 12 nodes and 15 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Assistantjs Portfolioaiassistant Ask (12 nodes, 15 edges)
+    subgraph assistantjs_portfolioaiassistant_ask_ai_assistan_2d186ff0["ai-assistant.js"]
+        ai_assistant_portfolioaiassistant_bf7eaa1d("PortfolioAIAssistant<br/><small>ai-assistant.js</small>")
+        ai_assistant_portfolioaiassistant_ask_57d985a5("ask()<br/><small>ai-assistant.js</small>")
+        ai_assistant_f872646a("ai-assistant.js")
+        ai_assistant_portfolioaiassistant_constructor_2ab5a1b0("constructor()<br/><small>ai-assistant.js</small>")
+        ai_assistant_portfolioaiassistant_resolveportfol_21623542("resolvePortfolioKnowledge()<br/><small>ai-assistant.js</small>")
+        ai_assistant_portfolioaiassistant_initspeech_5259e617("initSpeech()<br/><small>ai-assistant.js</small>")
+        ai_assistant_portfolioaiassistant_suggestnextact_ccf76f23("suggestNextActions()<br/><small>ai-assistant.js</small>")
+        ai_assistant_portfolioaiassistant_queryexternall_17e2ea1b("queryExternalLLM()<br/><small>ai-assistant.js</small>")
+        ai_assistant_portfolioaiassistant_togglespeech_5089a0c3("toggleSpeech()<br/><small>ai-assistant.js</small>")
+        ai_assistant_portfolioaiassistant_speak_ba616a25("speak()<br/><small>ai-assistant.js</small>")
+        ai_assistant_portfolioaiassistant_initspeechreco_b14d11f2("initSpeechRecognition()<br/><small>ai-assistant.js</small>")
+    end
+    ref_knowledge_base_js_v_6_5_f8c5f4a4("ref_knowledge_base_js_v_6_5")
+    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_ask_57d985a5
+    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_constructor_2ab5a1b0
+    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_resolveportfol_21623542
+    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_initspeech_5259e617
+    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_suggestnextact_ccf76f23
+    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_queryexternall_17e2ea1b
+    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_togglespeech_5089a0c3
+    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_speak_ba616a25
+    ai_assistant_portfolioaiassistant_bf7eaa1d -->|method| ai_assistant_portfolioaiassistant_initspeechreco_b14d11f2
+    ai_assistant_portfolioaiassistant_ask_57d985a5 -->|calls| ai_assistant_portfolioaiassistant_queryexternall_17e2ea1b
+    ai_assistant_portfolioaiassistant_ask_57d985a5 -->|calls| ai_assistant_portfolioaiassistant_suggestnextact_ccf76f23
+    ai_assistant_portfolioaiassistant_ask_57d985a5 -->|calls| ai_assistant_portfolioaiassistant_resolveportfol_21623542
+    ai_assistant_portfolioaiassistant_constructor_2ab5a1b0 -->|calls| ai_assistant_portfolioaiassistant_initspeech_5259e617
+    ai_assistant_f872646a -->|imports| ref_knowledge_base_js_v_6_5_f8c5f4a4
+    class ai_assistant_portfolioaiassistant_bf7eaa1d klass;
+    class ai_assistant_portfolioaiassistant_ask_57d985a5 function;
+    class ai_assistant_f872646a module;
+    class ai_assistant_portfolioaiassistant_constructor_2ab5a1b0 function;
+    class ai_assistant_portfolioaiassistant_resolveportfol_21623542 function;
+    class ai_assistant_portfolioaiassistant_initspeech_5259e617 function;
+    class ai_assistant_portfolioaiassistant_suggestnextact_ccf76f23 function;
+    class ai_assistant_portfolioaiassistant_queryexternall_17e2ea1b function;
+    class ai_assistant_portfolioaiassistant_togglespeech_5089a0c3 function;
+    class ai_assistant_portfolioaiassistant_speak_ba616a25 function;
+    class ai_assistant_portfolioaiassistant_initspeechreco_b14d11f2 function;
+    class ref_knowledge_base_js_v_6_5_f8c5f4a4 function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>constructor()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>initSpeech()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br>+6 more</td>
+  <td>PortfolioAIAssistant node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>.ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><code>queryExternalLLM()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>resolvePortfolioKnowledge()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>suggestNextActions()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td>.ask() node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>.constructor()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><code>initSpeech()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td>.constructor() node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>.initSpeech()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>constructor()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>.initSpeech() node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>.initSpeechRecognition()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>.initSpeechRecognition() node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>.queryExternalLLM()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>.queryExternalLLM() node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>.resolvePortfolioKnowledge()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>.resolvePortfolioKnowledge() node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>.speak()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>.speak() node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>.suggestNextActions()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>ask()</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>.suggestNextActions() node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>.toggleSpeech()</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>PortfolioAIAssistant</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>.toggleSpeech() node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>ai-assistant.js</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
+  <td><span class="tag tag-class">Module</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>ref_knowledge_base_js_v_6_5</code></td>
+  <td>ai-assistant.js node in ai-assistant.js.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>ref_knowledge_base_js_v_6_5</code><br><small style="color:var(--muted)"></small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>ai-assistant.js</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>ref_knowledge_base_js_v_6_5 node in project.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>ai-assistant.js</code></td><td>11 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: method x9, calls x4, imports x1, contains x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -1624,8 +1684,131 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 9. Appjs Initheroscrollindicatorfallback Handlescroll ====== -->
-<h2 id="appjs-initheroscrollindicatorfallback-handlescro">9. Appjs Initheroscrollindicatorfallback Handlescroll</h2>
+<!-- ====== 9. Appjs Appendassistantresponse Appendcopilotmessage ====== -->
+<h2 id="appjs-appendassistantresponse-appendcopilotmessa">9. Appjs Appendassistantresponse Appendcopilotmessage</h2>
+<p>Appjs Appendassistantresponse Appendcopilotmessage groups implementation around appjs, appendassistantresponse, appendcopilotmessage, appendtypingindicator, mostly in app.js. This section covers 7 nodes and 7 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Appjs Appendassistantresponse Appendcopilotmessage (7 nodes, 7 edges)
+    app_appendassistantresponse_f04cefbd("appendAssistantResponse()<br/><small>app.js</small>")
+    app_initaicopilotchat_014a09aa("initAICoPilotChat()<br/><small>app.js</small>")
+    app_executecopilotquery_a3383c75("executeCoPilotQuery()<br/><small>app.js</small>")
+    app_appendcopilotmessage_4dea3db6("appendCoPilotMessage()<br/><small>app.js</small>")
+    app_parsemarkdowntohtml_c88bc9d5("parseMarkdownToHtml()<br/><small>app.js</small>")
+    app_escapehtml_7f79eca0("escapeHtml()<br/><small>app.js</small>")
+    app_appendtypingindicator_19e35ccb("appendTypingIndicator()<br/><small>app.js</small>")
+    app_appendassistantresponse_f04cefbd -->|calls| app_parsemarkdowntohtml_c88bc9d5
+    app_appendassistantresponse_f04cefbd -->|calls| app_escapehtml_7f79eca0
+    app_appendassistantresponse_f04cefbd -->|calls| app_executecopilotquery_a3383c75
+    app_appendcopilotmessage_4dea3db6 -->|calls| app_escapehtml_7f79eca0
+    app_executecopilotquery_a3383c75 -->|calls| app_appendcopilotmessage_4dea3db6
+    app_executecopilotquery_a3383c75 -->|calls| app_appendtypingindicator_19e35ccb
+    app_initaicopilotchat_014a09aa -->|calls| app_executecopilotquery_a3383c75
+    class app_appendassistantresponse_f04cefbd function;
+    class app_initaicopilotchat_014a09aa function;
+    class app_executecopilotquery_a3383c75 function;
+    class app_appendcopilotmessage_4dea3db6 function;
+    class app_parsemarkdowntohtml_c88bc9d5 function;
+    class app_escapehtml_7f79eca0 function;
+    class app_appendtypingindicator_19e35ccb function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>appendAssistantResponse()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small><br><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small><br><code>parseMarkdownToHtml()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>appendAssistantResponse() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>appendCoPilotMessage()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>appendCoPilotMessage() node in app.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>appendTypingIndicator()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>appendTypingIndicator() node in app.js.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>appendAssistantResponse()</code><br><small style="color:var(--muted)">app.js</small><br><code>appendCoPilotMessage()</code><br><small style="color:var(--muted)">app.js</small><br><code>initContactHub()</code><br><small style="color:var(--muted)">app.js</small><br>+4 more</td>
+  <td>No direct outbound edge</td>
+  <td>Exports documentation data to a target format.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>appendAssistantResponse()</code><br><small style="color:var(--muted)">app.js</small><br><code>initAICoPilotChat()</code><br><small style="color:var(--muted)">app.js</small><br><code>initFloatingCoPilot()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>appendCoPilotMessage()</code><br><small style="color:var(--muted)">app.js</small><br><code>appendTypingIndicator()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>executeCoPilotQuery() node in app.js.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>initAICoPilotChat()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>Supports retrieval-augmented Q&amp;A or streaming chat.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>parseMarkdownToHtml()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>appendAssistantResponse()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>Exports documentation data to a target format.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>7 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x7. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 10. Appjs Initheroscrollindicatorfallback Handlescroll ====== -->
+<h2 id="appjs-initheroscrollindicatorfallback-handlescro">10. Appjs Initheroscrollindicatorfallback Handlescroll</h2>
 <p>Appjs Initheroscrollindicatorfallback Handlescroll groups implementation around appjs, initheroscrollindicatorfallback, handlescroll, initlenissmoothscroll, mostly in app.js. This section covers 7 nodes and 7 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -1744,30 +1927,32 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 10. Knowledge Basejs Aditya ====== -->
-<h2 id="knowledge-basejs-aditya">10. Knowledge Basejs Aditya</h2>
-<p>Knowledge Basejs Aditya groups implementation around knowledge, basejs, aditya, assistantjs, mostly in knowledge-base.js, ai-assistant.js. This section covers 5 nodes and 7 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 11. Appjs Initprojectfilters Initskillcircuitsync ====== -->
+<h2 id="appjs-initprojectfilters-initskillcircuitsync">11. Appjs Initprojectfilters Initskillcircuitsync</h2>
+<p>Appjs Initprojectfilters Initskillcircuitsync groups implementation around appjs, initprojectfilters, initskillcircuitsync, inittextscramble, mostly in app.js. This section covers 6 nodes and 6 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Knowledge Basejs Aditya (5 nodes, 7 edges)
-    subgraph knowledge_basejs_aditya_knowledge_base_js_b167530c["knowledge-base.js"]
-        knowledge_base_aditya_profile_789e2a0a("ADITYA_PROFILE<br/><small>knowledge-base.js</small>")
-        knowledge_base_aditya_projects_926c133f("ADITYA_PROJECTS<br/><small>knowledge-base.js</small>")
-        knowledge_base_aditya_skills_64cd31f0("ADITYA_SKILLS<br/><small>knowledge-base.js</small>")
-        knowledge_base_ff91c978("knowledge-base.js")
-    end
-    ai_assistant_f872646a("ai-assistant.js")
-    ai_assistant_f872646a -->|imports| knowledge_base_aditya_profile_789e2a0a
-    ai_assistant_f872646a -->|imports| knowledge_base_aditya_projects_926c133f
-    ai_assistant_f872646a -->|imports| knowledge_base_aditya_skills_64cd31f0
-    ai_assistant_f872646a -->|imports| knowledge_base_ff91c978
-    class knowledge_base_aditya_profile_789e2a0a klass;
-    class knowledge_base_aditya_projects_926c133f klass;
-    class knowledge_base_aditya_skills_64cd31f0 klass;
-    class knowledge_base_ff91c978 module;
-    class ai_assistant_f872646a module;
+    %% Section: Appjs Initprojectfilters Initskillcircuitsync (6 nodes, 6 edges)
+    app_renderarsenalmatrix_5f6fafd8("renderArsenalMatrix()<br/><small>app.js</small>")
+    app_renderarchitectureprojects_4b896ee2("renderArchitectureProjects()<br/><small>app.js</small>")
+    app_initprojectfilters_663a06a2("initProjectFilters()<br/><small>app.js</small>")
+    app_inittextscramble_3a23a273("initTextScramble()<br/><small>app.js</small>")
+    app_scrambleelement_77755d12("scrambleElement()<br/><small>app.js</small>")
+    app_initskillcircuitsync_87f20e15("initSkillCircuitSync()<br/><small>app.js</small>")
+    app_initprojectfilters_663a06a2 -->|calls| app_renderarchitectureprojects_4b896ee2
+    app_inittextscramble_3a23a273 -->|calls| app_scrambleelement_77755d12
+    app_renderarchitectureprojects_4b896ee2 -->|calls| app_inittextscramble_3a23a273
+    app_renderarchitectureprojects_4b896ee2 -->|calls| app_initskillcircuitsync_87f20e15
+    app_renderarsenalmatrix_5f6fafd8 -->|calls| app_inittextscramble_3a23a273
+    app_renderarsenalmatrix_5f6fafd8 -->|calls| app_initskillcircuitsync_87f20e15
+    class app_renderarsenalmatrix_5f6fafd8 function;
+    class app_renderarchitectureprojects_4b896ee2 function;
+    class app_initprojectfilters_663a06a2 function;
+    class app_inittextscramble_3a23a273 function;
+    class app_scrambleelement_77755d12 function;
+    class app_initskillcircuitsync_87f20e15 function;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -1791,41 +1976,235 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
-  <td><code>ai-assistant.js</code><br><small style="color:var(--muted)">ai-assistant.js</small></td>
-  <td><span class="tag tag-class">Module</span></td>
-  <td><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
-  <td><code>ADITYA_PROFILE</code><br><small style="color:var(--muted)">knowledge-base.js</small><br><code>ADITYA_PROJECTS</code><br><small style="color:var(--muted)">knowledge-base.js</small><br><code>ADITYA_SKILLS</code><br><small style="color:var(--muted)">knowledge-base.js</small><br>+1 more</td>
-  <td>ai-assistant.js node in ai-assistant.js.</td>
+  <td><code>initProjectFilters()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initProjectFilters() node in app.js.</td>
 </tr>
 <tr>
   <td>2</td>
+  <td><code>initSkillCircuitSync()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArsenalMatrix()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>initSkillCircuitSync() node in app.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>initTextScramble()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArsenalMatrix()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>scrambleElement()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initTextScramble() node in app.js.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initProjectFilters()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small><br><code>handleDirectProjectQuery()</code><br><small style="color:var(--muted)">app.js</small><br><code>initSkillCircuitSync()</code><br><small style="color:var(--muted)">app.js</small><br>+3 more</td>
+  <td>renderArchitectureProjects() node in app.js.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>renderArsenalMatrix()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>initSkillCircuitSync()</code><br><small style="color:var(--muted)">app.js</small><br><code>initTextScramble()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>renderArsenalMatrix() node in app.js.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>scrambleElement()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initTextScramble()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>scrambleElement() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>6 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x6. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 12. Appjs Initprojectsandboxmodal Closesandbox ====== -->
+<h2 id="appjs-initprojectsandboxmodal-closesandbox">12. Appjs Initprojectsandboxmodal Closesandbox</h2>
+<p>Appjs Initprojectsandboxmodal Closesandbox groups implementation around appjs, initprojectsandboxmodal, closesandbox, hextorgb, mostly in app.js. This section covers 5 nodes and 5 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Appjs Initprojectsandboxmodal Closesandbox (5 nodes, 5 edges)
+    app_initprojectsandboxmodal_updatebulbvisuals_5b72b985("updateBulbVisuals()<br/><small>app.js</small>")
+    app_initprojectsandboxmodal_hextorgb_2d706998("hexToRgb()<br/><small>app.js</small>")
+    app_initprojectsandboxmodal_closesandbox_efbbf00a("closeSandbox()<br/><small>app.js</small>")
+    app_initprojectsandboxmodal_e9b48eea("initProjectSandboxModal()<br/><small>app.js</small>")
+    app_initprojectsandboxmodal_rendernyayacase_7b875754("renderNyayaCase()<br/><small>app.js</small>")
+    app_initprojectsandboxmodal_updatebulbvisuals_5b72b985 -->|calls| app_initprojectsandboxmodal_hextorgb_2d706998
+    class app_initprojectsandboxmodal_updatebulbvisuals_5b72b985 function;
+    class app_initprojectsandboxmodal_hextorgb_2d706998 function;
+    class app_initprojectsandboxmodal_closesandbox_efbbf00a function;
+    class app_initprojectsandboxmodal_e9b48eea function;
+    class app_initprojectsandboxmodal_rendernyayacase_7b875754 function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>initProjectSandboxModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>closeSandbox()</code><br><small style="color:var(--muted)">app.js</small><br><code>escapeHtml()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initProjectSandboxModal() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>closeSandbox()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>initProjectSandboxModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>returnFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>closeSandbox() node in app.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>hexToRgb()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>updateBulbVisuals()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>No direct outbound edge</td>
+  <td>hexToRgb() node in app.js.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>renderNyayaCase()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>renderNyayaCase() node in app.js.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>updateBulbVisuals()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>hexToRgb()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>updateBulbVisuals() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>5 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x3, indirect call x1, calls x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 13. Knowledge Basejs Aditya ====== -->
+<h2 id="knowledge-basejs-aditya">13. Knowledge Basejs Aditya</h2>
+<p>Knowledge Basejs Aditya groups implementation around knowledge, basejs, aditya, profile, mostly in knowledge-base.js. This section covers 4 nodes and 3 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Knowledge Basejs Aditya (4 nodes, 3 edges)
+    knowledge_base_ff91c978("knowledge-base.js")
+    knowledge_base_aditya_profile_789e2a0a("ADITYA_PROFILE<br/><small>knowledge-base.js</small>")
+    knowledge_base_aditya_projects_926c133f("ADITYA_PROJECTS<br/><small>knowledge-base.js</small>")
+    knowledge_base_aditya_skills_64cd31f0("ADITYA_SKILLS<br/><small>knowledge-base.js</small>")
+    knowledge_base_ff91c978 -->|contains| knowledge_base_aditya_profile_789e2a0a
+    knowledge_base_ff91c978 -->|contains| knowledge_base_aditya_projects_926c133f
+    knowledge_base_ff91c978 -->|contains| knowledge_base_aditya_skills_64cd31f0
+    class knowledge_base_ff91c978 module;
+    class knowledge_base_aditya_profile_789e2a0a klass;
+    class knowledge_base_aditya_projects_926c133f klass;
+    class knowledge_base_aditya_skills_64cd31f0 klass;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
   <td><code>knowledge-base.js</code><br><small style="color:var(--muted)">knowledge-base.js</small></td>
   <td><span class="tag tag-class">Module</span></td>
-  <td><code>ai-assistant.js</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>knowledge-base.js node in knowledge-base.js.</td>
 </tr>
 <tr>
-  <td>3</td>
+  <td>2</td>
   <td><code>ADITYA_PROFILE</code><br><small style="color:var(--muted)">knowledge-base.js</small></td>
   <td><span class="tag tag-class">Class</span></td>
-  <td><code>ai-assistant.js</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>ADITYA_PROFILE node in knowledge-base.js.</td>
 </tr>
 <tr>
-  <td>4</td>
+  <td>3</td>
   <td><code>ADITYA_PROJECTS</code><br><small style="color:var(--muted)">knowledge-base.js</small></td>
   <td><span class="tag tag-class">Class</span></td>
-  <td><code>ai-assistant.js</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>ADITYA_PROJECTS node in knowledge-base.js.</td>
 </tr>
 <tr>
-  <td>5</td>
+  <td>4</td>
   <td><code>ADITYA_SKILLS</code><br><small style="color:var(--muted)">knowledge-base.js</small></td>
   <td><span class="tag tag-class">Class</span></td>
-  <td><code>ai-assistant.js</code><br><small style="color:var(--muted)">ai-assistant.js</small><br><code>app.js</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>External entry / no inbound edge</td>
   <td>No direct outbound edge</td>
   <td>ADITYA_SKILLS node in knowledge-base.js.</td>
 </tr>
@@ -1837,32 +2216,30 @@ flowchart LR
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
       <tr><td><code>knowledge-base.js</code></td><td>4 nodes</td></tr>
-<tr><td><code>ai-assistant.js</code></td><td>1 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: imports x3, contains x3, imports x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x3. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 11. Appjs Initmobilemenu Closemenu ====== -->
-<h2 id="appjs-initmobilemenu-closemenu">11. Appjs Initmobilemenu Closemenu</h2>
-<p>Appjs Initmobilemenu Closemenu groups implementation around appjs, initmobilemenu, closemenu, togglemenu, mostly in app.js. This section covers 3 nodes and 2 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 14. Appjs Handledirectprojectquery Initarchinspectormodal ====== -->
+<h2 id="appjs-handledirectprojectquery-initarchinspector">14. Appjs Handledirectprojectquery Initarchinspectormodal</h2>
+<p>Appjs Handledirectprojectquery Initarchinspectormodal groups implementation around appjs, handledirectprojectquery, initarchinspectormodal, closeinspector, mostly in app.js. This section covers 3 nodes and 2 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Appjs Initmobilemenu Closemenu (3 nodes, 2 edges)
-    app_initmobilemenu_2c9902b8("initMobileMenu()<br/><small>app.js</small>")
-    app_initmobilemenu_closemenu_90d16df1("closeMenu()<br/><small>app.js</small>")
-    app_initmobilemenu_togglemenu_1f746420("toggleMenu()<br/><small>app.js</small>")
-    app_initmobilemenu_2c9902b8 -->|contains| app_initmobilemenu_closemenu_90d16df1
-    app_initmobilemenu_2c9902b8 -->|contains| app_initmobilemenu_togglemenu_1f746420
-    class app_initmobilemenu_2c9902b8 function;
-    class app_initmobilemenu_closemenu_90d16df1 function;
-    class app_initmobilemenu_togglemenu_1f746420 function;
+    %% Section: Appjs Handledirectprojectquery Initarchinspectormodal (3 nodes, 2 edges)
+    app_initarchinspectormodal_a413fcea("initArchInspectorModal()<br/><small>app.js</small>")
+    app_handledirectprojectquery_a33a632a("handleDirectProjectQuery()<br/><small>app.js</small>")
+    app_initarchinspectormodal_closeinspector_2919309c("closeInspector()<br/><small>app.js</small>")
+    app_initarchinspectormodal_a413fcea -->|calls| app_handledirectprojectquery_a33a632a
+    class app_initarchinspectormodal_a413fcea function;
+    class app_handledirectprojectquery_a33a632a function;
+    class app_initarchinspectormodal_closeinspector_2919309c function;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -1886,27 +2263,27 @@ flowchart LR
 </tr>
 <tr>
   <td>1</td>
-  <td><code>initMobileMenu()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>handleDirectProjectQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
+  <td><code>initArchInspectorModal()</code><br><small style="color:var(--muted)">app.js</small><br><code>renderArchitectureProjects()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td>No direct outbound edge</td>
-  <td>initMobileMenu() node in app.js.</td>
+  <td>handleDirectProjectQuery() node in app.js.</td>
 </tr>
 <tr>
   <td>2</td>
-  <td><code>closeMenu()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>initArchInspectorModal()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>closeMenu() node in app.js.</td>
+  <td><code>closeInspector()</code><br><small style="color:var(--muted)">app.js</small><br><code>handleDirectProjectQuery()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initArchInspectorModal() node in app.js.</td>
 </tr>
 <tr>
   <td>3</td>
-  <td><code>toggleMenu()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>closeInspector()</code><br><small style="color:var(--muted)">app.js</small></td>
   <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>toggleMenu() node in app.js.</td>
+  <td><code>initArchInspectorModal()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><code>returnFocus()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>closeInspector() node in app.js.</td>
 </tr>
 </table>
 
@@ -1920,91 +2297,27 @@ flowchart LR
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x2. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: calls x1, indirect call x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
 
-<!-- ====== 12. Geminimd Graphify ====== -->
-<h2 id="geminimd-graphify">12. Geminimd Graphify</h2>
-<p>Geminimd Graphify groups implementation around geminimd, graphify, mostly in GEMINI.md. This section covers 2 nodes and 1 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<!-- ====== 15. Swjs Assets External ====== -->
+<h2 id="swjs-assets-external">15. Swjs Assets External</h2>
+<p>Swjs Assets External groups implementation around swjs, assets, external, cdn, mostly in sw.js. This section covers 3 nodes and 2 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Geminimd Graphify (2 nodes, 1 edges)
-    gemini_468da084("GEMINI.md")
-    gemini_graphify_a7c05bf2("graphify<br/><small>GEMINI.md</small>")
-    gemini_468da084 -->|contains| gemini_graphify_a7c05bf2
-    class gemini_468da084 concept;
-    class gemini_graphify_a7c05bf2 concept;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>GEMINI.md</code><br><small style="color:var(--muted)">GEMINI.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing GEMINI.md.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>graphify</code><br><small style="color:var(--muted)">GEMINI.md</small></td>
-  <td><span class="tag tag-func">Concept</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Documentation node describing graphify.</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>GEMINI.md</code></td><td>2 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 13. Swjs Precache Assets ====== -->
-<h2 id="swjs-precache-assets">13. Swjs Precache Assets</h2>
-<p>Swjs Precache Assets groups implementation around swjs, precache, assets, mostly in sw.js. This section covers 2 nodes and 1 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Swjs Precache Assets (2 nodes, 1 edges)
+    %% Section: Swjs Assets External (3 nodes, 2 edges)
     sw_8d4c780f("sw.js")
     sw_precache_assets_a7030024("PRECACHE_ASSETS<br/><small>sw.js</small>")
+    sw_external_cdn_assets_b7d23fbf("EXTERNAL_CDN_ASSETS<br/><small>sw.js</small>")
     sw_8d4c780f -->|contains| sw_precache_assets_a7030024
+    sw_8d4c780f -->|contains| sw_external_cdn_assets_b7d23fbf
     class sw_8d4c780f module;
     class sw_precache_assets_a7030024 async;
+    class sw_external_cdn_assets_b7d23fbf async;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
     classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
     classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
@@ -2036,6 +2349,14 @@ flowchart LR
 </tr>
 <tr>
   <td>2</td>
+  <td><code>EXTERNAL_CDN_ASSETS</code><br><small style="color:var(--muted)">sw.js</small></td>
+  <td><span class="tag tag-async">Async</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>EXTERNAL_CDN_ASSETS node in sw.js.</td>
+</tr>
+<tr>
+  <td>3</td>
   <td><code>PRECACHE_ASSETS</code><br><small style="color:var(--muted)">sw.js</small></td>
   <td><span class="tag tag-async">Async</span></td>
   <td>External entry / no inbound edge</td>
@@ -2049,12 +2370,211 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>sw.js</code></td><td>2 nodes</td></tr>
+      <tr><td><code>sw.js</code></td><td>3 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: contains x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x2. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 16. Other ====== -->
+<h2 id="other">16. Other</h2>
+<p>Other groups implementation around appjs, geminimd, initfloatingcopilot, closedrawer, mostly in app.js, GEMINI.md. This section covers 14 nodes and 8 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Other (14 nodes, 8 edges)
+    subgraph other_app_js_ccee49be["app.js"]
+        app_initfloatingcopilot_3971f2ea("initFloatingCoPilot()<br/><small>app.js</small>")
+        app_initmobilemenu_2c9902b8("initMobileMenu()<br/><small>app.js</small>")
+        app_initliveclock_e303f0e4("initLiveClock()<br/><small>app.js</small>")
+        app_initparticlecanvas_c274857a("initParticleCanvas()<br/><small>app.js</small>")
+        app_inittypingeffect_e79d9e7f("initTypingEffect()<br/><small>app.js</small>")
+        app_initliveclock_updatetime_30afc20c("updateTime()<br/><small>app.js</small>")
+        app_initparticlecanvas_animate_2d459359("animate()<br/><small>app.js</small>")
+        app_inittypingeffect_type_7ee8df36("type()<br/><small>app.js</small>")
+        app_initfloatingcopilot_opendrawer_3887f249("openDrawer()<br/><small>app.js</small>")
+        app_initfloatingcopilot_closedrawer_315c59b4("closeDrawer()<br/><small>app.js</small>")
+        app_initmobilemenu_closemenu_90d16df1("closeMenu()<br/><small>app.js</small>")
+        app_initmobilemenu_togglemenu_1f746420("toggleMenu()<br/><small>app.js</small>")
+    end
+    subgraph other_GEMINI_md_00b7e308["GEMINI.md"]
+        gemini_468da084("GEMINI.md")
+        gemini_graphify_a7c05bf2("graphify<br/><small>GEMINI.md</small>")
+    end
+    app_initliveclock_e303f0e4 -->|contains| app_initliveclock_updatetime_30afc20c
+    app_initparticlecanvas_c274857a -->|contains| app_initparticlecanvas_animate_2d459359
+    app_inittypingeffect_e79d9e7f -->|contains| app_inittypingeffect_type_7ee8df36
+    app_initfloatingcopilot_3971f2ea -->|contains| app_initfloatingcopilot_opendrawer_3887f249
+    app_initfloatingcopilot_3971f2ea -->|contains| app_initfloatingcopilot_closedrawer_315c59b4
+    app_initmobilemenu_2c9902b8 -->|contains| app_initmobilemenu_closemenu_90d16df1
+    app_initmobilemenu_2c9902b8 -->|contains| app_initmobilemenu_togglemenu_1f746420
+    gemini_468da084 -->|contains| gemini_graphify_a7c05bf2
+    class app_initfloatingcopilot_3971f2ea function;
+    class app_initmobilemenu_2c9902b8 function;
+    class app_initliveclock_e303f0e4 function;
+    class app_initparticlecanvas_c274857a function;
+    class app_inittypingeffect_e79d9e7f function;
+    class app_initliveclock_updatetime_30afc20c function;
+    class app_initparticlecanvas_animate_2d459359 function;
+    class app_inittypingeffect_type_7ee8df36 function;
+    class app_initfloatingcopilot_opendrawer_3887f249 function;
+    class app_initfloatingcopilot_closedrawer_315c59b4 function;
+    class app_initmobilemenu_closemenu_90d16df1 function;
+    class app_initmobilemenu_togglemenu_1f746420 function;
+    class gemini_468da084 concept;
+    class gemini_graphify_a7c05bf2 concept;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>initFloatingCoPilot()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>executeCoPilotQuery()</code><br><small style="color:var(--muted)">app.js</small><br><code>showToast()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td>initFloatingCoPilot() node in app.js.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>closeDrawer()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>closeDrawer() node in app.js.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>openDrawer()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>openDrawer() node in app.js.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>initMobileMenu()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>initMobileMenu() node in app.js.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>closeMenu()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>closeMenu() node in app.js.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>toggleMenu()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>toggleMenu() node in app.js.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>GEMINI.md</code><br><small style="color:var(--muted)">GEMINI.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing GEMINI.md.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>graphify</code><br><small style="color:var(--muted)">GEMINI.md</small></td>
+  <td><span class="tag tag-func">Concept</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Documentation node describing graphify.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>initLiveClock()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>initLiveClock() node in app.js.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>updateTime()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>updateTime() node in app.js.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>initParticleCanvas()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>initParticleCanvas() node in app.js.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>animate()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>animate() node in app.js.</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>initTypingEffect()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>initTypingEffect() node in app.js.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>type()</code><br><small style="color:var(--muted)">app.js</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>type() node in app.js.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>app.js</code></td><td>12 nodes</td></tr>
+<tr><td><code>GEMINI.md</code></td><td>2 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x8. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -2065,18 +2585,18 @@ flowchart LR
   <div class="card">
     <h4>Graph</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>Nodes</td><td>128</td></tr>
-      <tr><td>Edges</td><td>199</td></tr>
+      <tr><td>Nodes</td><td>160</td></tr>
+      <tr><td>Edges</td><td>245</td></tr>
       <tr><td>Hyperedges</td><td>0</td></tr>
-      <tr><td>Communities</td><td>13</td></tr>
-      <tr><td>Documented Sections</td><td>12</td></tr>
+      <tr><td>Communities</td><td>21</td></tr>
+      <tr><td>Documented Sections</td><td>15</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Edge Confidence</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>EXTRACTED</td><td>190</td></tr>
-      <tr><td>INFERRED</td><td>9</td></tr>
+      <tr><td>EXTRACTED</td><td>231</td></tr>
+      <tr><td>INFERRED</td><td>14</td></tr>
       <tr><td>AMBIGUOUS</td><td>0</td></tr>
     </table>
   </div>
@@ -2084,7 +2604,7 @@ flowchart LR
 
 <div style="text-align:center; padding:40px 0; color: var(--muted); font-size:0.9rem;">
   <p>portfolio — Architecture Documentation</p>
-  <p>Generated: 2026-10-17 11:05 UTC · graphify callflow-html</p>
+  <p>Generated: 2026-10-22 18:54 UTC · graphify callflow-html</p>
 </div>
 
 </div><!-- .container -->

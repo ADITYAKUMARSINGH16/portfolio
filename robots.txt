@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Build/tooling artifacts that carry no search value
+Disallow: /graphify-out/
+Disallow: /build_resume_pdf.py
+
+Sitemap: https://adityakumarsingh16.github.io/portfolio/sitemap.xml

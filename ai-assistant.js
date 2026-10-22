@@ -5,7 +5,7 @@
  * (Separate from Aditya's standalone projects like AURA or Nayaya AI).
  */
 
-import { ADITYA_PROFILE, ADITYA_SKILLS, ADITYA_PROJECTS } from './knowledge-base.js';
+import { ADITYA_PROFILE, ADITYA_SKILLS, ADITYA_PROJECTS } from './knowledge-base.js?v=6.5';
 
 export class PortfolioAIAssistant {
   constructor() {
@@ -58,6 +58,43 @@ export class PortfolioAIAssistant {
       this.synth.speak(utterance);
     } catch (e) {
       console.warn("Speech error:", e);
+    }
+  }
+
+  /**
+   * Initializes native Web Speech Recognition (Speech-to-Text) with fallback
+   */
+  initSpeechRecognition(onResult, onStatus) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) return null;
+
+    try {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+
+      recognition.onstart = () => {
+        onStatus && onStatus('listening');
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results?.[0]?.[0]?.transcript || '';
+        onResult && onResult(transcript);
+      };
+
+      recognition.onerror = (event) => {
+        onStatus && onStatus('error', event.error);
+      };
+
+      recognition.onend = () => {
+        onStatus && onStatus('idle');
+      };
+
+      return recognition;
+    } catch (e) {
+      console.warn("Speech recognition init error:", e);
+      return null;
     }
   }
 

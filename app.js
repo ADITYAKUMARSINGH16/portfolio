@@ -3,14 +3,18 @@
  * Main Interactive Application Controller
  */
 
-import { ADITYA_PROFILE, ADITYA_SKILLS, ADITYA_PROJECTS } from './knowledge-base.js';
-import { PortfolioAIAssistant } from './ai-assistant.js';
-import { cyberAudio } from './cyber-audio.js';
+import { ADITYA_PROFILE, ADITYA_SKILLS, ADITYA_PROJECTS } from './knowledge-base.js?v=6.5';
+import { PortfolioAIAssistant } from './ai-assistant.js?v=6.5';
+import { cyberAudio } from './cyber-audio.js?v=6.5';
 
 let lenisInstance = null;
 const coPilot = new PortfolioAIAssistant();
+let lastFocusedElement = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+  /* Phase 4: Recruiter-first section reorder */
+  reorderSections();
+
   initLenisSmoothScroll();
   initCyberAudio();
   initThemeToggle();
@@ -37,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollObserver();
   initArchInspectorModal();
   initCommandPalette();
+  initKeyboardHUD();
+  initRecruiterFastTrack();
   initProjectSandboxModal();
   initParallaxTilt();
   registerServiceWorker();
@@ -76,6 +82,12 @@ function initNetworkTelemetry() {
       ribbonIndicator?.classList.remove('offline');
       pulseDot?.classList.remove('pulse-emerald');
       if (statusText) statusText.innerHTML = 'AIR-GAPPED &amp; OFFLINE AI R&amp;D';
+      document.querySelectorAll('#fallback-metric-leetcode, #fallback-metric-gfg, #fallback-metric-github').forEach(fb => {
+        fb.style.display = 'none';
+      });
+      document.querySelectorAll('#img-metric-leetcode, #img-metric-gfg, #img-metric-github').forEach(img => {
+        img.style.display = 'block';
+      });
     } else {
       ribbonIndicator?.classList.add('offline');
       pulseDot?.classList.add('pulse-emerald');
@@ -179,22 +191,31 @@ function initThemeToggle() {
   const icon = document.getElementById('theme-toggle-icon');
   const html = document.documentElement;
 
-  // Retrieve saved preference or default to dark
-  const savedTheme = localStorage.getItem('aditya_theme') || 'dark';
-  html.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme, icon);
-  updateMetricsCardsTheme(savedTheme);
+  // Retrieve saved preference, fall back to system preference, then dark
+  const savedTheme = localStorage.getItem('aditya_theme');
+  const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  const initialTheme = savedTheme || systemTheme;
+  html.setAttribute('data-theme', initialTheme);
+  updateThemeIcon(initialTheme, icon);
+  updateMetricsCardsTheme(initialTheme);
 
   toggleBtn?.addEventListener('click', () => {
     cyberAudio.play('chime');
     const currentTheme = html.getAttribute('data-theme') || 'dark';
     const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-    html.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('aditya_theme', nextTheme);
-    updateThemeIcon(nextTheme, icon);
-    updateMetricsCardsTheme(nextTheme);
-    showToast(`Switched to ${nextTheme === 'dark' ? 'Neural Obsidian Dark' : 'Studio Light'} mode`);
+    // Cross-fade: dim body, switch theme, restore opacity
+    document.body.classList.add('theme-crossfade');
+    setTimeout(() => {
+      html.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('aditya_theme', nextTheme);
+      updateThemeIcon(nextTheme, icon);
+      updateMetricsCardsTheme(nextTheme);
+      showToast(`Switched to ${nextTheme === 'dark' ? 'Neural Obsidian Dark' : 'Studio Light'} mode`);
+    }, 160);
+    setTimeout(() => {
+      document.body.classList.remove('theme-crossfade');
+    }, 320);
   });
 }
 
@@ -207,30 +228,162 @@ function updateThemeIcon(theme, iconEl) {
   }
 }
 
+/* --------------------------------------------------------------------------
+   FOCUS TRAP & RETURN (Accessibility: modal keyboard navigation)
+   -------------------------------------------------------------------------- */
+const FOCUSABLE_SELECTORS = [
+  'button:not([disabled])',
+  'a[href]',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])'
+].join(',');
+
+/**
+ * Visibility check that works for `position: fixed` overlays.
+ * `offsetParent` is null for fixed-position elements, so it cannot be used here.
+ */
+function isFocusableVisible(el) {
+  if (!el || !el.isConnected) return false;
+  if (el.closest('.hidden, [aria-hidden="true"]')) return false;
+  const style = window.getComputedStyle(el);
+  if (style.display === 'none' || style.visibility === 'hidden') return false;
+  return el.getClientRects().length > 0;
+}
+
+function trapFocus(modal) {
+  if (!modal) return;
+  // Don't re-trap if already trapping this modal
+  if (modal._focusTrapHandler) return;
+
+  lastFocusedElement = document.activeElement;
+
+  const getFocusable = () => Array.from(modal.querySelectorAll(FOCUSABLE_SELECTORS))
+    .filter(isFocusableVisible);
+
+  const focusables = getFocusable();
+  if (focusables.length) {
+    (focusables.find(el => el.dataset && el.dataset.autofocus) || focusables[0]).focus();
+  }
+
+  const focusTrapHandler = (e) => {
+    if (e.key !== 'Tab') return;
+    const items = getFocusable();
+    if (!items.length) return;
+    const firstEl = items[0];
+    const lastEl = items[items.length - 1];
+    const currentIndex = items.indexOf(document.activeElement);
+
+    e.preventDefault();
+
+    if (e.shiftKey) {
+      if (currentIndex <= 0) {
+        lastEl.focus();
+      } else {
+        items[currentIndex - 1].focus();
+      }
+    } else {
+      if (currentIndex === -1 || currentIndex === items.length - 1) {
+        firstEl.focus();
+      } else {
+        items[currentIndex + 1].focus();
+      }
+    }
+  };
+
+  modal.addEventListener('keydown', focusTrapHandler);
+  modal._focusTrapHandler = focusTrapHandler;
+}
+
+function returnFocus(modal) {
+  if (modal && modal._focusTrapHandler) {
+    modal.removeEventListener('keydown', modal._focusTrapHandler);
+    modal._focusTrapHandler = null;
+  }
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function' && document.contains(lastFocusedElement)) {
+    lastFocusedElement.focus();
+  }
+  lastFocusedElement = null;
+}
+
+/* Phase 4: Recruiter-first section reorder.
+   Moves Engineering Arsenal up (right after Hero) and Terminal down (right before Footer)
+   so recruiters see skills before projects, and the CLI becomes a secondary exploration. */
+function reorderSections() {
+  const hero = document.querySelector('header#hero');
+  const systems = document.getElementById('systems');
+  const arsenal = document.getElementById('arsenal');
+  const contact = document.getElementById('contact');
+  const terminal = document.getElementById('terminal-section');
+  const footer = document.querySelector('footer');
+
+  if (!hero || !systems || !arsenal || !contact || !terminal || !footer) return;
+
+  const body = document.body;
+
+  // Move Arsenal immediately after Hero (before Systems)
+  body.insertBefore(arsenal, systems);
+
+  // Move Terminal immediately before Footer (after Contact)
+  body.insertBefore(terminal, footer);
+}
+
 /* ==========================================================================
    METRIC STAT CARDS (THEME SYNC & GRACEFUL FALLBACKS)
    ========================================================================== */
 function initMetricsCards() {
   const cards = [
-    { imgId: 'img-metric-leetcode', fallbackId: 'fallback-metric-leetcode' },
-    { imgId: 'img-metric-gfg', fallbackId: 'fallback-metric-gfg' },
-    { imgId: 'img-metric-github', fallbackId: 'fallback-metric-github' }
+    { imgId: 'img-metric-leetcode', fallbackId: 'fallback-metric-leetcode', wrapId: 'wrap-metric-leetcode' },
+    { imgId: 'img-metric-gfg', fallbackId: 'fallback-metric-gfg', wrapId: 'wrap-metric-gfg' },
+    { imgId: 'img-metric-github', fallbackId: 'fallback-metric-github', wrapId: 'wrap-metric-github' }
   ];
 
-  cards.forEach(({ imgId, fallbackId }) => {
+  cards.forEach(({ imgId, fallbackId, wrapId }) => {
     const img = document.getElementById(imgId);
     const fallback = document.getElementById(fallbackId);
+    const wrap = document.getElementById(wrapId);
     if (!img || !fallback) return;
 
-    img.addEventListener('error', () => {
-      img.style.display = 'none';
-      fallback.style.display = 'flex';
-    });
-
-    img.addEventListener('load', () => {
+    const showImage = () => {
       img.style.display = 'block';
       fallback.style.display = 'none';
-    });
+      if (wrap) wrap.classList.remove('is-loading');
+    };
+
+    const showFallback = () => {
+      img.style.display = 'none';
+      fallback.style.display = 'flex';
+      if (wrap) wrap.classList.remove('is-loading');
+    };
+
+    // If already loaded and valid (e.g. from browser cache)
+    if (img.complete && img.naturalWidth > 0) {
+      showImage();
+    } else {
+      if (wrap) wrap.classList.add('is-loading');
+
+      // 8s timeout safeguard in case 3rd party API server is completely unreachable
+      const timeoutId = setTimeout(() => {
+        if (!img.complete || img.naturalWidth === 0) {
+          showFallback();
+        }
+      }, 8000);
+
+      img.addEventListener('load', () => {
+        clearTimeout(timeoutId);
+        if (img.naturalWidth > 0) {
+          showImage();
+        } else {
+          showFallback();
+        }
+      }, { once: true });
+
+      img.addEventListener('error', () => {
+        clearTimeout(timeoutId);
+        showFallback();
+      }, { once: true });
+    }
   });
 
   const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
@@ -240,21 +393,35 @@ function initMetricsCards() {
 function updateMetricsCardsTheme(theme) {
   const isLight = theme === 'light';
 
+  const updateSrc = (img, newSrc) => {
+    if (!img) return;
+    if (img.getAttribute('src') !== newSrc && img.src !== newSrc) {
+      img.src = newSrc;
+    }
+  };
+
   const lcImg = document.getElementById('img-metric-leetcode');
   if (lcImg) {
-    lcImg.src = `https://leetcard.jacoblin.cool/singhaditya7864?theme=${isLight ? 'light' : 'dark'}&font=Fira%20Code`;
+    updateSrc(lcImg, `https://leetcard.jacoblin.cool/singhaditya7864?theme=${isLight ? 'light' : 'dark'}&font=Fira%20Code`);
   }
 
   const gfgImg = document.getElementById('img-metric-gfg');
   if (gfgImg) {
-    gfgImg.src = `https://gfgstatscard.vercel.app/singhaditya7864?theme=${isLight ? 'light' : 'dark'}`;
+    updateSrc(gfgImg, `https://gfgstatscard.vercel.app/singhaditya7864?theme=${isLight ? 'light' : 'dark'}`);
   }
 
   const ghImg = document.getElementById('img-metric-github');
   if (ghImg) {
-    ghImg.src = isLight
+    updateSrc(ghImg, isLight
       ? 'https://github-readme-stats.vercel.app/api?username=ADITYAKUMARSINGH16&show_icons=true&theme=default&hide_border=true&bg_color=ffffff&title_color=0284c7&icon_color=0284c7&text_color=0f172a'
-      : 'https://github-readme-stats.vercel.app/api?username=ADITYAKUMARSINGH16&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=38bdf8&text_color=e2e8f0';
+      : 'https://github-readme-stats.vercel.app/api?username=ADITYAKUMARSINGH16&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=38bdf8&text_color=e2e8f0');
+  }
+
+  const snakeImg = document.getElementById('img-metric-snake');
+  if (snakeImg) {
+    updateSrc(snakeImg, isLight
+      ? 'https://raw.githubusercontent.com/ADITYAKUMARSINGH16/ADITYAKUMARSINGH16/output/github-contribution-grid-snake.svg'
+      : 'https://raw.githubusercontent.com/ADITYAKUMARSINGH16/ADITYAKUMARSINGH16/output/github-contribution-grid-snake-dark.svg');
   }
 }
 
@@ -265,18 +432,38 @@ function initResumeModal() {
   const modal = document.getElementById('resume-dossier-modal');
   const closeBtn = document.getElementById('btn-close-resume-modal');
   const copyBtn = document.getElementById('btn-copy-resume-summary');
-  const heroBtn = document.getElementById('hero-resume-btn');
+  const heroBtn = document.getElementById('resume-download') || document.getElementById('hero-resume-btn');
   const heroPreviewBtn = document.getElementById('hero-preview-cv-btn');
   const navBtn = document.getElementById('nav-resume-btn');
   const footerLink = document.getElementById('footer-resume-link');
 
   if (!modal) return;
 
+  // Handle direct PWA shortcut / deep link #resume-download
+  function checkResumeDeepLink() {
+    if (window.location.hash === '#resume-download') {
+      const target = document.getElementById('resume-download') || heroBtn;
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.classList.add('pulse-highlight');
+          setTimeout(() => target.classList.remove('pulse-highlight'), 3000);
+          showToast('Official Resume Ready for Download 📄');
+        }, 350);
+      }
+    }
+  }
+
+  checkResumeDeepLink();
+  window.addEventListener('hashchange', checkResumeDeepLink);
+
   function openResume() {
     modal.classList.add('active');
+    trapFocus(modal);
   }
 
   function closeResume() {
+    returnFocus(modal);
     modal.classList.remove('active');
   }
 
@@ -326,9 +513,7 @@ CERTIFICATIONS:
 - Android Developer Virtual Internship – EduSkills (Google for Developers) [Sep – Nov 2023]
 - Networking Virtual Internship – EduSkills (Juniper Networks) [Jan – Mar 2024]`;
 
-    navigator.clipboard.writeText(summary).then(() => {
-      showToast('Official Resume summary copied to clipboard! 📋');
-    });
+    copyToClipboard(summary, 'Official Resume summary copied to clipboard! 📋');
   });
 }
 
@@ -343,20 +528,25 @@ function initArchInspectorModal() {
   const closeBtn = document.getElementById('btn-close-arch-inspector');
   const askBtn = document.getElementById('inspector-ask-copilot-btn');
 
-  closeBtn?.addEventListener('click', () => modal?.classList.remove('active'));
+  function closeInspector() {
+    returnFocus(modal);
+    modal?.classList.remove('active');
+  }
+
+  closeBtn?.addEventListener('click', closeInspector);
   modal?.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.remove('active');
+    if (e.target === modal) closeInspector();
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal?.classList.contains('active')) {
-      modal.classList.remove('active');
+      closeInspector();
     }
   });
 
   askBtn?.addEventListener('click', () => {
     if (!activeInspectorProject) return;
-    modal?.classList.remove('active');
+    closeInspector();
     const proj = ADITYA_PROJECTS.find(p => p.id === activeInspectorProject);
     const step = proj?.architecture?.[activeInspectorStep];
     const query = `Explain how ${proj?.title} implements ${step?.title || 'its architecture'}`;
@@ -380,6 +570,7 @@ function openArchInspector(projectId, stepIndex = 0) {
 
   renderInspectorStep(proj, stepIndex);
   modal?.classList.add('active');
+  trapFocus(modal);
 }
 
 function renderInspectorStep(proj, stepIndex) {
@@ -422,6 +613,8 @@ function renderInspectorStep(proj, stepIndex) {
       btn.addEventListener('click', (e) => {
         const idx = parseInt(e.currentTarget.getAttribute('data-step-idx'), 10);
         renderInspectorStep(proj, idx);
+        const nextActive = switcher.querySelector(`.step-switch-btn[data-step-idx="${idx}"]`);
+        nextActive?.focus();
       });
     });
   }
@@ -438,17 +631,20 @@ function initProjectSandboxModal() {
 
   if (!modal) return;
 
-  closeBtn?.addEventListener('click', () => {
+  function closeSandbox() {
+    returnFocus(modal);
     modal.classList.remove('active');
-  });
+  }
+
+  closeBtn?.addEventListener('click', closeSandbox);
 
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.remove('active');
+    if (e.target === modal) closeSandbox();
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
+      closeSandbox();
     }
   });
 
@@ -735,6 +931,7 @@ function openProjectSandbox(projectId = 'wiz') {
   });
 
   modal.classList.add('active');
+  trapFocus(modal);
   cyberAudio.play('whoosh');
 }
 
@@ -993,14 +1190,26 @@ function renderArchitectureProjects(filter = 'all') {
             <span><i class="fa-solid fa-network-wired"></i> System Architecture Flow</span>
             <span class="flow-interactive-badge"><i class="fa-solid fa-arrow-pointer"></i> Click step to inspect</span>
           </div>
+          <!-- Dynamic Animated Architecture Pipeline Track -->
+          <div class="pipeline-track-container">
+            <div class="pipeline-node-chips" role="toolbar" aria-label="Architecture pipeline stages for ${escapeHtml(proj.title)}">
+              ${proj.architecture.map((s, idx) => `
+                <div class="pipeline-chip interactive-step" role="button" tabindex="0" data-project-id="${proj.id}" data-step-index="${idx}" aria-label="Inspect ${escapeHtml(s.title)} step" title="Inspect node: ${escapeHtml(s.title)}">
+                  <span class="chip-step">${s.step}</span>
+                  <span class="chip-title">${s.title}</span>
+                </div>
+              `).join('')}
+            </div>
+            <div class="pipeline-pulse-beam" aria-hidden="true"></div>
+          </div>
           <ul class="flow-steps-list">
             ${proj.architecture.map((s, idx) => `
-              <li class="flow-step-item interactive-step" data-project-id="${proj.id}" data-step-index="${idx}" title="Click to inspect this architectural node">
+              <li class="flow-step-item interactive-step" role="button" tabindex="0" data-project-id="${proj.id}" data-step-index="${idx}" aria-label="Inspect ${escapeHtml(s.title)}: ${escapeHtml(s.desc)}" title="Click to inspect this architectural node">
                 <span class="step-num">${s.step}</span>
                 <div>
                   <span class="step-name">${s.title}:</span> ${s.desc}
                 </div>
-                <i class="fa-solid fa-chevron-right step-arrow-icon"></i>
+                <i class="fa-solid fa-chevron-right step-arrow-icon" aria-hidden="true"></i>
               </li>
             `).join('')}
           </ul>
@@ -1035,11 +1244,19 @@ function renderArchitectureProjects(filter = 'all') {
 
   // Attach Step Inspector triggers
   container.querySelectorAll('.interactive-step').forEach(stepEl => {
-    stepEl.addEventListener('click', (e) => {
+    const triggerStep = (e) => {
+      if (e) e.preventDefault();
       cyberAudio.play('ping');
-      const projId = e.currentTarget.getAttribute('data-project-id');
-      const stepIdx = parseInt(e.currentTarget.getAttribute('data-step-index'), 10) || 0;
+      const projId = stepEl.getAttribute('data-project-id');
+      const stepIdx = parseInt(stepEl.getAttribute('data-step-index'), 10) || 0;
       openArchInspector(projId, stepIdx);
+    };
+
+    stepEl.addEventListener('click', triggerStep);
+    stepEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        triggerStep(e);
+      }
     });
   });
 
@@ -1231,6 +1448,59 @@ function initAICoPilotChat() {
     }
   });
 
+  // Handle Speech Recognition (Voice Input Mic)
+  const micBtn = document.getElementById('btn-ai-mic');
+  let recognition = null;
+  let isListening = false;
+
+  if (micBtn) {
+    recognition = coPilot.initSpeechRecognition(
+      (transcript) => {
+        if (transcript) {
+          input.value = transcript;
+          cyberAudio.play('ping');
+          form?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+        }
+      },
+      (status, error) => {
+        if (status === 'listening') {
+          isListening = true;
+          micBtn.classList.add('listening');
+          cyberAudio.play('ping');
+          showToast('Listening... Speak your query 🎙️');
+        } else if (status === 'error') {
+          isListening = false;
+          micBtn.classList.remove('listening');
+          showToast(`Speech recognition: ${error || 'Mic unavailable'}`);
+        } else {
+          isListening = false;
+          micBtn.classList.remove('listening');
+        }
+      }
+    );
+
+    if (!recognition) {
+      micBtn.title = 'Speech Recognition not supported in this browser';
+      micBtn.style.opacity = '0.5';
+    }
+
+    micBtn.addEventListener('click', () => {
+      if (!recognition) {
+        showToast('Speech Recognition not supported in this browser');
+        return;
+      }
+      if (isListening) {
+        recognition.stop();
+      } else {
+        try {
+          recognition.start();
+        } catch (err) {
+          console.warn('Recognition start error:', err);
+        }
+      }
+    });
+  }
+
   // Handle Form Submit
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1397,6 +1667,8 @@ function initFloatingCoPilot() {
     drawer?.classList.remove('hidden');
     launcherWrap?.classList.add('active-open');
     if (launcherIcon) launcherIcon.className = 'fa-solid fa-xmark';
+    // Non-modal drawer: focus is moved in, but not trapped (page remains reachable).
+    lastFocusedElement = document.activeElement;
     setTimeout(() => {
       input?.focus();
       if (messages) messages.scrollTop = messages.scrollHeight;
@@ -1407,6 +1679,10 @@ function initFloatingCoPilot() {
     drawer?.classList.add('hidden');
     launcherWrap?.classList.remove('active-open');
     if (launcherIcon) launcherIcon.className = 'fa-solid fa-brain';
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function' && document.contains(lastFocusedElement)) {
+      lastFocusedElement.focus();
+    }
+    lastFocusedElement = null;
   }
 
   launcher?.addEventListener('click', (e) => {
@@ -1438,6 +1714,72 @@ function initFloatingCoPilot() {
       closeDrawer();
     }
   });
+
+  // Floating Drawer Voice Readout Toggle
+  const drawerVoiceToggle = document.getElementById('drawer-voice-toggle');
+  const drawerVoiceIcon = document.getElementById('drawer-voice-icon');
+  drawerVoiceToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isVoiceActive = coPilot.toggleSpeech();
+    if (drawerVoiceIcon) {
+      drawerVoiceIcon.className = isVoiceActive ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+    }
+    drawerVoiceToggle.classList.toggle('active', isVoiceActive);
+    showToast(isVoiceActive ? 'Voice Readout Active 🔊' : 'Voice Muted 🔇');
+  });
+
+  // Floating Drawer Voice Mic Input
+  const drawerMic = document.getElementById('btn-drawer-mic');
+  let drawerRecognition = null;
+  let isDrawerListening = false;
+
+  if (drawerMic) {
+    drawerRecognition = coPilot.initSpeechRecognition(
+      (transcript) => {
+        if (transcript) {
+          input.value = transcript;
+          cyberAudio.play('ping');
+          form?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+        }
+      },
+      (status, error) => {
+        if (status === 'listening') {
+          isDrawerListening = true;
+          drawerMic.classList.add('listening');
+          cyberAudio.play('ping');
+          showToast('Listening... Speak your query 🎙️');
+        } else if (status === 'error') {
+          isDrawerListening = false;
+          drawerMic.classList.remove('listening');
+          showToast(`Speech recognition: ${error || 'Mic unavailable'}`);
+        } else {
+          isDrawerListening = false;
+          drawerMic.classList.remove('listening');
+        }
+      }
+    );
+
+    if (!drawerRecognition) {
+      drawerMic.title = 'Speech Recognition not supported in this browser';
+      drawerMic.style.opacity = '0.5';
+    }
+
+    drawerMic.addEventListener('click', () => {
+      if (!drawerRecognition) {
+        showToast('Speech Recognition not supported in this browser');
+        return;
+      }
+      if (isDrawerListening) {
+        drawerRecognition.stop();
+      } else {
+        try {
+          drawerRecognition.start();
+        } catch (err) {
+          console.warn('Recognition start error:', err);
+        }
+      }
+    });
+  }
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1520,7 +1862,7 @@ function initCyberTerminal() {
       resLine.innerHTML = `
         <span class="term-cyan">[AIR-GAPPED OFFLINE ARCHITECTURE STATUS]</span><br/>
         &bull; <strong>Link State:</strong> ${isOnline ? '<span class="term-green">ONLINE (Live Telemetry)</span>' : '<span class="term-emerald">100% AIR-GAPPED (Disconnected)</span>'}<br/>
-        &bull; <strong>Service Worker:</strong> Registered &amp; Active (Cache: aditya-sys-v4.0)<br/>
+        &bull; <strong>Service Worker:</strong> Registered &amp; Active (Cache: aditya-sys-v5.0)<br/>
         &bull; <strong>Pre-Cached Subsystems:</strong> Core UI, Knowledge Base, Local AI Co-Pilot, Speech Engine, 1-Page Resume PDF<br/>
         &bull; <strong>Air-Gap Guarantee:</strong> 100% of reasoning executes on localhost. Zero external server dependencies required.
       `;
@@ -1622,6 +1964,7 @@ function initCyberTerminal() {
     } else if (cleanCmd.includes('resume') || cleanCmd.includes('cv')) {
       const modal = document.getElementById('resume-dossier-modal');
       modal?.classList.add('active');
+      trapFocus(modal);
       resLine.innerHTML = `
         <span class="term-cyan">[SYSTEM DOSSIER: RESUME &amp; CREDENTIALS]</span><br/>
         &bull; <strong>Candidate:</strong> Aditya Kumar Singh (B.Tech CSBS @ Techno India University, CGPA: 7.54)<br/>
@@ -1750,6 +2093,9 @@ function initCommandPalette() {
     { title: "Initiate Transmission / Contact", desc: "Direct phone, email, and transmission channels", cat: "Navigation", icon: "fa-satellite-dish", action: () => scrollToSection('contact') },
 
     // Actions & Credentials
+    { title: "Recruiter Fast-Track (30s Brief)", desc: "Executive brief, target roles, CGPA, and key distinctions", cat: "Actions", icon: "fa-bolt", action: () => { closePalette(); const m = document.getElementById('recruiter-fast-track-modal'); if (m) { m.classList.add('active'); trapFocus(m); } } },
+    { title: "Keyboard Shortcuts HUD (?)", desc: "View all tactical keyboard hotkeys for power users", cat: "Actions", icon: "fa-keyboard", action: () => { closePalette(); const m = document.getElementById('keyboard-hud-modal'); if (m) { m.classList.add('active'); trapFocus(m); } } },
+    { title: "Voice Input (Speech-to-Text)", desc: "Dictate query directly to the Portfolio AI Co-Pilot", cat: "Actions", icon: "fa-microphone", action: () => { closePalette(); document.getElementById('btn-ai-mic')?.click(); } },
     { title: "Download Official Resume PDF", desc: "1-Page Engineering Resume (LaTeX, verified)", cat: "Actions", icon: "fa-file-pdf", action: () => downloadResume() },
     { title: "Preview Resume Dossier", desc: "Interactive credentials and qualifications modal", cat: "Actions", icon: "fa-id-card", action: () => openResumeModal() },
     { title: "Air-Gapped Offline Status", desc: "Inspect Service Worker caching & zero-cloud integrity", cat: "Actions", icon: "fa-shield-halved", action: () => { closePalette(); const termInput = document.getElementById('terminal-cli-input'); if (termInput) { termInput.value = 'aditya --offline'; termInput.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })); document.getElementById('terminal-section')?.scrollIntoView({ behavior: 'smooth' }); } } },
@@ -1770,6 +2116,7 @@ function initCommandPalette() {
   function openPalette() {
     cyberAudio.play('whoosh');
     modal.classList.add('active');
+    trapFocus(modal);
     input.value = '';
     selectedIndex = 0;
     renderResults('');
@@ -1777,6 +2124,7 @@ function initCommandPalette() {
   }
 
   function closePalette() {
+    returnFocus(modal);
     modal.classList.remove('active');
   }
 
@@ -1806,6 +2154,7 @@ function initCommandPalette() {
     cyberAudio.play('whoosh');
     const m = document.getElementById('resume-dossier-modal');
     m?.classList.add('active');
+    trapFocus(m);
   }
 
   function renderResults(filterText) {
@@ -1836,9 +2185,9 @@ function initCommandPalette() {
       itemsInCat.forEach(item => {
         const isSel = flatIdx === selectedIndex;
         html += `
-          <div class="cmd-item ${isSel ? 'selected' : ''}" data-cmd-idx="${flatIdx}">
+          <div class="cmd-item ${isSel ? 'selected' : ''}" data-cmd-idx="${flatIdx}" role="option" aria-selected="${isSel}" tabindex="-1">
             <div class="cmd-item-left">
-              <span class="cmd-item-icon"><i class="fa-solid ${item.icon}"></i></span>
+              <span class="cmd-item-icon"><i class="fa-solid ${item.icon}" aria-hidden="true"></i></span>
               <div class="cmd-item-meta">
                 <div class="cmd-item-title">${item.title}</div>
                 <div class="cmd-item-desc">${item.desc}</div>
@@ -1927,6 +2276,172 @@ function initCommandPalette() {
       }
     }
   });
+
+  // Global Escape key listener to close command palette from anywhere
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closePalette();
+    }
+  });
+}
+
+/* ==========================================================================
+   10.5. KEYBOARD SHORTCUTS HUD MODAL (PRESS ?)
+   ========================================================================== */
+function initKeyboardHUD() {
+  const modal = document.getElementById('keyboard-hud-modal');
+  const closeBtn = document.getElementById('btn-close-hud-modal');
+  const triggerBtn = document.getElementById('btn-shortcuts-hud');
+
+  if (!modal) return;
+
+  function openHUD() {
+    cyberAudio.play('whoosh');
+    modal.classList.add('active');
+    trapFocus(modal);
+  }
+
+  function closeHUD() {
+    returnFocus(modal);
+    modal.classList.remove('active');
+  }
+
+  triggerBtn?.addEventListener('click', openHUD);
+  closeBtn?.addEventListener('click', closeHUD);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeHUD();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeHUD();
+    }
+  });
+
+  // Global Tactical Hotkeys Listener
+  window.addEventListener('keydown', (e) => {
+    // Ignore hotkeys when user is actively typing in inputs
+    const active = document.activeElement;
+    const isTyping = active && (
+      active.tagName === 'INPUT' ||
+      active.tagName === 'TEXTAREA' ||
+      active.tagName === 'SELECT' ||
+      active.isContentEditable
+    );
+    if (isTyping) return;
+
+    // Check if any modal is currently active
+    const isModalActive = !!document.querySelector('.modal-overlay.active, .cmd-palette-overlay.active');
+
+    if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+      e.preventDefault();
+      if (modal.classList.contains('active')) {
+        closeHUD();
+      } else {
+        openHUD();
+      }
+    } else if (!isModalActive && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      if (e.key.toLowerCase() === 't') {
+        e.preventDefault();
+        document.getElementById('btn-theme-toggle')?.click();
+      } else if (e.key.toLowerCase() === 'm') {
+        e.preventDefault();
+        document.getElementById('btn-sound-toggle')?.click();
+      } else if (e.key.toLowerCase() === 'r') {
+        e.preventDefault();
+        const resumeModal = document.getElementById('resume-dossier-modal');
+        if (resumeModal) {
+          resumeModal.classList.add('active');
+          trapFocus(resumeModal);
+        }
+      } else if (e.key.toLowerCase() === 'f') {
+        e.preventDefault();
+        const recModal = document.getElementById('recruiter-fast-track-modal');
+        if (recModal) {
+          recModal.classList.add('active');
+          trapFocus(recModal);
+        }
+      } else if (e.key.toLowerCase() === 'a') {
+        e.preventDefault();
+        document.getElementById('floating-ai-launcher')?.click();
+      } else if (e.key === '`' || e.key === '~') {
+        e.preventDefault();
+        const cliInput = document.getElementById('terminal-cli-input');
+        const termSection = document.getElementById('terminal-section');
+        if (termSection && cliInput) {
+          termSection.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => cliInput.focus(), 350);
+          showToast('Focused Terminal CLI (aditya@cli:~$)');
+        }
+      }
+    }
+  });
+}
+
+/* ==========================================================================
+   10.6. RECRUITER FAST-TRACK DOSSIER (30-SECOND EXECUTIVE BRIEF)
+   ========================================================================== */
+function initRecruiterFastTrack() {
+  const modal = document.getElementById('recruiter-fast-track-modal');
+  const closeBtn = document.getElementById('btn-close-recruiter-modal');
+  const heroBtn = document.getElementById('hero-fast-track-btn');
+  const copyBtn = document.getElementById('btn-copy-recruiter-pitch');
+
+  if (!modal) return;
+
+  function openRecruiterModal() {
+    cyberAudio.play('whoosh');
+    modal.classList.add('active');
+    trapFocus(modal);
+  }
+
+  function closeRecruiterModal() {
+    returnFocus(modal);
+    modal.classList.remove('active');
+  }
+
+  heroBtn?.addEventListener('click', openRecruiterModal);
+  closeBtn?.addEventListener('click', closeRecruiterModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeRecruiterModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeRecruiterModal();
+    }
+  });
+
+  // Handle deep link #recruiter or ?view=recruiter
+  function checkRecruiterDeepLink() {
+    const hash = window.location.hash;
+    const params = new URLSearchParams(window.location.search);
+    if (hash === '#recruiter' || params.get('view') === 'recruiter') {
+      setTimeout(() => openRecruiterModal(), 300);
+    }
+  }
+
+  checkRecruiterDeepLink();
+  window.addEventListener('hashchange', checkRecruiterDeepLink);
+
+  // Copy 30s pitch
+  copyBtn?.addEventListener('click', () => {
+    const pitch = `ADITYA KUMAR SINGH — 30-SECOND CANDIDATE BRIEF
+Role Focus: AI Engineer / Systems & Backend Engineer / Autonomous Systems
+Academics: B.Tech in CSBS @ Techno India University (CGPA: 7.54/10 • Grad: July 2026)
+Core Specializations:
+• Autonomous Voice & Vision AI (AURA): Local FastAPI, Ollama/Gemma, STT/TTS, OCR
+• Air-Gapped Multi-Agent RAG (Nyaya AI): 4-role judicial consensus, Pinecone, Docker
+• Hardware UDP Socket Datagrams (WiZ-Bulb-Sync): Sub-50ms network protocol
+• 300+ Solved algorithmic problems across LeetCode & GeeksforGeeks
+Certifications: Palo Alto Networks (Cybersecurity), Google for Developers (Android), Juniper Networks (Networking)
+Direct Contact: singhaditya7864@gmail.com | (+91) 7273963985
+Portfolio: https://adityakumarsingh16.github.io/portfolio/`;
+
+    copyToClipboard(pitch, '30s Recruiter Brief copied to clipboard! 📋');
+  });
 }
 
 /* ==========================================================================
@@ -1939,9 +2454,7 @@ function initContactHub() {
   const statusBox = document.getElementById('transmission-status');
 
   copyEmailBtn?.addEventListener('click', () => {
-    navigator.clipboard.writeText('singhaditya7864@gmail.com').then(() => {
-      showToast('Email singhaditya7864@gmail.com copied! 📋');
-    });
+    copyToClipboard('singhaditya7864@gmail.com', 'Email singhaditya7864@gmail.com copied! 📋');
   });
 
   function getTransmissionData() {
@@ -1964,29 +2477,35 @@ function initContactHub() {
 
     showToast(`Launching mail client for ${name}... ✉️`);
     
+    // Immediate visual feedback in status box
     if (statusBox) {
       statusBox.style.display = 'block';
-      statusBox.innerHTML = `
-        <i class="fa-solid fa-paper-plane" style="color: var(--accent-cyan); margin-right: 6px;"></i>
-        Mail client invoked for <strong>${escapeHtml(name)}</strong>! If your email software did not open automatically, click <strong>Copy Transmission</strong> or email directly at <a href="mailto:singhaditya7864@gmail.com" class="term-cyan">singhaditya7864@gmail.com</a>.
-      `;
+      statusBox.innerHTML = `<i class="fa-solid fa-paper-plane" style="color: var(--accent-cyan); margin-right: 6px;"></i> Launching mail client for <strong>${escapeHtml(name)}</strong>...`;
+      setTimeout(() => { statusBox.style.display = 'none'; }, 6000);
     }
+
+    // Follow-up confirmation once mail client is invoked
+    setTimeout(() => {
+      if (statusBox) {
+        statusBox.style.display = 'block';
+        statusBox.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--accent-emerald); margin-right: 6px;"></i> Mail client invoked for <strong>${escapeHtml(name)}</strong>! If your email software did not open automatically, click <strong>Copy Transmission</strong> or email directly at <a href="mailto:singhaditya7864@gmail.com" class="term-cyan">singhaditya7864@gmail.com</a>.`;
+        setTimeout(() => { statusBox.style.display = 'none'; }, 6000);
+      }
+    }, 1200);
   });
 
   copyTransmissionBtn?.addEventListener('click', () => {
     const { name, email, subject, message } = getTransmissionData();
     const payload = `To: singhaditya7864@gmail.com\nSubject: [Transmission] ${subject}\nFrom: ${name} (${email})\n\n${message || '(No message body provided)'}`;
 
-    navigator.clipboard.writeText(payload).then(() => {
-      showToast('Transmission payload copied! 📋');
-      if (statusBox) {
-        statusBox.style.display = 'block';
-        statusBox.innerHTML = `
-          <i class="fa-solid fa-circle-check" style="color: var(--accent-emerald); margin-right: 6px;"></i>
-          Payload copied to clipboard! You can paste directly into Gmail, Outlook, or any webmail service addressed to <strong>singhaditya7864@gmail.com</strong>.
-        `;
-      }
-    });
+    copyToClipboard(payload, 'Transmission payload copied! 📋');
+    if (statusBox) {
+      statusBox.style.display = 'block';
+      statusBox.innerHTML = `
+        <i class="fa-solid fa-circle-check" style="color: var(--accent-emerald); margin-right: 6px;"></i>
+        Payload copied to clipboard! You can paste directly into Gmail, Outlook, or any webmail service addressed to <strong>singhaditya7864@gmail.com</strong>.
+      `;
+    }
   });
 }
 
@@ -2004,15 +2523,27 @@ function initSettingsModal() {
 
   if (!openBtn || !modal) return;
 
+  function closeSettings() {
+    returnFocus(modal);
+    modal.classList.remove('active');
+  }
+
   openBtn.addEventListener('click', () => {
     providerSelect.value = coPilot.customProvider;
     apiKeyInput.value = coPilot.customApiKey;
     apiKeyGroup.style.display = providerSelect.value === 'local' ? 'none' : 'block';
     modal.classList.add('active');
+    trapFocus(modal);
   });
 
-  closeBtn?.addEventListener('click', () => modal.classList.remove('active'));
-  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+  closeBtn?.addEventListener('click', closeSettings);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeSettings(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeSettings();
+    }
+  });
 
   providerSelect?.addEventListener('change', () => {
     apiKeyGroup.style.display = providerSelect.value === 'local' ? 'none' : 'block';
@@ -2029,7 +2560,7 @@ function initSettingsModal() {
     localStorage.setItem('portfolio_ai_provider', prov);
     localStorage.setItem('portfolio_ai_api_key', key);
 
-    modal.classList.remove('active');
+    closeSettings();
     showToast(`AI Provider set to: ${prov.toUpperCase()}`);
   });
 }
@@ -2046,6 +2577,8 @@ function initMobileMenu() {
 
   function closeMenu() {
     menu.classList.remove('mobile-open');
+    document.body.classList.remove('no-scroll');
+    if (lenisInstance) lenisInstance.start();
     if (icon) {
       icon.className = 'fa-solid fa-bars';
     }
@@ -2053,6 +2586,10 @@ function initMobileMenu() {
 
   function toggleMenu() {
     const isOpen = menu.classList.toggle('mobile-open');
+    document.body.classList.toggle('no-scroll', isOpen);
+    if (lenisInstance) {
+      if (isOpen) lenisInstance.stop(); else lenisInstance.start();
+    }
     if (icon) {
       icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     }
@@ -2074,6 +2611,13 @@ function initMobileMenu() {
       if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
         closeMenu();
       }
+    }
+  });
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('mobile-open')) {
+      closeMenu();
     }
   });
 }
@@ -2124,7 +2668,7 @@ function initScrollSpy() {
 }
 
 /* ==========================================================================
-   TOAST HELPER
+   TOAST HELPER & CLIPBOARD UTILITY
    ========================================================================== */
 function showToast(message) {
   const toast = document.getElementById('toast-notification');
@@ -2134,6 +2678,39 @@ function showToast(message) {
   msgEl.textContent = message;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3200);
+}
+
+function copyToClipboard(text, successMsg = 'Copied to clipboard! 📋') {
+  const fallback = () => {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      if (ok) {
+        cyberAudio.play('success');
+        showToast(successMsg);
+      } else {
+        showToast('Unable to copy to clipboard');
+      }
+    } catch (err) {
+      showToast('Unable to copy to clipboard');
+    }
+  };
+
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+    navigator.clipboard.writeText(text).then(() => {
+      cyberAudio.play('success');
+      showToast(successMsg);
+    }).catch(fallback);
+  } else {
+    fallback();
+  }
 }
 
 /* ==========================================================================

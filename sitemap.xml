@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!--
+    Single-page site: only the canonical root URL is listed.
+    Google strips fragment identifiers (#section) from <loc> values, so listing
+    #systems / #arsenal / #metrics / #terminal-section / #contact / #ai-copilot-section
+    would register as duplicate entries for the same canonical document.
+    Section-level discovery is handled by in-page anchors + the BreadcrumbList JSON-LD.
+  -->
+  <url>
+    <loc>https://adityakumarsingh16.github.io/portfolio/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://avatars.githubusercontent.com/u/74896018?v=4</image:loc>
+      <image:title>Aditya Kumar Singh - Autonomous Systems &amp; AI Architecture</image:title>
+    </image:image>
+  </url>
+</urlset>

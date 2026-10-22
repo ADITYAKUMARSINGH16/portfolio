@@ -8,16 +8,24 @@
   <meta name="keywords" content="Aditya Kumar Singh, Nayaya AI, Wiz-Bulb-Sync, Autonomous AI, Local LLMs, Ollama, LangChain RAG, IoT UDP, Computer Vision, Techno India University">
   <meta name="author" content="Aditya Kumar Singh">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Aditya Kumar Singh | Autonomous Systems & AI Architecture">
-  <meta property="og:description" content="Explore system architectures in air-gapped legal AI, IoT socket protocols, and interact with the embedded Portfolio AI Co-Pilot.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/74896018?v=4">
+  <!-- Theme bootstrap: apply saved/system theme BEFORE first paint to avoid a flash of the wrong theme.
+       Resolution order: saved preference -> prefers-color-scheme -> dark fallback. -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('aditya_theme');
+        var system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', saved || system);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 
-  <!-- Google Fonts: Outfit, Inter, JetBrains Mono / Fira Code -->
+  <!-- Google Fonts: Outfit, Inter, JetBrains Mono / Fira Code (non-render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
 
   <!-- Favicon & PWA Icons -->
   <link rel="icon" type="image/svg+xml" href="assets/icon-192.svg">
@@ -28,23 +36,125 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Aditya SYS">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://adityakumarsingh16.github.io/portfolio/">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aditya Kumar Singh",
+    "url": "https://adityakumarsingh16.github.io/portfolio/",
+    "image": "https://avatars.githubusercontent.com/u/74896018?v=4",
+    "jobTitle": "Computer Science & Business Systems Undergraduate",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Techno India University, West Bengal"
+    },
+    "knowsAbout": ["Autonomous AI", "Local LLMs", "RAG", "Ollama", "FastAPI", "Python", "IoT", "UDP Networking", "Computer Vision", "Algorithmic Problem Solving", "Multi-Agent Systems"],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Techno India University",
+      "location": "West Bengal, India"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Katihar",
+      "addressRegion": "Bihar",
+      "addressCountry": "IN"
+    },
+    "email": "singhaditya7864@gmail.com",
+    "sameAs": [
+      "https://github.com/ADITYAKUMARSINGH16",
+      "https://www.linkedin.com/in/aditya-kumar-singh-7a439b315/",
+      "https://leetcode.com/u/singhaditya7864/",
+      "https://www.geeksforgeeks.org/profile/singhaditya7864/"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Aditya Kumar Singh | Autonomous Systems & AI Architecture",
+    "url": "https://adityakumarsingh16.github.io/portfolio/",
+    "description": "Personal portfolio and engineering station of Aditya Kumar Singh, CS undergraduate at Techno India University. Featuring offline legal intelligence (Nayaya AI), ambient IoT UDP networking (Wiz-Bulb-Sync), and an embedded Portfolio AI Co-Pilot.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://adityakumarsingh16.github.io/portfolio/#contact",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://adityakumarsingh16.github.io/portfolio/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Systems Architecture",
+        "item": "https://adityakumarsingh16.github.io/portfolio/#systems"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Engineering Arsenal",
+        "item": "https://adityakumarsingh16.github.io/portfolio/#arsenal"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Contact",
+        "item": "https://adityakumarsingh16.github.io/portfolio/#contact"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aditya Kumar Singh | Autonomous Systems & AI Architecture">
+  <meta property="og:description" content="Explore system architectures in air-gapped legal AI, IoT socket protocols, and interact with the embedded Portfolio AI Co-Pilot.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adityakumarsingh16.github.io/portfolio/">
+  <meta property="og:site_name" content="Aditya Kumar Singh // SYS">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/74896018?v=4">
+  <meta property="og:image:width" content="400">
+  <meta property="og:image:height" content="400">
+  <meta property="og:image:alt" content="Aditya Kumar Singh - Autonomous Systems & AI Architecture">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@ADITYAKUMARSINGH16">
+  <meta name="twitter:title" content="Aditya Kumar Singh | Autonomous Systems & AI Architecture">
+  <meta name="twitter:description" content="Personal portfolio and engineering station featuring offline legal AI, IoT UDP networking, and an embedded Portfolio AI Co-Pilot.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/74896018?v=4">
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Stylesheet with Cache Busting -->
-  <link rel="stylesheet" href="style.css?v=5.0">
+  <link rel="stylesheet" href="style.css?v=6.5">
 
   <!-- Lenis Smooth Inertia Scroll Engine -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 </head>
 <body>
+  <a href="#hero" class="skip-to-content">Skip to main content</a>
 
   <!-- Neural Mesh Background Canvas -->
   <canvas id="particle-canvas"></canvas>
 
   <!-- Navigation Bar -->
-  <nav class="navbar" id="main-nav">
+  <nav class="navbar" id="main-nav" role="banner" aria-label="Main Navigation">
     <div class="container">
       <a href="#hero" class="nav-brand-engineering">
         <span class="brand-badge-code" id="brand-badge-code">&lt;ADITYA // SYS&gt;</span>
@@ -72,13 +182,18 @@
         </button>
 
         <!-- Quantum Shift Theme Toggle -->
-        <button class="btn-theme-toggle" id="btn-theme-toggle" title="Toggle Theme (Neural Dark / Studio Light)">
+        <button class="btn-theme-toggle" id="btn-theme-toggle" title="Toggle Theme (Neural Dark / Studio Light)" aria-label="Toggle Theme (Neural Dark / Studio Light)">
           <i class="fa-solid fa-moon" id="theme-toggle-icon"></i>
         </button>
 
         <!-- Cyber Haptic Audio SFX Toggle -->
         <button class="btn-theme-toggle" id="btn-sound-toggle" title="Toggle Cyber Audio (SFX)" aria-label="Toggle Cyber Sound Effects">
           <i class="fa-solid fa-volume-high" id="sound-toggle-icon"></i>
+        </button>
+
+        <!-- Keyboard Shortcuts HUD Toggle (?) -->
+        <button class="btn-theme-toggle" id="btn-shortcuts-hud" title="Keyboard Shortcuts (Press ?)" aria-label="Open Keyboard Shortcuts">
+          <i class="fa-solid fa-keyboard"></i>
         </button>
 
         <!-- Air-Gapped PWA Install Button -->
@@ -110,13 +225,13 @@
   <!-- ========================================================================
        HERO: SYSTEM TELEMETRY & ENGINEER DOSSIER
        ======================================================================== -->
-  <header class="hero" id="hero">
+  <header class="hero" id="hero" aria-label="Hero: System Telemetry &amp; Engineer Dossier">
     <div class="container">
       <!-- Live Telemetry Ribbon -->
       <div class="telemetry-ribbon">
         <span class="telemetry-indicator" id="telemetry-network-indicator">
           <span class="pulse-dot-sm" id="network-pulse-dot"></span>
-          <span id="network-status-text">AIR-GAPPED &amp; OFFLINE AI R&amp;D</span>
+          <span id="network-status-text" aria-live="polite">AIR-GAPPED &amp; OFFLINE AI R&amp;D</span>
         </span>
         <span class="telemetry-divider">&bull;</span>
         <span>TECHNO INDIA UNIVERSITY (KOLKATA)</span>
@@ -150,7 +265,11 @@
           <i class="fa-solid fa-brain"></i>
           <span>Ask AI Co-Pilot</span>
         </a>
-        <a href="assets/Aditya_Kumar_Singh_Resume.pdf" target="_blank" download="Aditya_Kumar_Singh_Resume.pdf" class="dock-pill-btn accent-dock" id="hero-resume-btn" title="Download Official Resume PDF">
+        <button type="button" class="dock-pill-btn accent-dock" id="hero-fast-track-btn" title="Open Recruiter Fast-Track (30-second brief)">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Recruiter Brief</span>
+        </button>
+        <a href="assets/Aditya_Kumar_Singh_Resume.pdf" target="_blank" download="Aditya_Kumar_Singh_Resume.pdf" class="dock-pill-btn" id="resume-download" title="Download Official Resume PDF">
           <i class="fa-solid fa-file-arrow-down"></i>
           <span>Resume / CV</span>
         </a>
@@ -194,11 +313,12 @@
       </div>
     </div>
   </header>
+  <hr class="section-divider">
 
   <!-- ========================================================================
        SYSTEM ARCHITECTURE SHOWCASE (PROJECTS DEEP DIVE)
        ======================================================================== -->
-  <section id="systems">
+  <section id="systems" aria-label="Systems Architecture">
     <div class="container">
       <div class="section-header reveal-on-scroll">
         <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> Engineering Architecture</span>
@@ -222,12 +342,13 @@
         <!-- Rendered dynamically by app.js -->
       </div>
     </div>
+  <hr class="section-divider">
   </section>
 
   <!-- ========================================================================
        PORTFOLIO AI CO-PILOT STATION (DEDICATED PORTFOLIO GUIDE)
        ======================================================================== -->
-  <section id="ai-copilot-section">
+  <section id="ai-copilot-section" aria-label="Portfolio AI Co-Pilot">
     <div class="container">
       <div class="section-header">
         <span class="section-tag"><i class="fa-solid fa-microchip"></i> Dedicated Portfolio Intelligence</span>
@@ -342,6 +463,9 @@
                 autocomplete="off" 
                 required
               >
+              <button type="button" class="btn-copilot-mic" id="btn-ai-mic" aria-label="Voice Input (Speech to Text)" title="Speak your query (Speech to Text)">
+                <i class="fa-solid fa-microphone"></i>
+              </button>
               <button type="submit" class="btn-copilot-send" aria-label="Send">
                 <i class="fa-solid fa-paper-plane"></i>
               </button>
@@ -349,13 +473,14 @@
           </div>
         </div>
       </div>
+  <hr class="section-divider">
     </div>
   </section>
 
   <!-- ========================================================================
        ENGINEERING ARSENAL MATRIX (SKILLS)
        ======================================================================== -->
-  <section id="arsenal">
+  <section id="arsenal" aria-label="Core Engineering Arsenal">
     <div class="container">
       <div class="section-header">
         <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Technical Matrix</span>
@@ -374,7 +499,7 @@
   <!-- ========================================================================
        CODING METRICS & PROBLEM SOLVING
        ======================================================================== -->
-  <section id="metrics">
+  <section id="metrics" aria-label="Problem Solving &amp; Activity Metrics">
     <div class="container">
       <div class="section-header">
         <span class="section-tag"><i class="fa-solid fa-code-commit"></i> Algorithmic Mastery</span>
@@ -399,9 +524,9 @@
               View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
-          <div class="platform-img-wrap" id="wrap-metric-leetcode">
-            <img id="img-metric-leetcode" src="https://leetcard.jacoblin.cool/singhaditya7864?theme=dark&font=Fira%20Code" alt="Aditya LeetCode Stats" loading="lazy">
-            <div class="platform-fallback-card" id="fallback-metric-leetcode" style="display: none;">
+          <div class="platform-img-wrap is-loading" id="wrap-metric-leetcode">
+            <img id="img-metric-leetcode" src="https://leetcard.jacoblin.cool/singhaditya7864?theme=dark&font=Fira%20Code" alt="Aditya LeetCode Stats" decoding="async">
+            <div class="platform-fallback-card" id="fallback-metric-leetcode">
               <div class="fallback-title"><i class="fa-solid fa-code" style="color: #ffa116;"></i> LeetCode Profile (@singhaditya7864)</div>
               <p class="fallback-desc">Consistent practice in optimal time/space complexity across Graphs, Trees, and Dynamic Programming in C++ &amp; Python.</p>
               <a href="https://leetcode.com/u/singhaditya7864/" target="_blank" rel="noopener noreferrer" class="fallback-action-btn">
@@ -425,9 +550,9 @@
               View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
-          <div class="platform-img-wrap" id="wrap-metric-gfg">
-            <img id="img-metric-gfg" src="https://gfgstatscard.vercel.app/singhaditya7864?theme=dark" alt="Aditya GeeksforGeeks Stats" loading="lazy">
-            <div class="platform-fallback-card" id="fallback-metric-gfg" style="display: none;">
+          <div class="platform-img-wrap is-loading" id="wrap-metric-gfg">
+            <img id="img-metric-gfg" src="https://gfgstatscard.vercel.app/singhaditya7864?theme=dark" alt="Aditya GeeksforGeeks Stats" decoding="async">
+            <div class="platform-fallback-card" id="fallback-metric-gfg">
               <div class="fallback-title"><i class="fa-solid fa-circle-nodes" style="color: #2f8d46;"></i> GeeksforGeeks Profile (@singhaditya7864)</div>
               <p class="fallback-desc">Rigorous algorithmic problem solving and campus coding rank in Data Structures &amp; Core Algorithms.</p>
               <a href="https://www.geeksforgeeks.org/profile/singhaditya7864" target="_blank" rel="noopener noreferrer" class="fallback-action-btn">
@@ -451,9 +576,9 @@
               Follow <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
-          <div class="platform-img-wrap" id="wrap-metric-github">
-            <img id="img-metric-github" src="https://github-readme-stats.vercel.app/api?username=ADITYAKUMARSINGH16&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=38bdf8&text_color=e2e8f0" alt="Aditya GitHub Stats" loading="lazy">
-            <div class="platform-fallback-card" id="fallback-metric-github" style="display: none;">
+          <div class="platform-img-wrap is-loading" id="wrap-metric-github">
+            <img id="img-metric-github" src="https://github-readme-stats.vercel.app/api?username=ADITYAKUMARSINGH16&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=38bdf8&text_color=e2e8f0" alt="Aditya GitHub Stats" decoding="async">
+            <div class="platform-fallback-card" id="fallback-metric-github">
               <div class="fallback-title"><i class="fa-brands fa-github" style="color: var(--accent-cyan);"></i> GitHub Repository Hub (@ADITYAKUMARSINGH16)</div>
               <p class="fallback-desc">Active author across open-source autonomous systems, air-gapped legal AI, and IoT UDP repositories.</p>
               <a href="https://github.com/ADITYAKUMARSINGH16" target="_blank" rel="noopener noreferrer" class="fallback-action-btn">
@@ -469,21 +594,18 @@
         <h4 style="font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
           <i class="fa-brands fa-github" style="color: var(--accent-cyan);"></i> Contribution Activity Graph
         </h4>
-        <div class="platform-img-wrap" style="max-width: 900px; width: 100%;">
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ADITYAKUMARSINGH16/ADITYAKUMARSINGH16/output/github-contribution-grid-snake-dark.svg">
-            <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ADITYAKUMARSINGH16/ADITYAKUMARSINGH16/output/github-contribution-grid-snake.svg">
-            <img alt="Aditya's GitHub Contribution Grid Snake" src="https://raw.githubusercontent.com/ADITYAKUMARSINGH16/ADITYAKUMARSINGH16/output/github-contribution-grid-snake-dark.svg" loading="lazy">
-          </picture>
+        <div class="platform-img-wrap" id="wrap-metric-snake" style="max-width: 900px; width: 100%;">
+          <img id="img-metric-snake" alt="Aditya's GitHub Contribution Grid Snake" src="https://raw.githubusercontent.com/ADITYAKUMARSINGH16/ADITYAKUMARSINGH16/output/github-contribution-grid-snake-dark.svg" decoding="async">
         </div>
       </div>
+      <hr class="section-divider">
     </div>
   </section>
 
   <!-- ========================================================================
        CYBER TELEMETRY CONSOLE (INTERACTIVE CLI)
        ======================================================================== -->
-  <section id="terminal-section">
+  <section id="terminal-section" aria-label="Telemetry Console">
     <div class="container">
       <div class="section-header">
         <span class="section-tag"><i class="fa-solid fa-terminal"></i> Command Line Interface</span>
@@ -495,23 +617,36 @@
 
       <div class="terminal-window reveal-on-scroll">
         <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="tdot red"></span>
-            <span class="tdot yellow"></span>
-            <span class="tdot green"></span>
+          <div class="terminal-header-left">
+            <div class="terminal-dots" aria-hidden="true">
+              <span class="tdot red"></span>
+              <span class="tdot yellow"></span>
+              <span class="tdot green"></span>
+            </div>
+            <div class="terminal-title">
+              <span class="term-title-host">aditya@techno-india-csbs</span>:<span class="term-title-path">~</span>
+              <span class="term-title-sub">(telemetry shell)</span>
+            </div>
           </div>
-          <div class="terminal-title">aditya@techno-india-csbs:~ (telemetry shell)</div>
-          <div class="terminal-presets">
-            <button class="preset-chip" data-cmd="aditya --inspect aura">aura</button>
-            <button class="preset-chip" data-cmd="aditya --inspect nayaya-ai">nyaya-ai</button>
-            <button class="preset-chip" data-cmd="aditya --skills">skills</button>
-            <button class="preset-chip" data-cmd="aditya --certifications">certifications</button>
-            <button class="preset-chip" data-cmd="aditya --stats">stats</button>
-            <button class="preset-chip" data-cmd="aditya --resume">resume</button>
-            <button class="preset-chip" data-cmd="aditya --contact">contact</button>
-            <button class="preset-chip" data-cmd="help">help</button>
+          <div class="terminal-header-right">
+            <span class="terminal-status-badge"><span class="pulse-dot-sm"></span> BASH // READY</span>
           </div>
         </div>
+
+        <div class="terminal-quickbar">
+          <span class="quickbar-label"><i class="fa-solid fa-bolt"></i> <span>QUICK CMDS:</span></span>
+          <div class="terminal-presets" role="toolbar" aria-label="Terminal preset commands">
+            <button type="button" class="preset-chip" data-cmd="aditya --inspect aura">aura</button>
+            <button type="button" class="preset-chip" data-cmd="aditya --inspect nayaya-ai">nyaya-ai</button>
+            <button type="button" class="preset-chip" data-cmd="aditya --skills">skills</button>
+            <button type="button" class="preset-chip" data-cmd="aditya --certifications">certifications</button>
+            <button type="button" class="preset-chip" data-cmd="aditya --stats">stats</button>
+            <button type="button" class="preset-chip" data-cmd="aditya --resume">resume</button>
+            <button type="button" class="preset-chip" data-cmd="aditya --contact">contact</button>
+            <button type="button" class="preset-chip" data-cmd="help">help</button>
+          </div>
+        </div>
+
         <div class="terminal-body" id="terminal-output-body">
           <div class="terminal-line"><span class="term-cyan">aditya@system</span>:<span class="term-violet">~</span>$ aditya --telemetry</div>
           <div class="terminal-line"><span class="term-yellow">NAME:</span> Aditya Kumar Singh</div>
@@ -522,17 +657,18 @@
           <div class="terminal-line">Type 'help' or press [Tab] to autocomplete available commands.</div>
         </div>
         <div class="terminal-input-row">
-          <span class="term-green">aditya@cli:~$</span>
+          <span class="term-green terminal-prompt">aditya@cli:~$</span>
           <input type="text" id="terminal-cli-input" class="terminal-cli-input" placeholder="Type a command (Tab to autocomplete, ↑/↓ for history)..." autocomplete="off">
         </div>
       </div>
     </div>
+  <hr class="section-divider">
   </section>
 
   <!-- ========================================================================
        CONTACT HUB
        ======================================================================== -->
-  <section id="contact">
+  <section id="contact" aria-label="Contact Hub">
     <div class="container">
       <div class="section-header">
         <span class="section-tag"><i class="fa-solid fa-satellite-dish"></i> Direct Connection</span>
@@ -601,17 +737,17 @@
           <form id="portfolio-contact-form">
             <div class="form-group">
               <label for="contact-name" class="form-label">Your Name</label>
-              <input type="text" id="contact-name" class="form-input" placeholder="Jane Doe" required>
+              <input type="text" id="contact-name" class="form-input" placeholder="Jane Doe" autocomplete="name" required>
             </div>
 
             <div class="form-group">
               <label for="contact-email" class="form-label">Your Email</label>
-              <input type="email" id="contact-email" class="form-input" placeholder="jane@company.com" required>
+              <input type="email" id="contact-email" class="form-input" placeholder="jane@company.com" autocomplete="email" required>
             </div>
 
             <div class="form-group">
               <label for="contact-subject" class="form-label">Purpose / Subject</label>
-              <input type="text" id="contact-subject" class="form-input" placeholder="AI Engineering Opportunity / Collaboration" required>
+              <input type="text" id="contact-subject" class="form-input" placeholder="AI Engineering Opportunity / Collaboration" autocomplete="off" required>
             </div>
 
             <div class="form-group">
@@ -677,15 +813,20 @@
   </div>
 
   <!-- Floating Drawer -->
-  <div class="floating-copilot-drawer hidden" id="floating-ai-drawer">
+  <div class="floating-copilot-drawer hidden" id="floating-ai-drawer" role="dialog" aria-modal="false" aria-labelledby="floating-drawer-title">
     <div class="drawer-header">
       <div class="drawer-title-wrap">
         <span class="pulse-dot-sm"></span>
-        <span>Portfolio AI Co-Pilot</span>
+        <span id="floating-drawer-title">Portfolio AI Co-Pilot</span>
       </div>
-      <button class="btn-theme-toggle" id="btn-close-float-drawer" aria-label="Close Assistant">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+      <div style="display: flex; align-items: center; gap: 0.35rem;">
+        <button class="btn-theme-toggle" id="drawer-voice-toggle" aria-label="Toggle Voice Readout" title="Toggle AI Voice Response">
+          <i class="fa-solid fa-volume-xmark" id="drawer-voice-icon"></i>
+        </button>
+        <button class="btn-theme-toggle" id="btn-close-float-drawer" aria-label="Close Assistant">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
     </div>
 
     <div class="copilot-messages" id="drawer-chat-messages">
@@ -707,6 +848,9 @@
     <div class="copilot-input-bar">
       <form class="copilot-form" id="drawer-chat-form">
         <input type="text" id="drawer-user-input" class="copilot-input" placeholder="Ask about Aditya's portfolio..." autocomplete="off" required>
+        <button type="button" class="btn-copilot-mic" id="btn-drawer-mic" aria-label="Voice Input (Speech to Text)" title="Speak your query">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
         <button type="submit" class="btn-copilot-send" aria-label="Send">
           <i class="fa-solid fa-paper-plane"></i>
         </button>
@@ -715,11 +859,11 @@
   </div>
 
   <!-- Settings Modal for Custom AI Provider -->
-  <div class="modal-overlay" id="ai-settings-modal">
+  <div class="modal-overlay" id="ai-settings-modal" role="dialog" aria-modal="true" aria-labelledby="ai-settings-title">
     <div class="modal-card">
       <div class="drawer-header" style="background: none; border: none; padding: 0 0 1rem 0;">
-        <h3 style="font-size: 1.15rem;"><i class="fa-solid fa-gear" style="color: var(--accent-cyan);"></i> AI Provider Settings</h3>
-        <button class="btn-theme-toggle" id="btn-close-settings-modal"><i class="fa-solid fa-xmark"></i></button>
+        <h3 id="ai-settings-title" style="font-size: 1.15rem;"><i class="fa-solid fa-gear" style="color: var(--accent-cyan);"></i> AI Provider Settings</h3>
+        <button class="btn-theme-toggle" id="btn-close-settings-modal" aria-label="Close AI Provider Settings"><i class="fa-solid fa-xmark"></i></button>
       </div>
 
       <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
@@ -728,6 +872,7 @@
       </p>
 
       <form id="ai-provider-settings-form">
+        <input type="text" name="username" autocomplete="username" style="display:none;" aria-hidden="true" tabindex="-1">
         <div class="form-group">
           <label class="form-label">Provider Mode</label>
           <select id="setting-provider-select" class="form-input">
@@ -740,7 +885,7 @@
 
         <div class="form-group" id="setting-apikey-group" style="display: none;">
           <label class="form-label">API Key (Stored locally only)</label>
-          <input type="password" id="setting-api-key" class="form-input" placeholder="Enter API key...">
+          <input type="password" id="setting-api-key" class="form-input" placeholder="Enter API key..." autocomplete="new-password">
         </div>
 
         <button type="submit" class="dock-pill-btn primary" style="width: 100%; justify-content: center; padding: 0.75rem; margin-top: 1rem;">
@@ -753,12 +898,12 @@
   <!-- ========================================================================
        RESUME / CV DOSSIER MODAL
        ======================================================================== -->
-  <div class="modal-overlay" id="resume-dossier-modal">
+  <div class="modal-overlay" id="resume-dossier-modal" role="dialog" aria-modal="true" aria-labelledby="resume-dossier-title">
     <div class="modal-card resume-modal-card">
       <div class="drawer-header" style="background: none; border: none; padding: 0 0 1rem 0;">
         <div class="drawer-title-wrap">
           <span class="pulse-dot-sm"></span>
-          <h3 style="font-size: 1.15rem; margin: 0; color: var(--text-main);">
+          <h3 id="resume-dossier-title" style="font-size: 1.15rem; margin: 0; color: var(--text-main);">
             Aditya Kumar Singh <span class="gradient-text">// Resume Dossier</span>
           </h3>
         </div>
@@ -1134,18 +1279,24 @@
   <div class="cmd-palette-overlay" id="command-palette-modal" role="dialog" aria-modal="true" aria-labelledby="cmd-palette-input">
     <div class="cmd-palette-card">
       <div class="cmd-palette-header">
-        <i class="fa-solid fa-magnifying-glass cmd-search-icon"></i>
+        <i class="fa-solid fa-magnifying-glass cmd-search-icon" aria-hidden="true"></i>
         <input 
           type="text" 
           id="cmd-palette-input" 
           class="cmd-palette-input" 
           placeholder="Type to search projects, skills, commands, or press Esc..." 
           autocomplete="off"
+          role="combobox"
+          aria-expanded="true"
+          aria-controls="cmd-palette-results"
+          aria-autocomplete="list"
+          aria-label="Search commands, projects, and skills"
+          data-autofocus
         >
         <span class="cmd-esc-badge">ESC</span>
       </div>
 
-      <div class="cmd-palette-results" id="cmd-palette-results">
+      <div class="cmd-palette-results" id="cmd-palette-results" role="listbox" aria-label="Command results">
         <!-- Rendered dynamically -->
       </div>
 
@@ -1164,12 +1315,114 @@
   </div>
 
   <!-- Toast Notification -->
-  <div class="toast-notice" id="toast-notification">
+  <div class="toast-notice" id="toast-notification" aria-live="polite" aria-atomic="true">
     <i class="fa-solid fa-circle-check" style="color: var(--accent-emerald);"></i>
     <span id="toast-message">Copied to clipboard!</span>
   </div>
 
+  <!-- ========================================================================
+       MODAL: KEYBOARD NAVIGATION HUD & SHORTCUTS (PRESS ?)
+       ======================================================================== -->
+  <div class="modal-overlay" id="keyboard-hud-modal" role="dialog" aria-modal="true" aria-labelledby="keyboard-hud-title">
+    <div class="modal-card keyboard-hud-card">
+      <div class="drawer-header" style="background: none; border: none; padding: 0 0 1rem 0;">
+        <div class="drawer-title-wrap">
+          <span class="pulse-dot-sm"></span>
+          <h3 id="keyboard-hud-title" style="font-size: 1.15rem; margin: 0; color: var(--text-main);">
+            Cyber HUD <span class="gradient-text">// Keyboard Navigation</span>
+          </h3>
+        </div>
+        <button class="btn-theme-toggle" id="btn-close-hud-modal" aria-label="Close Shortcuts HUD">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+        Tactical keyboard shortcuts for power users. Navigate the system telemetry with zero mouse clicks.
+      </p>
+
+      <div class="hud-shortcuts-grid">
+        <div class="hud-shortcut-row"><span class="hud-key-combo"><kbd>?</kbd></span><span class="hud-desc">Toggle this Shortcuts HUD</span></div>
+        <div class="hud-shortcut-row"><span class="hud-key-combo"><kbd>Ctrl</kbd> + <kbd>K</kbd></span><span class="hud-desc">Open Command Palette</span></div>
+        <div class="hud-shortcut-row"><span class="hud-key-combo"><kbd>F</kbd></span><span class="hud-desc">Open Recruiter Fast-Track Brief</span></div>
+        <div class="hud-shortcut-row"><span class="hud-key-combo"><kbd>R</kbd></span><span class="hud-desc">Open Resume Dossier &amp; Credentials</span></div>
+        <div class="hud-shortcut-row"><span class="hud-key-combo"><kbd>T</kbd></span><span class="hud-desc">Toggle Color Theme (Dark / Light)</span></div>
+        <div class="hud-shortcut-row"><span class="hud-key-combo"><kbd>M</kbd></span><span class="hud-desc">Mute / Unmute Cyber Audio SFX</span></div>
+        <div class="hud-shortcut-row"><span class="hud-key-combo"><kbd>~</kbd> or <kbd>`</kbd></span><span class="hud-desc">Jump &amp; Focus Telemetry CLI</span></div>
+        <div class="hud-shortcut-row"><span class="hud-key-combo"><kbd>A</kbd></span><span class="hud-desc">Toggle AI Co-Pilot Floating Drawer</span></div>
+        <div class="hud-shortcut-row"><span class="hud-key-combo"><kbd>Esc</kbd></span><span class="hud-desc">Dismiss any open modal or drawer</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL: RECRUITER FAST-TRACK DOSSIER (30-SECOND EXECUTIVE BRIEF)
+       ======================================================================== -->
+  <div class="modal-overlay" id="recruiter-fast-track-modal" role="dialog" aria-modal="true" aria-labelledby="recruiter-modal-title">
+    <div class="modal-card recruiter-modal-card">
+      <div class="drawer-header" style="background: none; border: none; padding: 0 0 1rem 0;">
+        <div class="drawer-title-wrap">
+          <span class="pulse-dot-sm"></span>
+          <h3 id="recruiter-modal-title" style="font-size: 1.15rem; margin: 0; color: var(--text-main);">
+            Recruiter Fast-Track <span class="gradient-text">// 30s Executive Brief</span>
+          </h3>
+        </div>
+        <button class="btn-theme-toggle" id="btn-close-recruiter-modal" aria-label="Close Recruiter Modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="recruiter-dossier-grid">
+        <div class="recruiter-meta-bar">
+          <div class="recruiter-badge-item">
+            <span class="recruiter-label">TARGET ROLES</span>
+            <strong class="recruiter-val term-cyan">AI Engineer • Backend Engineer • Autonomous Systems</strong>
+          </div>
+          <div class="recruiter-badge-item">
+            <span class="recruiter-label">ACADEMIC BASE</span>
+            <strong class="recruiter-val">B.Tech CSBS @ Techno India University (CGPA: 7.54/10 • Grad 2026)</strong>
+          </div>
+          <div class="recruiter-badge-item">
+            <span class="recruiter-label">AVAILABILITY</span>
+            <strong class="recruiter-val term-green">Immediate for Internships &amp; Full-Time Engineering Roles</strong>
+          </div>
+        </div>
+
+        <div class="recruiter-highlights-box">
+          <h4><i class="fa-solid fa-bolt" style="color: var(--accent-amber); margin-right: 6px;"></i> Key Engineering Distinctions</h4>
+          <ul class="recruiter-bullet-list">
+            <li><strong>Autonomous AI Systems (AURA):</strong> Locally hosted voice assistant built with Python, FastAPI, Ollama (Gemma:2b), WebRTC VAD, and Tesseract OCR with zero cloud reliance.</li>
+            <li><strong>Air-Gapped Legal RAG (Nyaya AI):</strong> 4-role multi-agent deliberation pipeline (Assistant, Counsel, Defense, Judge) integrating Pinecone and Docker.</li>
+            <li><strong>Low-Latency Systems Range (WiZ-Bulb-Sync):</strong> Sub-50ms UDP socket protocol broadcasting directly to smart hardware.</li>
+            <li><strong>Algorithmic Problem Solving:</strong> 300+ problem solutions across LeetCode &amp; GeeksforGeeks with campus coding ranking.</li>
+          </ul>
+        </div>
+
+        <div class="recruiter-cert-strip">
+          <div class="recruiter-cert-pill"><i class="fa-solid fa-shield-halved" style="color: var(--accent-cyan);"></i> Palo Alto Networks (Cybersecurity)</div>
+          <div class="recruiter-cert-pill"><i class="fa-brands fa-google" style="color: var(--accent-amber);"></i> Google for Developers (Android)</div>
+          <div class="recruiter-cert-pill"><i class="fa-solid fa-network-wired" style="color: var(--accent-emerald);"></i> Juniper Networks (Networking)</div>
+        </div>
+
+        <div class="recruiter-actions-panel">
+          <a href="assets/Aditya_Kumar_Singh_Resume.pdf" download="Aditya_Kumar_Singh_Resume.pdf" class="dock-pill-btn primary" id="btn-recruiter-dl-pdf">
+            <i class="fa-solid fa-download"></i> <span>Download ATS Resume PDF</span>
+          </a>
+          <a href="mailto:singhaditya7864@gmail.com?subject=Engineering%20Opportunity%20-%20Interview%20Invitation" class="dock-pill-btn">
+            <i class="fa-solid fa-envelope"></i> <span>Invite for Interview</span>
+          </a>
+          <a href="tel:+917273963985" class="dock-pill-btn">
+            <i class="fa-solid fa-phone"></i> <span>Call (+91 7273963985)</span>
+          </a>
+          <button type="button" class="dock-pill-btn" id="btn-copy-recruiter-pitch">
+            <i class="fa-regular fa-copy"></i> <span>Copy 30s Pitch</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript Modules with Cache Busting -->
-  <script type="module" src="app.js?v=5.0"></script>
+  <script type="module" src="app.js?v=6.5"></script>
 </body>
 </html>
